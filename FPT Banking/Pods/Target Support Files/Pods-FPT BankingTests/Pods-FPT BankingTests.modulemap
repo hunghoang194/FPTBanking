@@ -1,0 +1,6 @@
+framework module Pods_FPT_BankingTests {
+  umbrella header "Pods-FPT BankingTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
