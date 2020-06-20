@@ -3,18 +3,28 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33C34A71249C5E8100CC09AE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A70249C5E8100CC09AE /* UIView.swift */; };
+		33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A72249C601F00CC09AE /* ColorConstant.swift */; };
+		33C34A75249C664600CC09AE /* FBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A74249C664600CC09AE /* FBBaseViewController.swift */; };
+		33C34A77249C6F2200CC09AE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A76249C6F2200CC09AE /* SlideMenuController.swift */; };
+		33F0BDE4249DE7C700E8FAA2 /* HDMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0BDE2249DE7C700E8FAA2 /* HDMenuTableViewCell.xib */; };
+		33F0BDE5249DE7C700E8FAA2 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0BDE3249DE7C700E8FAA2 /* MenuTableViewCell.swift */; };
+		33FE7F40249CBB1300939E03 /* TBLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FE7F3F249CBB1300939E03 /* TBLeftMenuViewController.swift */; };
 		B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F3EC2498E42D00412819 /* AppDelegate.swift */; };
-		B076F3EF2498E42D00412819 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F3EE2498E42D00412819 /* ViewController.swift */; };
+		B076F3EF2498E42D00412819 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F3EE2498E42D00412819 /* FBLoginViewController.swift */; };
 		B076F3F22498E42D00412819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B076F3F02498E42D00412819 /* Main.storyboard */; };
 		B076F3F42498E42F00412819 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B076F3F32498E42F00412819 /* Assets.xcassets */; };
 		B076F3F72498E42F00412819 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B076F3F52498E42F00412819 /* LaunchScreen.storyboard */; };
 		B076F4022498E42F00412819 /* FPT_BankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F4012498E42F00412819 /* FPT_BankingTests.swift */; };
 		B076F40D2498E42F00412819 /* FPT_BankingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F40C2498E42F00412819 /* FPT_BankingUITests.swift */; };
 		B0DA1396249B9D72003DBC6E /* Ultility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA1395249B9D72003DBC6E /* Ultility.swift */; };
+		DB1864AF5BD18BAB7CBBE54A /* Pods_FPT_BankingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FAE815A3A1FF8C17D2D644 /* Pods_FPT_BankingTests.framework */; };
+		DE7CE07CFC800FFEF0ED32F9 /* Pods_FPT_Banking_FPT_BankingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12EE33B9C1C2672717FEDB12 /* Pods_FPT_Banking_FPT_BankingUITests.framework */; };
+		FF1FFACCD38E5F74D6C69AEA /* Pods_FPT_Banking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F116082C8966D677CD6B1B /* Pods_FPT_Banking.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,9 +45,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12EE33B9C1C2672717FEDB12 /* Pods_FPT_Banking_FPT_BankingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPT_Banking_FPT_BankingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		33C34A70249C5E8100CC09AE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		33C34A72249C601F00CC09AE /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
+		33C34A74249C664600CC09AE /* FBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBaseViewController.swift; sourceTree = "<group>"; };
+		33C34A76249C6F2200CC09AE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		33F0BDE2249DE7C700E8FAA2 /* HDMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDMenuTableViewCell.xib; sourceTree = "<group>"; };
+		33F0BDE3249DE7C700E8FAA2 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		33FE7F3F249CBB1300939E03 /* TBLeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBLeftMenuViewController.swift; sourceTree = "<group>"; };
+		3BDB5D9B0EF27C8D93BA58DC /* Pods-FPT Banking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking.release.xcconfig"; path = "Target Support Files/Pods-FPT Banking/Pods-FPT Banking.release.xcconfig"; sourceTree = "<group>"; };
+		4A3DB6719D8A95AFA1316881 /* Pods-FPT BankingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT BankingTests.release.xcconfig"; path = "Target Support Files/Pods-FPT BankingTests/Pods-FPT BankingTests.release.xcconfig"; sourceTree = "<group>"; };
+		723F5F4E6E948FF585555671 /* Pods-FPT Banking-FPT BankingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking-FPT BankingUITests.release.xcconfig"; path = "Target Support Files/Pods-FPT Banking-FPT BankingUITests/Pods-FPT Banking-FPT BankingUITests.release.xcconfig"; sourceTree = "<group>"; };
+		8D2A9B5DD8BCC731B4B242B4 /* Pods-FPT Banking-FPT BankingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking-FPT BankingUITests.debug.xcconfig"; path = "Target Support Files/Pods-FPT Banking-FPT BankingUITests/Pods-FPT Banking-FPT BankingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B076F3E92498E42D00412819 /* FPT Banking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FPT Banking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B076F3EC2498E42D00412819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B076F3EE2498E42D00412819 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B076F3EE2498E42D00412819 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
 		B076F3F12498E42D00412819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B076F3F32498E42F00412819 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B076F3F62498E42F00412819 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +71,10 @@
 		B076F40C2498E42F00412819 /* FPT_BankingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPT_BankingUITests.swift; sourceTree = "<group>"; };
 		B076F40E2498E42F00412819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0DA1395249B9D72003DBC6E /* Ultility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ultility.swift; sourceTree = "<group>"; };
+		B4F116082C8966D677CD6B1B /* Pods_FPT_Banking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPT_Banking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2E18566A7B1908551551F2C /* Pods-FPT Banking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking.debug.xcconfig"; path = "Target Support Files/Pods-FPT Banking/Pods-FPT Banking.debug.xcconfig"; sourceTree = "<group>"; };
+		C6FAE815A3A1FF8C17D2D644 /* Pods_FPT_BankingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPT_BankingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE8AFE38BC6936D27799D72E /* Pods-FPT BankingTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT BankingTests.debug.xcconfig"; path = "Target Support Files/Pods-FPT BankingTests/Pods-FPT BankingTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF1FFACCD38E5F74D6C69AEA /* Pods_FPT_Banking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB1864AF5BD18BAB7CBBE54A /* Pods_FPT_BankingTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +98,68 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE7CE07CFC800FFEF0ED32F9 /* Pods_FPT_Banking_FPT_BankingUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D98C092D59A8FC08C053980 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C2E18566A7B1908551551F2C /* Pods-FPT Banking.debug.xcconfig */,
+				3BDB5D9B0EF27C8D93BA58DC /* Pods-FPT Banking.release.xcconfig */,
+				8D2A9B5DD8BCC731B4B242B4 /* Pods-FPT Banking-FPT BankingUITests.debug.xcconfig */,
+				723F5F4E6E948FF585555671 /* Pods-FPT Banking-FPT BankingUITests.release.xcconfig */,
+				DE8AFE38BC6936D27799D72E /* Pods-FPT BankingTests.debug.xcconfig */,
+				4A3DB6719D8A95AFA1316881 /* Pods-FPT BankingTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		33C34A6B249C5B4A00CC09AE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				33C34A74249C664600CC09AE /* FBBaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		33C34A6C249C5B5B00CC09AE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		33C34A6D249C5B6100CC09AE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				33F0BDE3249DE7C700E8FAA2 /* MenuTableViewCell.swift */,
+				33F0BDE2249DE7C700E8FAA2 /* HDMenuTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		33C34A6E249C5B6700CC09AE /* Conltroller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Conltroller;
+			sourceTree = "<group>";
+		};
+		33C34A6F249C5E6F00CC09AE /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				33C34A70249C5E8100CC09AE /* UIView.swift */,
+				33C34A72249C601F00CC09AE /* ColorConstant.swift */,
+				33C34A76249C6F2200CC09AE /* SlideMenuController.swift */,
+				33FE7F3F249CBB1300939E03 /* TBLeftMenuViewController.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B076F3E02498E42C00412819 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +167,8 @@
 				B076F4002498E42F00412819 /* FPT BankingTests */,
 				B076F40B2498E42F00412819 /* FPT BankingUITests */,
 				B076F3EA2498E42D00412819 /* Products */,
+				0D98C092D59A8FC08C053980 /* Pods */,
+				C50CB72C02EE043246ED09BF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +185,14 @@
 		B076F3EB2498E42D00412819 /* FPT Banking */ = {
 			isa = PBXGroup;
 			children = (
+				33C34A6F249C5E6F00CC09AE /* Extension */,
+				33C34A6E249C5B6700CC09AE /* Conltroller */,
+				33C34A6D249C5B6100CC09AE /* View */,
+				33C34A6C249C5B5B00CC09AE /* Model */,
+				33C34A6B249C5B4A00CC09AE /* Base */,
 				B0DA1394249B9D52003DBC6E /* Ultility */,
 				B076F3EC2498E42D00412819 /* AppDelegate.swift */,
-				B076F3EE2498E42D00412819 /* ViewController.swift */,
+				B076F3EE2498E42D00412819 /* FBLoginViewController.swift */,
 				B076F3F02498E42D00412819 /* Main.storyboard */,
 				B076F3F32498E42F00412819 /* Assets.xcassets */,
 				B076F3F52498E42F00412819 /* LaunchScreen.storyboard */,
@@ -136,6 +227,16 @@
 			path = Ultility;
 			sourceTree = "<group>";
 		};
+		C50CB72C02EE043246ED09BF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B4F116082C8966D677CD6B1B /* Pods_FPT_Banking.framework */,
+				12EE33B9C1C2672717FEDB12 /* Pods_FPT_Banking_FPT_BankingUITests.framework */,
+				C6FAE815A3A1FF8C17D2D644 /* Pods_FPT_BankingTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B076F4112498E42F00412819 /* Build configuration list for PBXNativeTarget "FPT Banking" */;
 			buildPhases = (
+				9855949BB7A8A0D629FCA5B5 /* [CP] Check Pods Manifest.lock */,
 				B076F3E52498E42D00412819 /* Sources */,
 				B076F3E62498E42D00412819 /* Frameworks */,
 				B076F3E72498E42D00412819 /* Resources */,
+				845138ED33A810DA9C59CAB6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +263,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B076F4142498E42F00412819 /* Build configuration list for PBXNativeTarget "FPT BankingTests" */;
 			buildPhases = (
+				5342EC2C81861AFE4FCF3149 /* [CP] Check Pods Manifest.lock */,
 				B076F3F92498E42F00412819 /* Sources */,
 				B076F3FA2498E42F00412819 /* Frameworks */,
 				B076F3FB2498E42F00412819 /* Resources */,
@@ -178,9 +282,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B076F4172498E42F00412819 /* Build configuration list for PBXNativeTarget "FPT BankingUITests" */;
 			buildPhases = (
+				CEE69EA9EE3BB34D6B0D2799 /* [CP] Check Pods Manifest.lock */,
 				B076F4042498E42F00412819 /* Sources */,
 				B076F4052498E42F00412819 /* Frameworks */,
 				B076F4062498E42F00412819 /* Resources */,
+				06D376000D972F4467BBC63C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -240,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33F0BDE4249DE7C700E8FAA2 /* HDMenuTableViewCell.xib in Resources */,
 				B076F3F72498E42F00412819 /* LaunchScreen.storyboard in Resources */,
 				B076F3F42498E42F00412819 /* Assets.xcassets in Resources */,
 				B076F3F22498E42D00412819 /* Main.storyboard in Resources */,
@@ -262,14 +369,123 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06D376000D972F4467BBC63C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FPT Banking-FPT BankingUITests/Pods-FPT Banking-FPT BankingUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FPT Banking-FPT BankingUITests/Pods-FPT Banking-FPT BankingUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FPT Banking-FPT BankingUITests/Pods-FPT Banking-FPT BankingUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5342EC2C81861AFE4FCF3149 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FPT BankingTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		845138ED33A810DA9C59CAB6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FPT Banking/Pods-FPT Banking-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FPT Banking/Pods-FPT Banking-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FPT Banking/Pods-FPT Banking-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9855949BB7A8A0D629FCA5B5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FPT Banking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CEE69EA9EE3BB34D6B0D2799 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FPT Banking-FPT BankingUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B076F3E52498E42D00412819 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B076F3EF2498E42D00412819 /* ViewController.swift in Sources */,
+				33C34A71249C5E8100CC09AE /* UIView.swift in Sources */,
+				33C34A77249C6F2200CC09AE /* SlideMenuController.swift in Sources */,
+				B076F3EF2498E42D00412819 /* FBLoginViewController.swift in Sources */,
 				B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */,
+				33C34A75249C664600CC09AE /* FBBaseViewController.swift in Sources */,
+				33F0BDE5249DE7C700E8FAA2 /* MenuTableViewCell.swift in Sources */,
 				B0DA1396249B9D72003DBC6E /* Ultility.swift in Sources */,
+				33FE7F40249CBB1300939E03 /* TBLeftMenuViewController.swift in Sources */,
+				33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +658,7 @@
 		};
 		B076F4122498E42F00412819 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C2E18566A7B1908551551F2C /* Pods-FPT Banking.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -460,6 +677,7 @@
 		};
 		B076F4132498E42F00412819 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BDB5D9B0EF27C8D93BA58DC /* Pods-FPT Banking.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -478,6 +696,7 @@
 		};
 		B076F4152498E42F00412819 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE8AFE38BC6936D27799D72E /* Pods-FPT BankingTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -499,6 +718,7 @@
 		};
 		B076F4162498E42F00412819 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A3DB6719D8A95AFA1316881 /* Pods-FPT BankingTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -520,6 +740,7 @@
 		};
 		B076F4182498E42F00412819 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D2A9B5DD8BCC731B4B242B4 /* Pods-FPT Banking-FPT BankingUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -540,6 +761,7 @@
 		};
 		B076F4192498E42F00412819 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 723F5F4E6E948FF585555671 /* Pods-FPT Banking-FPT BankingUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

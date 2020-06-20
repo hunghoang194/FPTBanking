@@ -10,9 +10,16 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    var slideMenu: SlideMenuController?
+    var leftMenu: TBLeftMenuViewController?
+    var rightMenu: TBLeftMenuViewController?
     var window: UIWindow?
-
+    class var sharedInstance: AppDelegate {
+        struct Singleton {
+            static let instance = (UIApplication.shared.delegate as! AppDelegate)
+        }
+        return Singleton.instance
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
