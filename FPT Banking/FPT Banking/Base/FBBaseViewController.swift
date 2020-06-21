@@ -77,10 +77,6 @@ class FBBaseViewController: UIViewController,UIGestureRecognizerDelegate {
                 self.navigationController?.navigationBar.isTranslucent = true
                 self.navigationController?.view.backgroundColor = UIColor.clear
             }
-            if isShowRightMenu {
-                isRightMenu = true
-                addTwoRightButton()
-            }
 //            else
 //            {
 //                self.navigationController?.navigationBar.layer.shadowColor = UIColor.clear.cgColor
@@ -103,42 +99,6 @@ class FBBaseViewController: UIViewController,UIGestureRecognizerDelegate {
         self.slideMenuController()?.removeRightGestures()
     }
 
-    func addTwoRightButton(){
-        navigationItem.rightBarButtonItem = nil
-        let notiButton = UIBarButtonItemWithBadge()
-        notiButton.image = UIImage.init(named: "ic_noti")
-        notiButton.target = self
-        notiButton.action = #selector(self.tapNoti)
-        notiButton.tag = 1234
-        if UIApplication.shared.applicationIconBadgeNumber > 0{
-            if #available(iOS 11.0 , *) {
-                notiButton.addBadge(numberOfNoti: UIApplication.shared.applicationIconBadgeNumber, offsetFromTopRight: CGPoint(x: 4, y: -4), background: UIColor.init(named: ColorName.BlackRedButtonColor)!)
-            } else {
-                notiButton.addBadge(numberOfNoti: UIApplication.shared.applicationIconBadgeNumber, offsetFromTopRight: CGPoint(x: 4, y: -4))
-            }
-        }
-        let menuRight = UIButton(type: .custom)
-        menuRight.setImage(UIImage.init(named: "ic_menu"), for: .normal)
-        menuRight.frame = CGRect(x: -10, y: 0, width: 44, height: 44)
-        menuRight.addTarget(self, action: #selector(self.tapRightMenu), for: .touchUpInside)
-        menuRight.contentHorizontalAlignment = UIControlContentHorizontalAlignment.right
-        let menuButton = UIBarButtonItem(customView: menuRight)
-        
-        // check show icon notification
-        let isIconNotification = self.isShowIconNotification()
-        if !isIconNotification {
-            navigationItem.rightBarButtonItems = [menuButton,notiButton]
-            return
-        }
-        navigationItem.rightBarButtonItems = [menuButton]
-    }
-    @objc func reloadBadge(){
-        addNotiBtn()
-        updateContentViewsBadge()
-    }
-    
-    func updateContentViewsBadge() { }
-    
     @objc func tapRightMenu(){
         self.toggleRight()
     }
@@ -157,7 +117,7 @@ class FBBaseViewController: UIViewController,UIGestureRecognizerDelegate {
         btnLeft.setImage(buttonImage, for: .normal)
         btnLeft.frame = CGRect(x: -10, y: 0, width: 44, height: 44)
         btnLeft.addTarget(self, action: #selector(self.tapLeft), for: .touchUpInside)
-        btnLeft.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
+        btnLeft.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         let leftButton = UIBarButtonItem(customView: btnLeft)
         navigationItem.leftBarButtonItem = leftButton
     }
@@ -211,13 +171,13 @@ extension UIViewController {
     }
 }
 
-extension FBBaseViewController: TBLeftMenuDelegate {
-    func logout() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-    }
-
-    func logoutSuccess() {
-        MBProgressHUD.hide(for: self.view, animated: true)
-    }
-}
+//extension FBBaseViewController: TBLeftMenuDelegate {
+//    func logout() {
+//        MBProgressHUD.showAdded(to: self.view, animated: true)
+//    }
+//
+//    func logoutSuccess() {
+//        MBProgressHUD.hide(for: self.view, animated: true)
+//    }
+//}
 

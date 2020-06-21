@@ -9,11 +9,12 @@
 /* Begin PBXBuildFile section */
 		33C34A71249C5E8100CC09AE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A70249C5E8100CC09AE /* UIView.swift */; };
 		33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A72249C601F00CC09AE /* ColorConstant.swift */; };
-		33C34A75249C664600CC09AE /* FBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A74249C664600CC09AE /* FBBaseViewController.swift */; };
 		33C34A77249C6F2200CC09AE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A76249C6F2200CC09AE /* SlideMenuController.swift */; };
-		33F0BDE4249DE7C700E8FAA2 /* HDMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0BDE2249DE7C700E8FAA2 /* HDMenuTableViewCell.xib */; };
-		33F0BDE5249DE7C700E8FAA2 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0BDE3249DE7C700E8FAA2 /* MenuTableViewCell.swift */; };
-		33FE7F40249CBB1300939E03 /* TBLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FE7F3F249CBB1300939E03 /* TBLeftMenuViewController.swift */; };
+		33F0BDE4249DE7C700E8FAA2 /* FBMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0BDE2249DE7C700E8FAA2 /* FBMenuTableViewCell.xib */; };
+		33F0BDE5249DE7C700E8FAA2 /* FBMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0BDE3249DE7C700E8FAA2 /* FBMenuTableViewCell.swift */; };
+		B016B5C2249FCBC5000EBD2C /* FBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */; };
+		B016B5C5249FD10B000EBD2C /* FBUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016B5C4249FD10B000EBD2C /* FBUserProfile.swift */; };
+		B016B5C8249FD310000EBD2C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B016B5C7249FD310000EBD2C /* Login.storyboard */; };
 		B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F3EC2498E42D00412819 /* AppDelegate.swift */; };
 		B076F3EF2498E42D00412819 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F3EE2498E42D00412819 /* FBLoginViewController.swift */; };
 		B076F3F22498E42D00412819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B076F3F02498E42D00412819 /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		B076F4022498E42F00412819 /* FPT_BankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F4012498E42F00412819 /* FPT_BankingTests.swift */; };
 		B076F40D2498E42F00412819 /* FPT_BankingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F40C2498E42F00412819 /* FPT_BankingUITests.swift */; };
 		B0DA1396249B9D72003DBC6E /* Ultility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA1395249B9D72003DBC6E /* Ultility.swift */; };
+		B0DA13A6249E4170003DBC6E /* FBSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA13A5249E4170003DBC6E /* FBSlideMenuController.swift */; };
 		DB1864AF5BD18BAB7CBBE54A /* Pods_FPT_BankingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FAE815A3A1FF8C17D2D644 /* Pods_FPT_BankingTests.framework */; };
 		DE7CE07CFC800FFEF0ED32F9 /* Pods_FPT_Banking_FPT_BankingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12EE33B9C1C2672717FEDB12 /* Pods_FPT_Banking_FPT_BankingUITests.framework */; };
 		FF1FFACCD38E5F74D6C69AEA /* Pods_FPT_Banking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4F116082C8966D677CD6B1B /* Pods_FPT_Banking.framework */; };
@@ -48,15 +50,16 @@
 		12EE33B9C1C2672717FEDB12 /* Pods_FPT_Banking_FPT_BankingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPT_Banking_FPT_BankingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33C34A70249C5E8100CC09AE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		33C34A72249C601F00CC09AE /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
-		33C34A74249C664600CC09AE /* FBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBaseViewController.swift; sourceTree = "<group>"; };
 		33C34A76249C6F2200CC09AE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
-		33F0BDE2249DE7C700E8FAA2 /* HDMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HDMenuTableViewCell.xib; sourceTree = "<group>"; };
-		33F0BDE3249DE7C700E8FAA2 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
-		33FE7F3F249CBB1300939E03 /* TBLeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBLeftMenuViewController.swift; sourceTree = "<group>"; };
+		33F0BDE2249DE7C700E8FAA2 /* FBMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBMenuTableViewCell.xib; sourceTree = "<group>"; };
+		33F0BDE3249DE7C700E8FAA2 /* FBMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBMenuTableViewCell.swift; sourceTree = "<group>"; };
 		3BDB5D9B0EF27C8D93BA58DC /* Pods-FPT Banking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking.release.xcconfig"; path = "Target Support Files/Pods-FPT Banking/Pods-FPT Banking.release.xcconfig"; sourceTree = "<group>"; };
 		4A3DB6719D8A95AFA1316881 /* Pods-FPT BankingTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT BankingTests.release.xcconfig"; path = "Target Support Files/Pods-FPT BankingTests/Pods-FPT BankingTests.release.xcconfig"; sourceTree = "<group>"; };
 		723F5F4E6E948FF585555671 /* Pods-FPT Banking-FPT BankingUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking-FPT BankingUITests.release.xcconfig"; path = "Target Support Files/Pods-FPT Banking-FPT BankingUITests/Pods-FPT Banking-FPT BankingUITests.release.xcconfig"; sourceTree = "<group>"; };
 		8D2A9B5DD8BCC731B4B242B4 /* Pods-FPT Banking-FPT BankingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking-FPT BankingUITests.debug.xcconfig"; path = "Target Support Files/Pods-FPT Banking-FPT BankingUITests/Pods-FPT Banking-FPT BankingUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBHomeViewController.swift; sourceTree = "<group>"; };
+		B016B5C4249FD10B000EBD2C /* FBUserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserProfile.swift; sourceTree = "<group>"; };
+		B016B5C7249FD310000EBD2C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		B076F3E92498E42D00412819 /* FPT Banking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FPT Banking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B076F3EC2498E42D00412819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B076F3EE2498E42D00412819 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +74,7 @@
 		B076F40C2498E42F00412819 /* FPT_BankingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPT_BankingUITests.swift; sourceTree = "<group>"; };
 		B076F40E2498E42F00412819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0DA1395249B9D72003DBC6E /* Ultility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ultility.swift; sourceTree = "<group>"; };
+		B0DA13A5249E4170003DBC6E /* FBSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBSlideMenuController.swift; sourceTree = "<group>"; };
 		B4F116082C8966D677CD6B1B /* Pods_FPT_Banking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPT_Banking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E18566A7B1908551551F2C /* Pods-FPT Banking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking.debug.xcconfig"; path = "Target Support Files/Pods-FPT Banking/Pods-FPT Banking.debug.xcconfig"; sourceTree = "<group>"; };
 		C6FAE815A3A1FF8C17D2D644 /* Pods_FPT_BankingTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPT_BankingTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,53 +122,55 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		335A2479249E1BB4003A43D3 /* hvn-macs */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "hvn-macs";
-			sourceTree = "<group>";
-		};
 		33C34A6B249C5B4A00CC09AE /* Base */ = {
 			isa = PBXGroup;
 			children = (
-				33C34A74249C664600CC09AE /* FBBaseViewController.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		33C34A6C249C5B5B00CC09AE /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		33C34A6D249C5B6100CC09AE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				33F0BDE3249DE7C700E8FAA2 /* MenuTableViewCell.swift */,
-				33F0BDE2249DE7C700E8FAA2 /* HDMenuTableViewCell.xib */,
+				33F0BDE3249DE7C700E8FAA2 /* FBMenuTableViewCell.swift */,
+				33F0BDE2249DE7C700E8FAA2 /* FBMenuTableViewCell.xib */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		33C34A6E249C5B6700CC09AE /* Conltroller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Conltroller;
 			sourceTree = "<group>";
 		};
 		33C34A6F249C5E6F00CC09AE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				B0DA13A5249E4170003DBC6E /* FBSlideMenuController.swift */,
 				33C34A70249C5E8100CC09AE /* UIView.swift */,
 				33C34A72249C601F00CC09AE /* ColorConstant.swift */,
 				33C34A76249C6F2200CC09AE /* SlideMenuController.swift */,
-				33FE7F3F249CBB1300939E03 /* TBLeftMenuViewController.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B016B5C0249FCB9C000EBD2C /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B016B5C3249FD0FC000EBD2C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B016B5C4249FD10B000EBD2C /* FBUserProfile.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B016B5C6249FD2FA000EBD2C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B016B5C7249FD310000EBD2C /* Login.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		B076F3E02498E42C00412819 = {
@@ -192,15 +198,16 @@
 		B076F3EB2498E42D00412819 /* FPT Banking */ = {
 			isa = PBXGroup;
 			children = (
+				B016B5C6249FD2FA000EBD2C /* Storyboard */,
+				B016B5C3249FD0FC000EBD2C /* Model */,
+				B016B5C0249FCB9C000EBD2C /* ViewController */,
 				33C34A6F249C5E6F00CC09AE /* Extension */,
-				33C34A6E249C5B6700CC09AE /* Conltroller */,
 				33C34A6D249C5B6100CC09AE /* View */,
-				33C34A6C249C5B5B00CC09AE /* Model */,
 				33C34A6B249C5B4A00CC09AE /* Base */,
 				B0DA1394249B9D52003DBC6E /* Ultility */,
+				B076F3F02498E42D00412819 /* Main.storyboard */,
 				B076F3EC2498E42D00412819 /* AppDelegate.swift */,
 				B076F3EE2498E42D00412819 /* FBLoginViewController.swift */,
-				B076F3F02498E42D00412819 /* Main.storyboard */,
 				B076F3F32498E42F00412819 /* Assets.xcassets */,
 				B076F3F52498E42F00412819 /* LaunchScreen.storyboard */,
 				B076F3F82498E42F00412819 /* Info.plist */,
@@ -229,7 +236,6 @@
 		B0DA1394249B9D52003DBC6E /* Ultility */ = {
 			isa = PBXGroup;
 			children = (
-				335A2479249E1BB4003A43D3 /* hvn-macs */,
 				B0DA1395249B9D72003DBC6E /* Ultility.swift */,
 			);
 			path = Ultility;
@@ -354,9 +360,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33F0BDE4249DE7C700E8FAA2 /* HDMenuTableViewCell.xib in Resources */,
+				33F0BDE4249DE7C700E8FAA2 /* FBMenuTableViewCell.xib in Resources */,
 				B076F3F72498E42F00412819 /* LaunchScreen.storyboard in Resources */,
 				B076F3F42498E42F00412819 /* Assets.xcassets in Resources */,
+				B016B5C8249FD310000EBD2C /* Login.storyboard in Resources */,
 				B076F3F22498E42D00412819 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,11 +495,12 @@
 				33C34A71249C5E8100CC09AE /* UIView.swift in Sources */,
 				33C34A77249C6F2200CC09AE /* SlideMenuController.swift in Sources */,
 				B076F3EF2498E42D00412819 /* FBLoginViewController.swift in Sources */,
+				B016B5C2249FCBC5000EBD2C /* FBHomeViewController.swift in Sources */,
 				B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */,
-				33C34A75249C664600CC09AE /* FBBaseViewController.swift in Sources */,
-				33F0BDE5249DE7C700E8FAA2 /* MenuTableViewCell.swift in Sources */,
+				33F0BDE5249DE7C700E8FAA2 /* FBMenuTableViewCell.swift in Sources */,
+				B016B5C5249FD10B000EBD2C /* FBUserProfile.swift in Sources */,
 				B0DA1396249B9D72003DBC6E /* Ultility.swift in Sources */,
-				33FE7F40249CBB1300939E03 /* TBLeftMenuViewController.swift in Sources */,
+				B0DA13A6249E4170003DBC6E /* FBSlideMenuController.swift in Sources */,
 				33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

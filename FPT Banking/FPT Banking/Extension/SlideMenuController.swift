@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@objc public protocol SlideMenuControllerDelegate {
+@objc public protocol TBLeftMenuViewController {
     @objc optional func leftWillOpen()
     @objc optional func leftDidOpen()
     @objc optional func leftWillClose()
@@ -68,7 +68,7 @@ open class SlideMenuController: UIViewController, UIGestureRecognizerDelegate {
         var velocity: CGFloat
     }
     
-    open weak var delegate: SlideMenuControllerDelegate?
+    open weak var delegate: TBLeftMenuViewController?
     
     open var opacityView = UIView()
     open var mainContainerView = UIView()

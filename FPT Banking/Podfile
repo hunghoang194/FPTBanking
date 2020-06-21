@@ -5,9 +5,10 @@ target 'FPT Banking' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
     pod 'SwiftyJSON'
-    pod 'Alamofire'
+    pod 'Alamofire', '~> 4.2'
     pod 'Toast-Swift'
     pod 'MBProgressHUD'
+    pod 'SwiftyJSON'
   # Pods for FPT Banking
 	
   target 'FPT BankingTests' do
