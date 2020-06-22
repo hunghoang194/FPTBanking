@@ -14,12 +14,8 @@ final class FBUltil {
     var iPhoneStorybroard = UIStoryboard(name: "ElearninglPhone", bundle: nil)
     //MARK: check storyboard Elearning
     var storyboard: UIStoryboard {
-        get {
-            if WTUtilitys() {
-                return self.iPhoneStorybroard
+        return self.iPhoneStorybroard
             }
-        }
-    }
     
     // MARK: get vc elearnig
 //    func getVcElearning() -> ElearningViewController {

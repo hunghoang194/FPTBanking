@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import Firebase
 
-class FBMainViewController: UINavigationController,SlideMenuControllerDelegate {
+class FBMainViewController: UINavigationController,SlideMenuControllerDelegate{
 
     override func viewDidLoad() {
         super.viewDidLoad()

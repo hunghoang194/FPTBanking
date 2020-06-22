@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var leftMenu: TBLeftMenuViewController?
     var rightMenu: TBLeftMenuViewController?
     var mainNavigation: FBMainViewController?
+    var storyboardName = ""
     var isLogout = false
     var token = ""
     var window: UIWindow?
@@ -35,8 +36,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     UINavigationBar.appearance().barTintColor = RED_COLOR
                 }
                 UINavigationBar.appearance().isTranslucent = false
-                UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white, NSAttributedStringKey.font: UIFont.init(name: "Montserrat-Bold", size: 20) ?? ""]
-                mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HDMainNaviViewController") as? FBMainViewController
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.init(name: "Montserrat-Bold", size: 20) ?? ""]
+                mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FBMainViewController") as? FBMainViewController
                 leftMenu = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TBLeftMenuViewController") as? TBLeftMenuViewController
                 slideMenu = SlideMenuController.init(mainViewController: mainNavigation!, leftMenuViewController: UIViewController())
                 AppDelegate.sharedInstance.slideMenu?.changeLeftViewWidth(UIScreen.main.bounds.width * (3 / 4) < 320 ? UIScreen.main.bounds.width * (3 / 4) : 320)
@@ -68,7 +69,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-
+extension AppDelegate {
+    func logout(message: String) {
+        self.isLogout = true
+        UIApplication.shared.applicationIconBadgeNumber = 0
+        NotificationCenter.default.post(name: NSNotification.Name.init(rawValue: "change_badge"), object: nil)
+        UserDefaults.standard.removeObject(forKey: "save_user_obj")
+        UserDefaults.standard.removeObject(forKey: "save_type_user")
+        UserDefaults.standard.removeObject(forKey: "term_of_use")
+        FBKeychainService.saveToken(token: "")
+        FBKeychainService.savePassword(token: "")
+        FBKeychainService.saveUsername(token: "")
+        FBDataCenter.sharedInstance.token = ""
+        FBDataCenter.sharedInstance.userInfo = nil
+        if message != "" {
+            let alert = UIAlertController(title: "Thông báo", message: message, preferredStyle: .alert)
+            alert.addAction(UIAlertAction.init(title: "OK", style: .default, handler: { (action) in
+                if self.slideMenu != nil {
+                    self.slideMenu?.closeLeft()
+                }
+                self.mainNavigation?.popToRootViewController(animated: true)
+            }))
+            self.mainNavigation?.present(alert, animated: true, completion: nil)
+        }
+    }
+}

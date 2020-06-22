@@ -28,7 +28,7 @@ let kSecMatchLimitValue = NSString(format: kSecMatchLimit)
 let kSecReturnDataValue = NSString(format: kSecReturnData)
 let kSecMatchLimitOneValue = NSString(format: kSecMatchLimitOne)
 
-public class HDKeychainService: NSObject {
+public class FBKeychainService: NSObject {
     
     /**
      * Exposed methods to perform save and load queries.

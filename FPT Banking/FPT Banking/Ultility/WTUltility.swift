@@ -8,12 +8,9 @@
 
 import UIKit
 import Security
-import UserNotifications
 import AVKit
-import IDMPhotoBrowser
 import CommonCrypto
-import RNCryptor
-import QBImagePickerController
+//import QBImagePickerController
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
 
@@ -45,7 +42,7 @@ public class WTUtilitys:NSObject {
         return check!
     }
     class func blurView(_ view: UIView, with alpha: CGFloat) {
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.alpha = alpha
@@ -76,7 +73,7 @@ public class WTUtilitys:NSObject {
                 }
                 let formatter = NumberFormatter()
                 formatter.numberStyle = NumberFormatter.Style.decimal
-                formatter.locale = NSLocale(localeIdentifier: "vi_VN") as Locale!
+                formatter.locale = NSLocale(localeIdentifier: "vi_VN") as Locale?
                 let strOrigin = originString?.replacingOccurrences(of: ".", with: "")
                 let textAsFloat = Float(strOrigin!)
                 let strReturn = formatter.string(from:NSNumber(value:textAsFloat!))
@@ -86,7 +83,7 @@ public class WTUtilitys:NSObject {
             {
                 let formatter = NumberFormatter()
                 formatter.numberStyle = NumberFormatter.Style.decimal
-                formatter.locale = NSLocale(localeIdentifier: "vi_VN") as Locale!
+                formatter.locale = NSLocale(localeIdentifier: "vi_VN") as Locale?
                 let strReturn = formatter.string(from:NSNumber(value:originString as! Float))
                 return strReturn!
             }
@@ -106,7 +103,7 @@ public class WTUtilitys:NSObject {
             {
                 let formatter = NumberFormatter()
                 formatter.numberStyle = NumberFormatter.Style.decimal
-                formatter.locale = NSLocale(localeIdentifier: "vi_VN") as Locale!
+                formatter.locale = NSLocale(localeIdentifier: "vi_VN") as Locale?
                 let strReturn = formatter.string(from:NSNumber(value:originString as! Float))
                 return strReturn!
             }
@@ -423,7 +420,7 @@ public class WTUtilitys:NSObject {
         {
             label?.text = ""
         }
-        let attributes:Dictionary = [NSAttributedStringKey.strikethroughStyle:NSNumber.init(value: NSUnderlineStyle.styleSingle.rawValue),NSAttributedStringKey.strikethroughColor:UIColor.red]
+        let attributes:Dictionary = [NSAttributedString.Key.strikethroughStyle:NSNumber.init(value: NSUnderlineStyle.single.rawValue),NSAttributedString.Key.strikethroughColor:UIColor.red]
         let attributedString:NSAttributedString  = NSAttributedString.init(string: (label?.text)!, attributes: attributes)
         label?.attributedText = attributedString
     }
@@ -435,8 +432,8 @@ public class WTUtilitys:NSObject {
     class func animationNextView(view: UIView){
         let transition = CATransition()
         transition.duration = 0.5
-        transition.type = kCATransitionPush
-        transition.subtype = kCATransitionFromRight
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
         view.window!.layer.add(transition, forKey: kCATransition)
     }
     class func heightForView(text:String, width:CGFloat) -> CGFloat{
@@ -450,14 +447,7 @@ public class WTUtilitys:NSObject {
         label.sizeToFit()
         return label.frame.height
     }
-    class func registerNotificationWillEnterForeground(observer: AnyObject, selector: Selector) {
-        // Handle when the app becomes active, going from the background to the foreground
-        NotificationCenter.default.addObserver(observer, selector: selector, name: .UIApplicationWillEnterForeground, object: nil)
-    }
-    
-    class func removeObserverForNotifications(observer: AnyObject) {
-        NotificationCenter.default.removeObserver(observer)
-    }
+
     class func save(service: NSString, data: NSString) {
         let dataFromString: NSData = data.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false)! as NSData
         
@@ -612,87 +602,19 @@ public class WTUtilitys:NSObject {
             return ""
         }
     }
-    class func documentWith(filePath: String)->ReaderDocument?{
-        let directoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-        let fileUrl = directoryURL.appendingPathComponent(filePath)
-        let document:ReaderDocument? = ReaderDocument.init(filePath: fileUrl.path, password: nil)
-        return document
-    }
+
     class func getThumbnailImage(forUrl url: URL) -> UIImage? {
         let asset: AVAsset = AVAsset(url: url)
         let imageGenerator = AVAssetImageGenerator(asset: asset)
         
         do {
-            let thumbnailImage = try imageGenerator.copyCGImage(at: CMTimeMake(1, 60) , actualTime: nil)
+            let thumbnailImage = try imageGenerator.copyCGImage(at: CMTimeMake(value: 1, timescale: 60) , actualTime: nil)
             return UIImage(cgImage: thumbnailImage)
         } catch let error {
             print(error)
         }
         
         return nil
-    }
-    static func playVideo(view:UIViewController, asset:PHAsset) {
-        guard (asset.mediaType == PHAssetMediaType.video)
-            else {
-                print("Not a valid video media type")
-                return
-        }
-        let options = PHVideoRequestOptions()
-        options.isNetworkAccessAllowed = true
-        PHCachingImageManager().requestAVAsset(forVideo: asset, options: options) { (assetResponse, audioMix, info) in
-            if let assetS = assetResponse{
-                //            dispatch_async(dispatch_get_main_queue(), {
-                DispatchQueue.main.async {
-                    let playItem = AVPlayerItem.init(asset: assetS)
-                    let player = AVPlayer.init(playerItem: playItem)
-                    let playerViewController = AVPlayerViewController()
-                    playerViewController.player = player
-                    view.present(playerViewController, animated: true) {
-                        playerViewController.player!.play()
-                    }
-                }
-            }
-        }
-    }
-    static func getDataFromAsset(asset:PHAsset,blockData: @escaping (Data?) -> Void){
-        guard (asset.mediaType == PHAssetMediaType.video)
-            else {
-                print("Not a valid video media type")
-                return
-        }
-        let options = PHVideoRequestOptions()
-        options.isNetworkAccessAllowed = true
-        if asset.mediaType == PHAssetMediaType.video{
-            PHCachingImageManager().requestAVAsset(forVideo: asset, options: options) { (asset, audioMix, info) in
-                let asset = asset as? AVURLAsset
-                if let url = asset?.url{
-                    do {
-                        let receipt = try Data(contentsOf: url, options: .mappedIfSafe)
-                        blockData(receipt)
-                        // do things with jsonData
-                    } catch {
-                        print(error)
-                        blockData(nil)
-                    }
-                }
-                else{
-                    blockData(nil)
-                }
-            }
-        }
-        else{
-            blockData(nil)
-        }
-    }
-    static func getAssetThumbnail(asset: PHAsset) -> UIImage {
-        let manager = PHImageManager.default()
-        let option = PHImageRequestOptions()
-        var thumbnail = UIImage()
-        option.isSynchronous = true
-        manager.requestImage(for: asset, targetSize: CGSize(width: asset.pixelWidth, height: asset.pixelHeight), contentMode: .aspectFit, options: option, resultHandler: {(result, info)->Void in
-            thumbnail = result ?? UIImage()
-        })
-        return thumbnail
     }
 }
 extension UIView {
@@ -729,14 +651,14 @@ extension Date {
 extension String {
     func height(withConstrainedWidth width: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: width, height: .greatestFiniteMagnitude)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         
         return ceil(boundingBox.height)
     }
     
     func width(withConstrainedHeight height: CGFloat, font: UIFont) -> CGFloat {
         let constraintRect = CGSize(width: .greatestFiniteMagnitude, height: height)
-        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedStringKey.font: font], context: nil)
+        let boundingBox = self.boundingRect(with: constraintRect, options: .usesLineFragmentOrigin, attributes: [NSAttributedString.Key.font: font], context: nil)
         
         return ceil(boundingBox.width)
     }

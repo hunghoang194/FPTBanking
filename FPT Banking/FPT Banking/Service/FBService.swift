@@ -11,8 +11,8 @@ import Alamofire
 import SwiftyJSON
 import Photos
 import CommonCrypto
-import RNCryptor
-import TLPhotoPicker
+//import RNCryptor
+//import TLPhotoPicker
 import AdSupport
 
 typealias CompletionBlockDoubleResult = (_ result1: Any?,_ result2: Any?, _ message: String?, _ errorCode: Int) -> Void
@@ -21,7 +21,7 @@ typealias CompletionPageBlock = (_ result: Any?, _ message: String?, _ errorCode
 typealias ProgressBlock = (_ currentProgress: Double) -> Void
 
 class FBServices:NSObject{
-    static let shareInstance = HDServices()
+    static let shareInstance = FBServices()
     func post(_ url:URL,parameter:[String:Any]?, header:HTTPHeaders?,block:@escaping CompletionBlock){
         postToServiceWith(url, parameter: parameter, httpMethod: .post, header: header, block: block)
     }
@@ -50,15 +50,15 @@ class FBServices:NSObject{
                 do {
                     let resJson = try JSON.init(data: response.data!)
                     if resJson[KEY.KEY_API.error].int == TOKEN_EXPIRED_CODE{
-                        let userName = HDKeychainService.loadUsername() ?? ""
-                        let password = HDKeychainService.loadPassword() ?? ""
+                        let userName = FBKeychainService.loadUsername() ?? ""
+                        let password = FBKeychainService.loadPassword() ?? ""
                         self.refreshToken(username: userName, password: password, block: { (response2, message2, errorCode2) in
                             if errorCode2 == SUCCESS_CODE{
                                 //                                let resJson = JSON.init(response2!)
                                 //                                HDDataCenter.sharedInstance.userInfo = HDUserInfoObj.init(json: resJson["data"]["data"])
                                 //                                HDDataCenter.sharedInstance.token = "Bearer \(resJson["data"]["access_token"].string ?? "")"
                                 //                                HDKeychainService.saveToken(token:"Bearer \(resJson["data"]["access_token"].string ?? "")")
-                                self.postToServiceWith(url, parameter: parameter, httpMethod: httpMethod, header: HDHeader.headerToken(), block: block)
+                                self.postToServiceWith(url, parameter: parameter, httpMethod: httpMethod, header: FBHeader.headerToken(), block: block)
                             }
                             else{
                                 AppDelegate.sharedInstance.logout(message: "Phiên đăng nhập hết hạn.")
@@ -124,15 +124,15 @@ class FBServices:NSObject{
                     let resJson = try JSON.init(data: response.data!)
                     if resJson[KEY.KEY_API.error].int == TOKEN_EXPIRED_CODE{
                         
-                        let userName = HDKeychainService.loadUsername() ?? ""
-                        let password = HDKeychainService.loadPassword() ?? ""
+                        let userName = FBKeychainService.loadUsername() ?? ""
+                        let password = FBKeychainService.loadPassword() ?? ""
                         self.refreshToken(username: userName, password: password, block: { (response2, message2, errorCode2) in
                             if errorCode2 == SUCCESS_CODE{
                                 //                                let resJson = JSON.init(response2!)
                                 //                                HDDataCenter.sharedInstance.userInfo = HDUserInfoObj.init(json: resJson["data"]["data"])
                                 //                                HDDataCenter.sharedInstance.token = "Bearer \(resJson["data"]["access_token"].string ?? "")"
                                 //                                HDKeychainService.saveToken(token:"Bearer \(resJson["data"]["access_token"].string ?? "")")
-                                self.postToServiceWith(url, parameter: parameter, httpMethod: httpMethod, header: HDHeader.headerToken(), block: block)
+                                self.postToServiceWith(url, parameter: parameter, httpMethod: httpMethod, header: FBHeader.headerToken(), block: block)
                             }
                             else{
                                 AppDelegate.sharedInstance.logout(message: "Phiên đăng nhập hết hạn.")
@@ -169,165 +169,165 @@ class FBServices:NSObject{
     }
 }
 extension FBServices {
-    func login(username:String,password:String,block:@escaping CompletionBlock){
-        var deviceToken:String = WTUtilitys.getDefaultString(originString: UserDefaults.resultUUID() as AnyObject)
-        print("deviceToken \(deviceToken)")
-        var deviceTokenPushkit = WTUtilitys.getDefaultString(originString: UserDefaults.resultUUIDPushkit() as AnyObject)
-        if deviceToken == "" {
-            deviceToken = SIMULATOR_TOKEN
-        }
-        if deviceTokenPushkit == "" {
-            deviceTokenPushkit = SIMULATOR_TOKEN
-        }
-        //        if deviceToken != nil {
-        let passwordEncode = WTUtilitys.encryptAES256(password) ?? ""
-        var udid = ASIdentifierManager.shared().advertisingIdentifier.uuidString
-        if udid.replacingOccurrences(of: "0", with: "").count < 10 {
-            udid = UIDevice.current.identifierForVendor?.uuidString ?? ""
-        }
-        let param:[String:Any] = ["name":username,
-                                  "password":passwordEncode,
-                                  "uuid":deviceToken,
-                                  "uuid_pushkit":deviceTokenPushkit,
-                                  "device_id": udid]
-        self.post(URL.init(string: API.login)!, parameter: param, header: nil, block: block)
-    }
+//    func login(username:String,password:String,block:@escaping CompletionBlock){
+//        var deviceToken:String = WTUtilitys.getDefaultString(originString: UserDefaults.resultUUID() as AnyObject)
+//        print("deviceToken \(deviceToken)")
+//        var deviceTokenPushkit = WTUtilitys.getDefaultString(originString: UserDefaults.resultUUIDPushkit() as AnyObject)
+//        if deviceToken == "" {
+//            deviceToken = SIMULATOR_TOKEN
+//        }
+//        if deviceTokenPushkit == "" {
+//            deviceTokenPushkit = SIMULATOR_TOKEN
+//        }
+//        //        if deviceToken != nil {
+//        let passwordEncode = WTUtilitys.encryptAES256(password) ?? ""
+//        var udid = ASIdentifierManager.shared().advertisingIdentifier.uuidString
+//        if udid.replacingOccurrences(of: "0", with: "").count < 10 {
+//            udid = UIDevice.current.identifierForVendor?.uuidString ?? ""
+//        }
+//        let param:[String:Any] = ["name":username,
+//                                  "password":passwordEncode,
+//                                  "uuid":deviceToken,
+//                                  "uuid_pushkit":deviceTokenPushkit,
+//                                  "device_id": udid]
+//        self.post(URL.init(string: API.login)!, parameter: param, header: nil, block: block)
+//    }
     
-    func refreshToken(username:String,password:String,block:@escaping CompletionBlock){
-        var deviceToken:String = WTUtilitys.getDefaultString(originString: UserDefaults.resultUUID() as AnyObject)
-        if deviceToken == "" {
-            deviceToken = SIMULATOR_TOKEN
-        }
-        //        if deviceToken != nil {
-        let passwordEncode = WTUtilitys.encryptAES256(password) ?? ""
-        let param:[String:Any] = ["name":username,
-                                  "password":passwordEncode,
-                                  "uuid":deviceToken,
-                                  "platform":0] // 0: IOS
-        self.post(URL.init(string: API.refreshToken)!, parameter: param, header: nil){ (response, message, errorCode) in
-            if response != nil{
-                let resJson = JSON.init(response!)
-                
-                HDDataCenter.sharedInstance.token = "Bearer \(resJson["data"]["access_token"].string ?? "")"
-                HDKeychainService.saveToken(token:"Bearer \(resJson["data"]["access_token"].string ?? "")")
-                
-                print("Bearer \(resJson["data"]["access_token"].string ?? "")")
-                block(resJson["data"].array,resJson["message"].string,errorCode)
-            }
-            else{
-                block(nil,message,errorCode)
-            }
-        }
-    }
+//    func refreshToken(username:String,password:String,block:@escaping CompletionBlock){
+//        var deviceToken:String = WTUtilitys.getDefaultString(originString: UserDefaults.resultUUID() as AnyObject)
+//        if deviceToken == "" {
+//            deviceToken = SIMULATOR_TOKEN
+//        }
+//        //        if deviceToken != nil {
+//        let passwordEncode = WTUtilitys.encryptAES256(password) ?? ""
+//        let param:[String:Any] = ["name":username,
+//                                  "password":passwordEncode,
+//                                  "uuid":deviceToken,
+//                                  "platform":0] // 0: IOS
+//        self.post(URL.init(string: API.refreshToken)!, parameter: param, header: nil){ (response, message, errorCode) in
+//            if response != nil{
+//                let resJson = JSON.init(response!)
+//
+//                HDDataCenter.sharedInstance.token = "Bearer \(resJson["data"]["access_token"].string ?? "")"
+//                HDKeychainService.saveToken(token:"Bearer \(resJson["data"]["access_token"].string ?? "")")
+//
+//                print("Bearer \(resJson["data"]["access_token"].string ?? "")")
+//                block(resJson["data"].array,resJson["message"].string,errorCode)
+//            }
+//            else{
+//                block(nil,message,errorCode)
+//            }
+//        }
+//    }
     // MARK: HEAD update password
-    func updatePassword(id: String, newPass: String, confirmPass: String, block:@escaping CompletionBlock) {
-        let newPasswordEncode = WTUtilitys.encryptAES256(newPass) ?? ""
-        let confirmPassEncode = WTUtilitys.encryptAES256(confirmPass) ?? ""
-        let param = ["id":id,
-                     "password":newPasswordEncode,
-                     "password_confirm":confirmPassEncode]
-        self.post(URL.init(string: API.updatePass)!, parameter: param, header: HDHeader.headerToken()) { (response, message, errorCode) in
-            if errorCode == SUCCESS_CODE{
-                let resJson = JSON.init(response!)
-                block(nil,resJson["message"].string,resJson["error"].int ?? ERROR_CODE)
-            }
-            else{
-                block(nil,message,ERROR_CODE)
-            }
-        }
-    }
-    func logout(block:@escaping CompletionBlock){
-        var deviceToken:String = WTUtilitys.getDefaultString(originString: UserDefaults.resultUUID() as AnyObject)
-        if deviceToken == "" {
-            deviceToken = SIMULATOR_TOKEN
-        }
-        self.get(URL.init(string: "\(API.logout)\(deviceToken)")!, parameter: nil, header: HDHeader.headerToken(), block: block)
-    }
-    func searchReport(status:Int?,headId:String?,keyword:String?,uid:String?,page:Int?,block:@escaping CompletionPageBlock){
-        var statusStr = ""
-        var pageStr = ""
-        if status != nil{
-            statusStr = "\(status ?? 0)"
-        }
-        if page != nil{
-            pageStr = "\(page ?? 0)"
-        }
-        let keywordEncode = (keyword ?? "").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        //        let headNameEncode = (headName ?? "").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
-        let api = String.init(format: API.searchReport,statusStr,headId ?? "",keywordEncode ?? "",uid ?? "",pageStr)
-        self.get(URL.init(string: api)!, parameter: nil, header: HDHeader.headerToken()) { (response, message, errorCode) in
-            if response != nil{
-                let resJson = JSON.init(response!)
-                if errorCode == SUCCESS_CODE{
-                    var arrReport = [FBUserProfile]() // doi lai sau
-                    let arrJson = resJson["data"]["data"].array
-                    if arrJson?.count ?? 0 > 0{
-                        for report in arrJson!{
-                            arrReport.append(FBUserProfile.init(json: report))// doi lai sau
-                        }
-                    }
-                    block(arrReport,message,SUCCESS_CODE, resJson["data"]["dataPage"]["nextPage"].bool ?? false)
-                }
-                else{
-                    block(nil, resJson["message"].string, ERROR_CODE, nil)
-                }
-            }
-            else{
-                block(nil,message,errorCode, nil)
-            }
-        }
-    }
-    
-    func searchAccount(block:@escaping CompletionBlock){
-        self.get(URL.init(string: API.searchAccount)!, parameter: nil, header: HDHeader.headerToken()) { (response, message, errorCode) in
-            if response != nil{
-                let resJson = JSON.init(response!)
-                if errorCode == SUCCESS_CODE{
-                    var arrCarType = [FBUserProfile]() // sua lai sau
-                    let arrJson = resJson["data"].array
-                    if arrJson?.count ?? 0 > 0{
-                        for carType in arrJson!{
-                            arrCarType.append(FBUserProfile.init(json: carType)) // sua lai sau
-                        }
-                    }
-                    block(arrCarType,message,SUCCESS_CODE)
-                }
-                else{
-                    block(nil, resJson["message"].string, ERROR_CODE)
-                }
-            }
-            else{
-                block(nil,message,errorCode)
-            }
-        }
-    }
-    func getListOjt(year:Int?, month: Int?,block:@escaping CompletionBlock){
-        let yearStr = year == nil ? "" : "\(year ?? 0)"
-        let monthStr = year == nil ? "" : "\(month ?? 0)"
-        let api = "\(API.getListOjt)?year=\(yearStr)&month=\(monthStr)"
-        print(api)
-        self.get(URL.init(string: api)!, parameter: nil, header: HDHeader.headerToken()) { (response, message, errorCode) in
-            if response != nil{
-                let resJson = JSON.init(response!)
-                let datas = resJson["data"].array
-                
-                var result = [FBUserProfile]() // sua lai sau
-                for data in datas ?? []
-                {
-                    result.append(FBUserProfile.init(json: data))// sua lai sau
-                }
-                if errorCode == SUCCESS_CODE{
-                    block(result,message,SUCCESS_CODE)
-                }
-                else{
-                    block(nil, resJson["message"].string, ERROR_CODE)
-                }
-            }
-            else{
-                block(nil,message,errorCode)
-            }
-        }
-    }
+//    func updatePassword(id: String, newPass: String, confirmPass: String, block:@escaping CompletionBlock) {
+//        let newPasswordEncode = WTUtilitys.encryptAES256(newPass) ?? ""
+//        let confirmPassEncode = WTUtilitys.encryptAES256(confirmPass) ?? ""
+//        let param = ["id":id,
+//                     "password":newPasswordEncode,
+//                     "password_confirm":confirmPassEncode]
+//        self.post(URL.init(string: API.updatePass)!, parameter: param, header: FBHeader.headerToken()) { (response, message, errorCode) in
+//            if errorCode == SUCCESS_CODE{
+//                let resJson = JSON.init(response!)
+//                block(nil,resJson["message"].string,resJson["error"].int ?? ERROR_CODE)
+//            }
+//            else{
+//                block(nil,message,ERROR_CODE)
+//            }
+//        }
+//    }
+//    func logout(block:@escaping CompletionBlock){
+//        var deviceToken:String = WTUtilitys.getDefaultString(originString: UserDefaults.resultUUID() as AnyObject)
+//        if deviceToken == "" {
+//            deviceToken = SIMULATOR_TOKEN
+//        }
+//        self.get(URL.init(string: "\(API.logout)\(deviceToken)")!, parameter: nil, header: FBHeader.headerToken(), block: block)
+//    }
+//    func searchReport(status:Int?,headId:String?,keyword:String?,uid:String?,page:Int?,block:@escaping CompletionPageBlock){
+//        var statusStr = ""
+//        var pageStr = ""
+//        if status != nil{
+//            statusStr = "\(status ?? 0)"
+//        }
+//        if page != nil{
+//            pageStr = "\(page ?? 0)"
+//        }
+//        let keywordEncode = (keyword ?? "").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+//        //        let headNameEncode = (headName ?? "").addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)
+//        let api = String.init(format: API.searchReport,statusStr,headId ?? "",keywordEncode ?? "",uid ?? "",pageStr)
+//        self.get(URL.init(string: api)!, parameter: nil, header: FBHeader.headerToken()) { (response, message, errorCode) in
+//            if response != nil{
+//                let resJson = JSON.init(response!)
+//                if errorCode == SUCCESS_CODE{
+//                    var arrReport = [FBUserProfile]() // doi lai sau
+//                    let arrJson = resJson["data"]["data"].array
+//                    if arrJson?.count ?? 0 > 0{
+//                        for report in arrJson!{
+//                            arrReport.append(FBUserProfile.init(json: report))// doi lai sau
+//                        }
+//                    }
+//                    block(arrReport,message,SUCCESS_CODE, resJson["data"]["dataPage"]["nextPage"].bool ?? false)
+//                }
+//                else{
+//                    block(nil, resJson["message"].string, ERROR_CODE, nil)
+//                }
+//            }
+//            else{
+//                block(nil,message,errorCode, nil)
+//            }
+//        }
+//    }
+//
+//    func searchAccount(block:@escaping CompletionBlock){
+//        self.get(URL.init(string: API.searchAccount)!, parameter: nil, header: FBHeader.headerToken()) { (response, message, errorCode) in
+//            if response != nil{
+//                let resJson = JSON.init(response!)
+//                if errorCode == SUCCESS_CODE{
+//                    var arrCarType = [FBUserProfile]() // sua lai sau
+//                    let arrJson = resJson["data"].array
+//                    if arrJson?.count ?? 0 > 0{
+//                        for carType in arrJson!{
+//                            arrCarType.append(FBUserProfile.init(json: carType)) // sua lai sau
+//                        }
+//                    }
+//                    block(arrCarType,message,SUCCESS_CODE)
+//                }
+//                else{
+//                    block(nil, resJson["message"].string, ERROR_CODE)
+//                }
+//            }
+//            else{
+//                block(nil,message,errorCode)
+//            }
+//        }
+//    }
+//    func getListOjt(year:Int?, month: Int?,block:@escaping CompletionBlock){
+//        let yearStr = year == nil ? "" : "\(year ?? 0)"
+//        let monthStr = year == nil ? "" : "\(month ?? 0)"
+//        let api = "\(API.getListOjt)?year=\(yearStr)&month=\(monthStr)"
+//        print(api)
+//        self.get(URL.init(string: api)!, parameter: nil, header: FBHeader.headerToken()) { (response, message, errorCode) in
+//            if response != nil{
+//                let resJson = JSON.init(response!)
+//                let datas = resJson["data"].array
+//
+//                var result = [FBUserProfile]() // sua lai sau
+//                for data in datas ?? []
+//                {
+//                    result.append(FBUserProfile.init(json: data))// sua lai sau
+//                }
+//                if errorCode == SUCCESS_CODE{
+//                    block(result,message,SUCCESS_CODE)
+//                }
+//                else{
+//                    block(nil, resJson["message"].string, ERROR_CODE)
+//                }
+//            }
+//            else{
+//                block(nil,message,errorCode)
+//            }
+//        }
+//    }
 //    func getDraftTestByModule(mid: Int, block: @escaping CompletionBlock) {
 //        HDServices.shareInstance.get(URL.init(string: "\(API.getDraftTestByModule)?mid=\(mid)")!, parameter: nil, header: HDHeader.headerToken()) { (response, message, errorCode) in
 //            if response != nil {
@@ -469,4 +469,27 @@ extension FBServices {
 //            }
 //        }
 //    }
+}
+class FBHeader {
+    class func headerTokenForUpload()-> HTTPHeaders{
+        return ["Authorization":FBDataCenter.sharedInstance.token,
+                "Content-type": "multipart/form-data"]
+    }
+    class func headerTokenTitle()-> HTTPHeaders{
+        return ["Authorization":FBDataCenter.sharedInstance.token,
+                "Content-Type":"application/x-www-form-urlencoded"]
+    }
+    class  func headerToken() -> HTTPHeaders{
+        return ["Authorization":FBDataCenter.sharedInstance.token]
+    }
+    class func headerTokenJson() -> HTTPHeaders {
+        return ["Authorization": FBDataCenter.sharedInstance.token,
+                "Content-type": "application/json"]
+    }
+    class func  headerForLogin() -> HTTPHeaders  {
+        return [
+            "Content-Type" : "application/x-www-form-urlencoded",
+            "deviceid":(UIDevice.current.identifierForVendor?.uuidString)!]
+    }
+    
 }

@@ -10,7 +10,13 @@ import Foundation
 import UIKit
 let ERROR_CODE = 1
 let SUCCESS_CODE = 0
-let LOGOUT_ERROR_CODE = 2
+let TOKEN_EXPIRED_CODE = 2
+let LOGOUT_ERROR_CODE = 3
+let NEW_VERSION_CODE = 1001
+let NAVIGATION_COLOR = UIColor.init(red: 27.0/255.0, green: 31.0/255.0, blue: 37.0/255.0, alpha: 1.0)
+let BLACK_COLOR_DEFAULT = UIColor.init(red: 22.0/255.0, green: 25.0/255.0, blue: 30.0/255.0, alpha: 1.0)
+let RED_COLOR = UIColor(red:0.93, green:0.11, blue:0.19, alpha:1)
+let BKG_GRAY = UIColor.init(red: 229.0/255.0, green: 229.0/255.0, blue: 229.0/255.0, alpha: 1.0)
 let DATE_FOMAT_SERVER = "YYYY-MM-dd HH:mm:ss"
 let DATE_FOMAT_SHOW = "dd-MMM-YYYY"
 
