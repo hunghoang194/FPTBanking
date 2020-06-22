@@ -27,6 +27,16 @@
 		3353C1CB24A08EF300033839 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C724A08EF300033839 /* AvatarView.swift */; };
 		3353C1CC24A08EF300033839 /* KPDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1CA24A08EF300033839 /* KPDropMenu.m */; };
 		3353C1CE24A0938500033839 /* FBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1CD24A0938500033839 /* FBMainViewController.swift */; };
+		3353C1D124A09AE000033839 /* FBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1D024A09AE000033839 /* FBKeychain.swift */; };
+		3353C1D524A09C0E00033839 /* FBDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1D424A09C0E00033839 /* FBDataCenter.swift */; };
+		3353C1D724A09EA800033839 /* WTUltility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1D624A09EA800033839 /* WTUltility.swift */; };
+		3353C1D924A0A02800033839 /* FBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1D824A0A02800033839 /* FBService.swift */; };
+		3353C1E024A0A79C00033839 /* HDDetailOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DA24A0A79C00033839 /* HDDetailOJTViewController.swift */; };
+		3353C1E124A0A79C00033839 /* HDContentOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DB24A0A79C00033839 /* HDContentOJTViewController.swift */; };
+		3353C1E224A0A79C00033839 /* HDExamOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DC24A0A79C00033839 /* HDExamOJTViewController.swift */; };
+		3353C1E324A0A79C00033839 /* HDTestResultDetailOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DD24A0A79C00033839 /* HDTestResultDetailOJTViewController.swift */; };
+		3353C1E424A0A79C00033839 /* HDTestResultOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DE24A0A79C00033839 /* HDTestResultOJTViewController.swift */; };
+		3353C1E524A0A79C00033839 /* HDActivityOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DF24A0A79C00033839 /* HDActivityOJTViewController.swift */; };
 		33C34A71249C5E8100CC09AE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A70249C5E8100CC09AE /* UIView.swift */; };
 		33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A72249C601F00CC09AE /* ColorConstant.swift */; };
 		33C34A77249C6F2200CC09AE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A76249C6F2200CC09AE /* SlideMenuController.swift */; };
@@ -42,7 +52,7 @@
 		B076F3F72498E42F00412819 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B076F3F52498E42F00412819 /* LaunchScreen.storyboard */; };
 		B076F4022498E42F00412819 /* FPT_BankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F4012498E42F00412819 /* FPT_BankingTests.swift */; };
 		B076F40D2498E42F00412819 /* FPT_BankingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F40C2498E42F00412819 /* FPT_BankingUITests.swift */; };
-		B0DA1396249B9D72003DBC6E /* Ultility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA1395249B9D72003DBC6E /* Ultility.swift */; };
+		B0DA1396249B9D72003DBC6E /* FBUltil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA1395249B9D72003DBC6E /* FBUltil.swift */; };
 		B0DA13A6249E4170003DBC6E /* FBSlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DA13A5249E4170003DBC6E /* FBSlideMenuController.swift */; };
 		DB1864AF5BD18BAB7CBBE54A /* Pods_FPT_BankingTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6FAE815A3A1FF8C17D2D644 /* Pods_FPT_BankingTests.framework */; };
 		DE7CE07CFC800FFEF0ED32F9 /* Pods_FPT_Banking_FPT_BankingUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12EE33B9C1C2672717FEDB12 /* Pods_FPT_Banking_FPT_BankingUITests.framework */; };
@@ -89,6 +99,16 @@
 		3353C1C924A08EF300033839 /* KPDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPDropMenu.h; sourceTree = "<group>"; };
 		3353C1CA24A08EF300033839 /* KPDropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPDropMenu.m; sourceTree = "<group>"; };
 		3353C1CD24A0938500033839 /* FBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBMainViewController.swift; sourceTree = "<group>"; };
+		3353C1D024A09AE000033839 /* FBKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBKeychain.swift; sourceTree = "<group>"; };
+		3353C1D424A09C0E00033839 /* FBDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDataCenter.swift; sourceTree = "<group>"; };
+		3353C1D624A09EA800033839 /* WTUltility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTUltility.swift; sourceTree = "<group>"; };
+		3353C1D824A0A02800033839 /* FBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBService.swift; sourceTree = "<group>"; };
+		3353C1DA24A0A79C00033839 /* HDDetailOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDDetailOJTViewController.swift; sourceTree = "<group>"; };
+		3353C1DB24A0A79C00033839 /* HDContentOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDContentOJTViewController.swift; sourceTree = "<group>"; };
+		3353C1DC24A0A79C00033839 /* HDExamOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDExamOJTViewController.swift; sourceTree = "<group>"; };
+		3353C1DD24A0A79C00033839 /* HDTestResultDetailOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDTestResultDetailOJTViewController.swift; sourceTree = "<group>"; };
+		3353C1DE24A0A79C00033839 /* HDTestResultOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDTestResultOJTViewController.swift; sourceTree = "<group>"; };
+		3353C1DF24A0A79C00033839 /* HDActivityOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDActivityOJTViewController.swift; sourceTree = "<group>"; };
 		33C34A70249C5E8100CC09AE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		33C34A72249C601F00CC09AE /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
 		33C34A76249C6F2200CC09AE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
@@ -114,7 +134,7 @@
 		B076F4082498E42F00412819 /* FPT BankingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FPT BankingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B076F40C2498E42F00412819 /* FPT_BankingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPT_BankingUITests.swift; sourceTree = "<group>"; };
 		B076F40E2498E42F00412819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B0DA1395249B9D72003DBC6E /* Ultility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ultility.swift; sourceTree = "<group>"; };
+		B0DA1395249B9D72003DBC6E /* FBUltil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUltil.swift; sourceTree = "<group>"; };
 		B0DA13A5249E4170003DBC6E /* FBSlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBSlideMenuController.swift; sourceTree = "<group>"; };
 		B4F116082C8966D677CD6B1B /* Pods_FPT_Banking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPT_Banking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2E18566A7B1908551551F2C /* Pods-FPT Banking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking.debug.xcconfig"; path = "Target Support Files/Pods-FPT Banking/Pods-FPT Banking.debug.xcconfig"; sourceTree = "<group>"; };
@@ -197,6 +217,28 @@
 			path = KPDropMenu;
 			sourceTree = "<group>";
 		};
+		3353C1CF24A09AB500033839 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				3353C1D024A09AE000033839 /* FBKeychain.swift */,
+				3353C1D824A0A02800033839 /* FBService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		3353C1E624A0A7D200033839 /* Example */ = {
+			isa = PBXGroup;
+			children = (
+				3353C1DF24A0A79C00033839 /* HDActivityOJTViewController.swift */,
+				3353C1DB24A0A79C00033839 /* HDContentOJTViewController.swift */,
+				3353C1DA24A0A79C00033839 /* HDDetailOJTViewController.swift */,
+				3353C1DC24A0A79C00033839 /* HDExamOJTViewController.swift */,
+				3353C1DD24A0A79C00033839 /* HDTestResultDetailOJTViewController.swift */,
+				3353C1DE24A0A79C00033839 /* HDTestResultOJTViewController.swift */,
+			);
+			path = Example;
+			sourceTree = "<group>";
+		};
 		33C34A6B249C5B4A00CC09AE /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +283,7 @@
 		B016B5C0249FCB9C000EBD2C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				3353C1E624A0A7D200033839 /* Example */,
 				B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */,
 				3353C1CD24A0938500033839 /* FBMainViewController.swift */,
 			);
@@ -290,6 +333,7 @@
 		B076F3EB2498E42D00412819 /* FPT Banking */ = {
 			isa = PBXGroup;
 			children = (
+				3353C1CF24A09AB500033839 /* Service */,
 				3353C1C524A08EE900033839 /* Lib */,
 				3353C1A224A0729700033839 /* Other */,
 				B016B5C6249FD2FA000EBD2C /* Storyboard */,
@@ -330,7 +374,9 @@
 		B0DA1394249B9D52003DBC6E /* Ultility */ = {
 			isa = PBXGroup;
 			children = (
-				B0DA1395249B9D72003DBC6E /* Ultility.swift */,
+				B0DA1395249B9D72003DBC6E /* FBUltil.swift */,
+				3353C1D424A09C0E00033839 /* FBDataCenter.swift */,
+				3353C1D624A09EA800033839 /* WTUltility.swift */,
 			);
 			path = Ultility;
 			sourceTree = "<group>";
@@ -588,6 +634,8 @@
 			files = (
 				33C34A71249C5E8100CC09AE /* UIView.swift in Sources */,
 				33C34A77249C6F2200CC09AE /* SlideMenuController.swift in Sources */,
+				3353C1E324A0A79C00033839 /* HDTestResultDetailOJTViewController.swift in Sources */,
+				3353C1D124A09AE000033839 /* FBKeychain.swift in Sources */,
 				B076F3EF2498E42D00412819 /* FBLoginViewController.swift in Sources */,
 				3353C1BA24A08B4000033839 /* Timer.swift in Sources */,
 				B016B5C2249FCBC5000EBD2C /* FBHomeViewController.swift in Sources */,
@@ -597,23 +645,31 @@
 				3353C1C024A08B4000033839 /* CustomPhotoPickerViewController.swift in Sources */,
 				3353C1CB24A08EF300033839 /* AvatarView.swift in Sources */,
 				3353C1B424A08B4000033839 /* UIViewExtension.swift in Sources */,
+				3353C1D724A09EA800033839 /* WTUltility.swift in Sources */,
 				3353C1B724A08B4000033839 /* UITextFieldExtension.swift in Sources */,
+				3353C1E424A0A79C00033839 /* HDTestResultOJTViewController.swift in Sources */,
 				3353C1CC24A08EF300033839 /* KPDropMenu.m in Sources */,
 				3353C1A424A072B100033839 /* Constain.swift in Sources */,
 				B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */,
+				3353C1E524A0A79C00033839 /* HDActivityOJTViewController.swift in Sources */,
+				3353C1D524A09C0E00033839 /* FBDataCenter.swift in Sources */,
 				3353C1CE24A0938500033839 /* FBMainViewController.swift in Sources */,
 				33F0BDE5249DE7C700E8FAA2 /* FBMenuTableViewCell.swift in Sources */,
 				3353C1BF24A08B4000033839 /* KPDropMenuExtension.swift in Sources */,
 				B016B5C5249FD10B000EBD2C /* FBUserProfile.swift in Sources */,
 				3353C1B524A08B4000033839 /* UITextViewExtension.swift in Sources */,
 				3340418624A051E900A0E8C6 /* Preferences.swift in Sources */,
-				B0DA1396249B9D72003DBC6E /* Ultility.swift in Sources */,
+				3353C1E224A0A79C00033839 /* HDExamOJTViewController.swift in Sources */,
+				3353C1E124A0A79C00033839 /* HDContentOJTViewController.swift in Sources */,
+				B0DA1396249B9D72003DBC6E /* FBUltil.swift in Sources */,
+				3353C1E024A0A79C00033839 /* HDDetailOJTViewController.swift in Sources */,
 				3353C1B624A08B4000033839 /* UICollectionViewExtension.swift in Sources */,
 				3353C1C424A08D6500033839 /* ExampleModel.swift in Sources */,
 				3353C1BE24A08B4000033839 /* AvatarViewExtension.swift in Sources */,
 				B0DA13A6249E4170003DBC6E /* FBSlideMenuController.swift in Sources */,
 				3353C1A624A0894200033839 /* FBBaseViewController.swift in Sources */,
 				3353C1BC24A08B4000033839 /* UILabelExtension.swift in Sources */,
+				3353C1D924A0A02800033839 /* FBService.swift in Sources */,
 				33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */,
 				3353C1C224A08C6200033839 /* FBProduct.swift in Sources */,
 			);
