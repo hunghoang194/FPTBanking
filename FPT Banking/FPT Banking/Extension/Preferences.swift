@@ -16,7 +16,7 @@ class Preferences {
     
     static var LoginStoryboard: UIStoryboard {
         get {
-            return UIStoryboard(name: "Login", bundle: nil)
+            return UIStoryboard(name: "Home", bundle: nil)
         }
     }
     

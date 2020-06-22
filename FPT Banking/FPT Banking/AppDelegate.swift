@@ -11,8 +11,6 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var slideMenu: SlideMenuController?
-    var leftMenu: TBLeftMenuViewController?
-    var rightMenu: TBLeftMenuViewController?
     var mainNavigation: FBMainViewController?
     var storyboardName = ""
     var isLogout = false
@@ -38,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.init(name: "Montserrat-Bold", size: 20) ?? ""]
                 mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FBMainViewController") as? FBMainViewController
-                leftMenu = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TBLeftMenuViewController") as? TBLeftMenuViewController
+//                leftMenu = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TBLeftMenuViewController") as? TBLeftMenuViewController
                 slideMenu = SlideMenuController.init(mainViewController: mainNavigation!, leftMenuViewController: UIViewController())
                 AppDelegate.sharedInstance.slideMenu?.changeLeftViewWidth(UIScreen.main.bounds.width * (3 / 4) < 320 ? UIScreen.main.bounds.width * (3 / 4) : 320)
                 slideMenu?.delegate = mainNavigation

@@ -10,6 +10,7 @@ import UIKit
 import Security
 import AVKit
 import CommonCrypto
+import RNCryptor
 //import QBImagePickerController
 let SCREEN_WIDTH = UIScreen.main.bounds.size.width
 let SCREEN_HEIGHT = UIScreen.main.bounds.size.height
@@ -35,7 +36,7 @@ public class WTUtilitys:NSObject {
         if textCheck == nil {
             return true
         }
-        if ((textCheck? .isKind(of: NSNull.classForCoder()))! || textCheck?.characters.count == 0)
+        if ((textCheck? .isKind(of: NSNull.classForCoder()))! || textCheck?.utf8CString.count == 0)
         {
             check = true
         }
@@ -514,7 +515,7 @@ public class WTUtilitys:NSObject {
         do {
             let regex = try NSRegularExpression(pattern: "(https?)\\S*(png|jpg|jpeg|gif)", options: [NSRegularExpression.Options.caseInsensitive])
             
-            regex.enumerateMatches(in: htmlString, options: [NSRegularExpression.MatchingOptions.reportProgress], range: NSMakeRange(0, htmlString.characters.count)) { (result, flags, stop) -> Void in
+            regex.enumerateMatches(in: htmlString, options: [NSRegularExpression.MatchingOptions.reportProgress], range: NSMakeRange(0, htmlString.utf8CString.count)) { (result, flags, stop) -> Void in
                 if let range = result?.range {
                     images.append(htmlNSString.substring(with: range))  //because Swift ranges are still completely ridiculous
                 }

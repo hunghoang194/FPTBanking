@@ -10,21 +10,12 @@
 		3340418624A051E900A0E8C6 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340418524A051E800A0E8C6 /* Preferences.swift */; };
 		3353C1A424A072B100033839 /* Constain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1A324A072B100033839 /* Constain.swift */; };
 		3353C1A624A0894200033839 /* FBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1A524A0894200033839 /* FBBaseViewController.swift */; };
-		3353C1B424A08B4000033839 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1A724A08B3F00033839 /* UIViewExtension.swift */; };
-		3353C1B524A08B4000033839 /* UITextViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1A824A08B3F00033839 /* UITextViewExtension.swift */; };
-		3353C1B724A08B4000033839 /* UITextFieldExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1AA24A08B3F00033839 /* UITextFieldExtension.swift */; };
-		3353C1B924A08B4000033839 /* UITableViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1AC24A08B3F00033839 /* UITableViewExtension.swift */; };
 		3353C1BA24A08B4000033839 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1AD24A08B3F00033839 /* Timer.swift */; };
-		3353C1BB24A08B4000033839 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1AE24A08B3F00033839 /* UIViewControllerExtension.swift */; };
-		3353C1BC24A08B4000033839 /* UILabelExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1AF24A08B3F00033839 /* UILabelExtension.swift */; };
-		3353C1BD24A08B4000033839 /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1B024A08B4000033839 /* UIButtonExtension.swift */; };
 		3353C1BE24A08B4000033839 /* AvatarViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1B124A08B4000033839 /* AvatarViewExtension.swift */; };
 		3353C1BF24A08B4000033839 /* KPDropMenuExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1B224A08B4000033839 /* KPDropMenuExtension.swift */; };
-		3353C1C024A08B4000033839 /* CustomPhotoPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1B324A08B4000033839 /* CustomPhotoPickerViewController.swift */; };
 		3353C1C224A08C6200033839 /* FBProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C124A08C6200033839 /* FBProduct.swift */; };
 		3353C1C424A08D6500033839 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C324A08D6500033839 /* ExampleModel.swift */; };
 		3353C1CB24A08EF300033839 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C724A08EF300033839 /* AvatarView.swift */; };
-		3353C1CC24A08EF300033839 /* KPDropMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1CA24A08EF300033839 /* KPDropMenu.m */; };
 		3353C1CE24A0938500033839 /* FBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1CD24A0938500033839 /* FBMainViewController.swift */; };
 		3353C1D124A09AE000033839 /* FBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1D024A09AE000033839 /* FBKeychain.swift */; };
 		3353C1D524A09C0E00033839 /* FBDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1D424A09C0E00033839 /* FBDataCenter.swift */; };
@@ -46,7 +37,11 @@
 		33F0BDE5249DE7C700E8FAA2 /* FBMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0BDE3249DE7C700E8FAA2 /* FBMenuTableViewCell.swift */; };
 		B016B5C2249FCBC5000EBD2C /* FBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */; };
 		B016B5C5249FD10B000EBD2C /* FBUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016B5C4249FD10B000EBD2C /* FBUserProfile.swift */; };
-		B016B5C8249FD310000EBD2C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B016B5C7249FD310000EBD2C /* Login.storyboard */; };
+		B05F7DD424A0D13C00EEFE45 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05F7DD324A0D13C00EEFE45 /* Home.storyboard */; };
+		B05F7DD724A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F7DD524A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift */; };
+		B05F7DD824A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05F7DD624A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib */; };
+		B05F7DDB24A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F7DD924A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift */; };
+		B05F7DDC24A0E01600EEFE45 /* TransactionHistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05F7DDA24A0E01600EEFE45 /* TransactionHistoryTableViewCell.xib */; };
 		B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F3EC2498E42D00412819 /* AppDelegate.swift */; };
 		B076F3EF2498E42D00412819 /* FBLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F3EE2498E42D00412819 /* FBLoginViewController.swift */; };
 		B076F3F22498E42D00412819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B076F3F02498E42D00412819 /* Main.storyboard */; };
@@ -82,22 +77,12 @@
 		3340418524A051E800A0E8C6 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		3353C1A324A072B100033839 /* Constain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constain.swift; sourceTree = "<group>"; };
 		3353C1A524A0894200033839 /* FBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBaseViewController.swift; sourceTree = "<group>"; };
-		3353C1A724A08B3F00033839 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
-		3353C1A824A08B3F00033839 /* UITextViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextViewExtension.swift; sourceTree = "<group>"; };
-		3353C1AA24A08B3F00033839 /* UITextFieldExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldExtension.swift; sourceTree = "<group>"; };
-		3353C1AC24A08B3F00033839 /* UITableViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableViewExtension.swift; sourceTree = "<group>"; };
 		3353C1AD24A08B3F00033839 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		3353C1AE24A08B3F00033839 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
-		3353C1AF24A08B3F00033839 /* UILabelExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelExtension.swift; sourceTree = "<group>"; };
-		3353C1B024A08B4000033839 /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		3353C1B124A08B4000033839 /* AvatarViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewExtension.swift; sourceTree = "<group>"; };
 		3353C1B224A08B4000033839 /* KPDropMenuExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDropMenuExtension.swift; sourceTree = "<group>"; };
-		3353C1B324A08B4000033839 /* CustomPhotoPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPhotoPickerViewController.swift; sourceTree = "<group>"; };
 		3353C1C124A08C6200033839 /* FBProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBProduct.swift; sourceTree = "<group>"; };
 		3353C1C324A08D6500033839 /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
 		3353C1C724A08EF300033839 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
-		3353C1C924A08EF300033839 /* KPDropMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KPDropMenu.h; sourceTree = "<group>"; };
-		3353C1CA24A08EF300033839 /* KPDropMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KPDropMenu.m; sourceTree = "<group>"; };
 		3353C1CD24A0938500033839 /* FBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBMainViewController.swift; sourceTree = "<group>"; };
 		3353C1D024A09AE000033839 /* FBKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBKeychain.swift; sourceTree = "<group>"; };
 		3353C1D424A09C0E00033839 /* FBDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDataCenter.swift; sourceTree = "<group>"; };
@@ -123,7 +108,11 @@
 		8D2A9B5DD8BCC731B4B242B4 /* Pods-FPT Banking-FPT BankingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking-FPT BankingUITests.debug.xcconfig"; path = "Target Support Files/Pods-FPT Banking-FPT BankingUITests/Pods-FPT Banking-FPT BankingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBHomeViewController.swift; sourceTree = "<group>"; };
 		B016B5C4249FD10B000EBD2C /* FBUserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserProfile.swift; sourceTree = "<group>"; };
-		B016B5C7249FD310000EBD2C /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		B05F7DD324A0D13C00EEFE45 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B05F7DD524A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitysCollectionViewCell.swift; sourceTree = "<group>"; };
+		B05F7DD624A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UtilitysCollectionViewCell.xib; sourceTree = "<group>"; };
+		B05F7DD924A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTableViewCell.swift; sourceTree = "<group>"; };
+		B05F7DDA24A0E01600EEFE45 /* TransactionHistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionHistoryTableViewCell.xib; sourceTree = "<group>"; };
 		B076F3E92498E42D00412819 /* FPT Banking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FPT Banking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B076F3EC2498E42D00412819 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B076F3EE2498E42D00412819 /* FBLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginViewController.swift; sourceTree = "<group>"; };
@@ -197,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				3353C1C624A08EF300033839 /* Avatar View */,
-				3353C1C824A08EF300033839 /* KPDropMenu */,
 			);
 			path = Lib;
 			sourceTree = "<group>";
@@ -208,15 +196,6 @@
 				3353C1C724A08EF300033839 /* AvatarView.swift */,
 			);
 			path = "Avatar View";
-			sourceTree = "<group>";
-		};
-		3353C1C824A08EF300033839 /* KPDropMenu */ = {
-			isa = PBXGroup;
-			children = (
-				3353C1C924A08EF300033839 /* KPDropMenu.h */,
-				3353C1CA24A08EF300033839 /* KPDropMenu.m */,
-			);
-			path = KPDropMenu;
 			sourceTree = "<group>";
 		};
 		3353C1CF24A09AB500033839 /* Service */ = {
@@ -255,6 +234,10 @@
 				33F0BDE3249DE7C700E8FAA2 /* FBMenuTableViewCell.swift */,
 				33F0BDE2249DE7C700E8FAA2 /* FBMenuTableViewCell.xib */,
 				3353C1E924A0BD5B00033839 /* TBLeftMenuViewController.swift */,
+				B05F7DD524A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift */,
+				B05F7DD624A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib */,
+				B05F7DD924A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift */,
+				B05F7DDA24A0E01600EEFE45 /* TransactionHistoryTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,16 +246,8 @@
 			isa = PBXGroup;
 			children = (
 				3353C1B124A08B4000033839 /* AvatarViewExtension.swift */,
-				3353C1B324A08B4000033839 /* CustomPhotoPickerViewController.swift */,
 				3353C1B224A08B4000033839 /* KPDropMenuExtension.swift */,
 				3353C1AD24A08B3F00033839 /* Timer.swift */,
-				3353C1B024A08B4000033839 /* UIButtonExtension.swift */,
-				3353C1AF24A08B3F00033839 /* UILabelExtension.swift */,
-				3353C1AC24A08B3F00033839 /* UITableViewExtension.swift */,
-				3353C1AA24A08B3F00033839 /* UITextFieldExtension.swift */,
-				3353C1A824A08B3F00033839 /* UITextViewExtension.swift */,
-				3353C1AE24A08B3F00033839 /* UIViewControllerExtension.swift */,
-				3353C1A724A08B3F00033839 /* UIViewExtension.swift */,
 				3340418524A051E800A0E8C6 /* Preferences.swift */,
 				33C34A70249C5E8100CC09AE /* UIView.swift */,
 				33C34A72249C601F00CC09AE /* ColorConstant.swift */,
@@ -306,7 +281,7 @@
 		B016B5C6249FD2FA000EBD2C /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				B016B5C7249FD310000EBD2C /* Login.storyboard */,
+				B05F7DD324A0D13C00EEFE45 /* Home.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -504,9 +479,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F0BDE4249DE7C700E8FAA2 /* FBMenuTableViewCell.xib in Resources */,
+				B05F7DD424A0D13C00EEFE45 /* Home.storyboard in Resources */,
 				B076F3F72498E42F00412819 /* LaunchScreen.storyboard in Resources */,
+				B05F7DDC24A0E01600EEFE45 /* TransactionHistoryTableViewCell.xib in Resources */,
+				B05F7DD824A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib in Resources */,
 				B076F3F42498E42F00412819 /* Assets.xcassets in Resources */,
-				B016B5C8249FD310000EBD2C /* Login.storyboard in Resources */,
 				B076F3F22498E42D00412819 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,16 +620,9 @@
 				3353C1BA24A08B4000033839 /* Timer.swift in Sources */,
 				3353C1EC24A0BEDD00033839 /* FBMenuObj.swift in Sources */,
 				B016B5C2249FCBC5000EBD2C /* FBHomeViewController.swift in Sources */,
-				3353C1BB24A08B4000033839 /* UIViewControllerExtension.swift in Sources */,
-				3353C1B924A08B4000033839 /* UITableViewExtension.swift in Sources */,
-				3353C1BD24A08B4000033839 /* UIButtonExtension.swift in Sources */,
-				3353C1C024A08B4000033839 /* CustomPhotoPickerViewController.swift in Sources */,
 				3353C1CB24A08EF300033839 /* AvatarView.swift in Sources */,
-				3353C1B424A08B4000033839 /* UIViewExtension.swift in Sources */,
 				3353C1D724A09EA800033839 /* WTUltility.swift in Sources */,
-				3353C1B724A08B4000033839 /* UITextFieldExtension.swift in Sources */,
 				3353C1E424A0A79C00033839 /* HDTestResultOJTViewController.swift in Sources */,
-				3353C1CC24A08EF300033839 /* KPDropMenu.m in Sources */,
 				3353C1A424A072B100033839 /* Constain.swift in Sources */,
 				B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */,
 				3353C1E524A0A79C00033839 /* HDActivityOJTViewController.swift in Sources */,
@@ -661,10 +631,10 @@
 				33F0BDE5249DE7C700E8FAA2 /* FBMenuTableViewCell.swift in Sources */,
 				3353C1BF24A08B4000033839 /* KPDropMenuExtension.swift in Sources */,
 				B016B5C5249FD10B000EBD2C /* FBUserProfile.swift in Sources */,
-				3353C1B524A08B4000033839 /* UITextViewExtension.swift in Sources */,
 				3340418624A051E900A0E8C6 /* Preferences.swift in Sources */,
 				3353C1E224A0A79C00033839 /* HDExamOJTViewController.swift in Sources */,
 				3353C1E124A0A79C00033839 /* HDContentOJTViewController.swift in Sources */,
+				B05F7DD724A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift in Sources */,
 				B0DA1396249B9D72003DBC6E /* FBUltil.swift in Sources */,
 				3353C1EA24A0BD5B00033839 /* TBLeftMenuViewController.swift in Sources */,
 				3353C1E824A0AB1000033839 /* NSDate+Ultil.swift in Sources */,
@@ -672,8 +642,8 @@
 				3353C1C424A08D6500033839 /* ExampleModel.swift in Sources */,
 				3353C1BE24A08B4000033839 /* AvatarViewExtension.swift in Sources */,
 				3353C1A624A0894200033839 /* FBBaseViewController.swift in Sources */,
-				3353C1BC24A08B4000033839 /* UILabelExtension.swift in Sources */,
 				3353C1D924A0A02800033839 /* FBService.swift in Sources */,
+				B05F7DDB24A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift in Sources */,
 				33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */,
 				3353C1C224A08C6200033839 /* FBProduct.swift in Sources */,
 			);

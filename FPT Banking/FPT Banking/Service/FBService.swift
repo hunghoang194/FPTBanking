@@ -137,7 +137,6 @@ class FBServices:NSObject{
                             else{
                                 AppDelegate.sharedInstance.logout(message: "Phiên đăng nhập hết hạn.")
                             }
-                        })
                     }
                     else if resJson[KEY.KEY_API.error].int == LOGOUT_ERROR_CODE{
                         AppDelegate.sharedInstance.logout(message: "Tài khoản của bạn đã được đăng nhập ở nơi khác.")

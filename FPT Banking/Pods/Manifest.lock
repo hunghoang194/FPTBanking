@@ -1,16 +1,20 @@
 PODS:
   - Alamofire (4.9.0)
   - MBProgressHUD (1.2.0)
+  - RNCryptor (5.1.0)
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
+  - SlideMenuControllerSwift (4.0.0)
   - SwiftyJSON (5.0.0)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.2)
   - MBProgressHUD
+  - RNCryptor
   - SDWebImage
+  - SlideMenuControllerSwift
   - SwiftyJSON
   - Toast-Swift
 
@@ -18,17 +22,21 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - MBProgressHUD
+    - RNCryptor
     - SDWebImage
+    - SlideMenuControllerSwift
     - SwiftyJSON
     - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
+  SlideMenuControllerSwift: 021d6318201c53d4d4d3710517d43d6c556c7dd0
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: d0b2f6809cf16daf39a84c317f9d60178627ee34
+PODFILE CHECKSUM: b4994be2bc21e41c61fbca4b0a8a51b74ae9632e
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.8.3

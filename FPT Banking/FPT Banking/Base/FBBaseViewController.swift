@@ -27,7 +27,7 @@ class FBBaseViewController: UIViewController {
         super.viewDidLoad()
         
 //        self.navigationController?.navigationItem.backBarButtonItem?.isEnabled = false
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
+//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.initData()
         self.initUI()
     }
@@ -131,15 +131,15 @@ extension UIViewController {
     }
 }
 
-extension FBBaseViewController: TBLeftMenuDelegate {
-    func logout() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-    }
-
-    func logoutSuccess() {
-        MBProgressHUD.hide(for: self.view, animated: true)
-    }
-}
+//extension FBBaseViewController: TBLeftMenuDelegate {
+//    func logout() {
+//        MBProgressHUD.showAdded(to: self.view, animated: true)
+//    }
+//
+//    func logoutSuccess() {
+//        MBProgressHUD.hide(for: self.view, animated: true)
+//    }
+//}
 enum HDRequiredPermission: String {
 case photoLibrary = "thư viện ảnh"
 case none // Exec hiển thị đòi quyền
