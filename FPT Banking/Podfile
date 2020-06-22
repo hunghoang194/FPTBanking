@@ -9,6 +9,7 @@ target 'FPT Banking' do
     pod 'Toast-Swift'
     pod 'MBProgressHUD'
     pod 'SwiftyJSON'
+    pod 'SDWebImage'
   # Pods for FPT Banking
 	
   target 'FPT BankingTests' do
