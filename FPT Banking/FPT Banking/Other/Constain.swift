@@ -36,16 +36,20 @@ extension UserDefaults {
         self.standard.synchronize()
     }
 }
+
+enum NetworkErrorType {
+    case API_ERROR
+    case HTTP_ERROR
+}
+
 struct API {
     static let baseUrl = "your base url"
-
-
     struct PATH {
         static let login = "auth/login"
         static let logout = "auth/logout"
-
     }
-//    static let exportModuleTable = "\(baseUrl)\(PATH.exportModuleTable)"?
+    static let login = "\(baseUrl)\(PATH.login)"
+    static let logout = "\(baseUrl)\(PATH.logout)"
 }
 struct KEY {
     struct KEY_API {
@@ -53,7 +57,6 @@ struct KEY {
         static let userName = "username"
         static let id = "id"
         static let password = "password"
-        static let dealer_id = "dealer_id"
         static let error = "error"
         static let message = "message"
         static let data = "data"
@@ -86,10 +89,7 @@ extension Date
     func dateAt(hours: Int, minutes: Int) -> Date
     {
         let calendar = NSCalendar(calendarIdentifier: NSCalendar.Identifier.gregorian)!
-        
         //get the month/day/year componentsfor today's date.
-        
-        
         var date_components = calendar.components(
             [NSCalendar.Unit.year,
              NSCalendar.Unit.month,

@@ -22,78 +22,12 @@ typealias ProgressBlock = (_ currentProgress: Double) -> Void
 
 class FBServices:NSObject{
     static let shareInstance = FBServices()
-    func post(_ url:URL,parameter:[String:Any]?, header:HTTPHeaders?,block:@escaping CompletionBlock){
-        postToServiceWith(url, parameter: parameter, httpMethod: .post, header: header, block: block)
-    }
-    func get(_ url:URL,parameter:[String:String]?, header:HTTPHeaders?,block:@escaping CompletionBlock){
-        postToServiceWith(url, parameter: parameter, httpMethod: .get, header: header, block: block)
     }
     
     // MARK: request get string html
     func getStringHtml(_ url:URL,parameter:[String:String]?, header:HTTPHeaders?,block:@escaping CompletionBlock){
         postToServiceBodyWithHTML(url, parameter: parameter, httpMethod: .get, header: header, block: block)
     }
-    
-    func postWithBody(_ url:URL,parameter:[String:Any]?, header:HTTPHeaders?,block:@escaping CompletionBlock){
-        postToServiceBodyWith(url, parameter: parameter, httpMethod: .post, header: header, block: block)
-    }
-    private  func postToServiceBodyWith(_ url:URL,parameter:[String:Any]?, httpMethod:HTTPMethod, header:HTTPHeaders?,block:@escaping CompletionBlock){
-        var urlStr = url.absoluteString
-        if urlStr.contains(Character.init("?")){
-            urlStr = "\(urlStr)&version=\(WTUtilitys.getVersionApp())&platform=0"
-        }
-        else{
-            urlStr = "\(urlStr)?version=\(WTUtilitys.getVersionApp())&platform=0"
-        }
-        Alamofire.request(URL.init(string: urlStr)!, method: httpMethod, parameters: parameter, encoding: JSONEncoding.default, headers: header).responseJSON { (response) in
-            if response.result.isSuccess && response.data != nil {
-                do {
-                    let resJson = try JSON.init(data: response.data!)
-                    if resJson[KEY.KEY_API.error].int == TOKEN_EXPIRED_CODE{
-                        let userName = FBKeychainService.loadUsername() ?? ""
-                        let password = FBKeychainService.loadPassword() ?? ""
-                        self.refreshToken(username: userName, password: password, block: { (response2, message2, errorCode2) in
-                            if errorCode2 == SUCCESS_CODE{
-                                //                                let resJson = JSON.init(response2!)
-                                //                                HDDataCenter.sharedInstance.userInfo = HDUserInfoObj.init(json: resJson["data"]["data"])
-                                //                                HDDataCenter.sharedInstance.token = "Bearer \(resJson["data"]["access_token"].string ?? "")"
-                                //                                HDKeychainService.saveToken(token:"Bearer \(resJson["data"]["access_token"].string ?? "")")
-                                self.postToServiceWith(url, parameter: parameter, httpMethod: httpMethod, header: FBHeader.headerToken(), block: block)
-                            }
-                            else{
-                                AppDelegate.sharedInstance.logout(message: "Phiên đăng nhập hết hạn.")
-                            }
-                        })
-                    }
-                    else if resJson[KEY.KEY_API.error].int == LOGOUT_ERROR_CODE{
-                        AppDelegate.sharedInstance.logout(message: "Tài khoản của bạn đã được đăng nhập ở nơi khác.")
-                    }
-                    else if resJson[KEY.KEY_API.error].int == NEW_VERSION_CODE{
-                        let alert = UIAlertController(title: "Thông báo", message: resJson["message"].string, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction.init(title: "Cập nhật", style: .default, handler: { (action) in
-                            UIApplication.shared.open(URL.init(string:resJson["data"]["maintain_url_ios"].string ?? "")!, options: [:], completionHandler: { (success) in
-                                if success{
-                                    exit(0)
-                                }
-                            })
-                            //                            UIApplication.shared.open(URL.init(string:resJson["data"]["maintain_url"].string ?? "")!)
-                            //                            exit(0)
-                        }))
-                        AppDelegate.sharedInstance.mainNavigation?.present(alert, animated: true, completion: nil)
-                    }
-                    else{
-                        block(resJson, resJson["message"].string, resJson[KEY.KEY_API.error].int  ?? ERROR_CODE)
-                    }
-                }
-                catch{
-                    block(nil,error.localizedDescription,ERROR_CODE)
-                }
-            } else {
-                block(nil, response.error?.localizedDescription, ERROR_CODE)
-            }
-        }
-    }
-    
     // MARK: post to service body with html
     private  func postToServiceBodyWithHTML(_ url:URL,parameter:[String:Any]?, httpMethod:HTTPMethod, header:HTTPHeaders?,block:@escaping CompletionBlock){
         print("URL URL URL \(url.absoluteURL)")
@@ -105,69 +39,12 @@ class FBServices:NSObject{
             }
         }
     }
-    
-    //MARK: Post to service with
-    private func postToServiceWith(_ url:URL,parameter: [String:Any]?, httpMethod:HTTPMethod, header:HTTPHeaders?,block:@escaping CompletionBlock){
-        var urlStr = url.absoluteString
-        if urlStr.contains(Character.init("?")){
-            urlStr = "\(urlStr)&version=\(WTUtilitys.getVersionApp())&platform=0"
-        }
-        else{
-            urlStr = "\(urlStr)?version=\(WTUtilitys.getVersionApp())&platform=0"
-        }
-        Alamofire.request(URL.init(string: urlStr)!, method: httpMethod, parameters: parameter, encoding: URLEncoding.httpBody, headers: header).responseJSON { (response) in
-            #if DEBUG
-            print(response.debugDescription)
-            #endif
-            if response.result.isSuccess && response.data != nil {
-                do {
-                    let resJson = try JSON.init(data: response.data!)
-                    if resJson[KEY.KEY_API.error].int == TOKEN_EXPIRED_CODE{
-                        
-                        let userName = FBKeychainService.loadUsername() ?? ""
-                        let password = FBKeychainService.loadPassword() ?? ""
-                        self.refreshToken(username: userName, password: password, block: { (response2, message2, errorCode2) in
-                            if errorCode2 == SUCCESS_CODE{
-                                //                                let resJson = JSON.init(response2!)
-                                //                                HDDataCenter.sharedInstance.userInfo = HDUserInfoObj.init(json: resJson["data"]["data"])
-                                //                                HDDataCenter.sharedInstance.token = "Bearer \(resJson["data"]["access_token"].string ?? "")"
-                                //                                HDKeychainService.saveToken(token:"Bearer \(resJson["data"]["access_token"].string ?? "")")
-                                self.postToServiceWith(url, parameter: parameter, httpMethod: httpMethod, header: FBHeader.headerToken(), block: block)
-                            }
-                            else{
-                                AppDelegate.sharedInstance.logout(message: "Phiên đăng nhập hết hạn.")
-                            }
-                    }
-                    else if resJson[KEY.KEY_API.error].int == LOGOUT_ERROR_CODE{
-                        AppDelegate.sharedInstance.logout(message: "Tài khoản của bạn đã được đăng nhập ở nơi khác.")
-                    }
-                    else if resJson[KEY.KEY_API.error].int == NEW_VERSION_CODE{
-                        let alert = UIAlertController(title: "Thông báo", message: resJson["message"].string, preferredStyle: .alert)
-                        alert.addAction(UIAlertAction.init(title: "Cập nhật", style: .default, handler: { (action) in
-                            UIApplication.shared.open(URL.init(string:resJson["data"]["maintain_url_ios"].string ?? "") ?? URL.init(string: "https://www.google.com/")!, options: [:], completionHandler: { (success) in
-                                if success{
-                                    exit(0)
-                                }
-                            })
-                            //                            UIApplication.shared.open(URL.init(string:resJson["data"]["maintain_url"].string ?? "")!)
-                            //                            exit(0)
-                        }))
-                        AppDelegate.sharedInstance.mainNavigation?.present(alert, animated: true, completion: nil)
-                    }
-                    else{
-                        block(resJson, resJson["message"].string, resJson[KEY.KEY_API.error].int  ?? ERROR_CODE)
-                    }
-                }
-                catch{
-                    block(nil,error.localizedDescription,ERROR_CODE)
-                }
-            } else {
-                block(nil, response.error?.localizedDescription, ERROR_CODE)
-            }
-        }
-    }
-}
 extension FBServices {
+    func login(username:String,password:String,block:@escaping CompletionBlock){
+        let passwordEncode = WTUtilitys.encryptAES256(password) ?? ""
+        let param:[String:Any] = ["name":username,
+                                  "password":passwordEncode]
+    }
 //    func login(username:String,password:String,block:@escaping CompletionBlock){
 //        var deviceToken:String = WTUtilitys.getDefaultString(originString: UserDefaults.resultUUID() as AnyObject)
 //        print("deviceToken \(deviceToken)")

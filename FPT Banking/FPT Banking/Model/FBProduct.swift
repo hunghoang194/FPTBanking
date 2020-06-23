@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class HDProductObj: NSObject {
+class FBProductObj: NSObject {
     var modelId:NSInteger?
     var productID:NSInteger?
     var productName:String?

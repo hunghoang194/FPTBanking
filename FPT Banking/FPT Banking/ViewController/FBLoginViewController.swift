@@ -12,7 +12,7 @@ import MBProgressHUD
 import Alamofire
 import SwiftyJSON
 
-class FBLoginViewController: UIViewController {
+class FBLoginViewController: FBBaseViewController {
     @IBOutlet weak var userNameView: UIView!
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var passwordView: UIView!
@@ -43,62 +43,40 @@ class FBLoginViewController: UIViewController {
             message = NSLocalizedString("Vui lòng nhập mật khẩu của bạn", comment: "")
         }
 //        if !check {
-//            Toast.init(text: message, delay: 0, duration: 2.0).show()
-//        }
+//            Toas.init(text: message, delay: 0, duration: 2.0).show()
+//                }
         return check
     }
-    //    @IBAction func onRecoverPass(_ sender: Any) {
-    //        self.toForgotPass()
-    //    }
     
     @IBAction func actionLoginPress(_ sender: Any) {
 //        if checkValid() {
 //            MBProgressHUD.showAdded(to: self.view, animated: true)
-//            FBServices.shareInstance.checkLogin(username: txtUserName.text ?? "") { (response, message, errorCode) in
+//            FBConnection.request(APIRouter.login(username: "username", password: "password"), LoginResponse.self, completion: {(result, error) in
 //                MBProgressHUD.hide(for: self.view, animated: true)
-//                if errorCode == SUCCESS_CODE {
-//                    if (response as? [JSON])?.count ?? 0 > 0{
-//                        let alert = UIAlertController(title: AppConstant.Alert.Title.alert, message: AppConstant.Alert.Message.login_notification, preferredStyle: .alert)
-//                        alert.addAction(UIAlertAction.init(title: AppConstant.Alert.Action.yes, style: .default, handler: { (action) in
-//                            self.login()
-//                        }))
-//                        alert.addAction(UIAlertAction.init(title: AppConstant.Alert.Action.no, style: .cancel, handler: { (action) in
+//                if error == SUCCESS_CODE as! Int {
+//                    if result != nil {
+//                        let resJson = JSON.init(result!)
+//                        FBKeychainService.savePassword(token:self.txtPassword.text ?? "")
+//                        FBKeychainService.saveUsername(token:self.txtUserName.text ?? "")
+//                        FBKeychainService.saveToken(token:"Bearer \(resJson["data"]["access_token"].string ?? "")")
+//                        print("TEST access_token login: \("Bearer \(resJson["data"]["access_token"].string ?? "")")")
 //
-//                        }))
-//                        self.present(alert, animated: true, completion: nil)
+//                        let encodedData = NSKeyedArchiver.archivedData(withRootObject: FBDataCenter.sharedInstance.userInfo!)
+//                        UserDefaults.standard.set(encodedData, forKey: "save_user_obj")
+//                        FBDataCenter.sharedInstance.token = "Bearer \(resJson["data"]["access_token"].string ?? "")"
+//                        self.savedResJson = resJson
 //                    }
-//                    else{
-//                        self.login()
-//                    }
+//                    print("Fullname: " + (result?.user?.fullname)!)
+//                    // gotoHome
+//                    self.goHome()
 //                }
-//                else{
-//                    Toast(text: message, duration: 3.0).show()
+//                guard error == nil else {
+//                    print("False with code: \(error?.mErrorCode) and message: \(error?.mErrorMessage)")
+//                    return
 //                }
-//            }
+//            })
 //        }
-    }
-    func login() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        FBServices.shareInstance.login(username: txtUserName.text!, password: txtPassword.text!) { (response, message, error) in
-            MBProgressHUD.hide(for: self.view, animated: true)
-            if error == SUCCESS_CODE {
-                if response != nil {
-                    let resJson = JSON.init(response!)
-                    FBDataCenter.sharedInstance.userInfo = FBUserProfile.init(json: resJson["data"]["data"])
-                    FBKeychainService.savePassword(token:self.txtPassword.text ?? "")
-                    FBKeychainService.saveUsername(token:self.txtUserName.text ?? "")
-                    FBKeychainService.saveToken(token:"Bearer \(resJson["data"]["access_token"].string ?? "")")
-                    print("TEST access_token login: \("Bearer \(resJson["data"]["access_token"].string ?? "")")")
-                    
-                    let encodedData = NSKeyedArchiver.archivedData(withRootObject: FBDataCenter.sharedInstance.userInfo!)
-                    UserDefaults.standard.set(encodedData, forKey: "save_user_obj")
-                    FBDataCenter.sharedInstance.token = "Bearer \(resJson["data"]["access_token"].string ?? "")"
-                    self.savedResJson = resJson
-                }
-            } else {
-//                Toast.init(text: message).show()
-            }
-        }
+        self.goHome()
     }
 }
 

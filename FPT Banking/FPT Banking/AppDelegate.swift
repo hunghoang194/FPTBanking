@@ -24,25 +24,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UINavigationBar.appearance().tintColor = .white
-                UIApplication.shared.statusBarStyle = .lightContent
-                // Check os to change color navigation
-                if #available(iOS 11.0, *) {
-                    UINavigationBar.appearance().barTintColor = UIColor.init(named: ColorName.NavigationBackgroundColor)
-                } else {
-                    // Fallback on earlier versions
-                    UINavigationBar.appearance().barTintColor = RED_COLOR
-                }
-                UINavigationBar.appearance().isTranslucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.init(name: "Montserrat-Bold", size: 20) ?? ""]
-                mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FBMainViewController") as? FBMainViewController
+//        UINavigationBar.appearance().tintColor = .white
+//                UIApplication.shared.statusBarStyle = .lightContent
+//                // Check os to change color navigation
+//                if #available(iOS 11.0, *) {
+//                    UINavigationBar.appearance().barTintColor = UIColor.init(named: ColorName.NavigationBackgroundColor)
+//                } else {
+//                    // Fallback on earlier versions
+//                    UINavigationBar.appearance().barTintColor = RED_COLOR
+//                }
+//                UINavigationBar.appearance().isTranslucent = false
+//        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.init(name: "Montserrat-Bold", size: 20) ?? ""]
+//                mainNavigation = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FBMainViewController") as? FBMainViewController
 //                leftMenu = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TBLeftMenuViewController") as? TBLeftMenuViewController
-                slideMenu = SlideMenuController.init(mainViewController: mainNavigation!, leftMenuViewController: UIViewController())
-                AppDelegate.sharedInstance.slideMenu?.changeLeftViewWidth(UIScreen.main.bounds.width * (3 / 4) < 320 ? UIScreen.main.bounds.width * (3 / 4) : 320)
-                slideMenu?.delegate = mainNavigation
-
-        //        slideMenu?.option
-                window!.rootViewController = slideMenu
+//                slideMenu = SlideMenuController.init(mainViewController: mainNavigation!, leftMenuViewController: UIViewController())
+//                AppDelegate.sharedInstance.slideMenu?.changeLeftViewWidth(UIScreen.main.bounds.width * (3 / 4) < 320 ? UIScreen.main.bounds.width * (3 / 4) : 320)
+//                slideMenu?.delegate = mainNavigation
+//
+//        //        slideMenu?.option
+//                window!.rootViewController = slideMenu
                 return true
     }
 
