@@ -29,6 +29,5 @@ class FBProductObj: NSObject {
     var pointOJT:NSInteger?
     var date:String?
     var id: Int?
-    var image: String?
     var timeTest: String?
 }
