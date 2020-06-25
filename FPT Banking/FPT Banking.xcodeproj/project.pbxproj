@@ -283,9 +283,9 @@
 			isa = PBXGroup;
 			children = (
 				B076F3EE2498E42D00412819 /* FBLoginViewController.swift */,
-				3353C1E624A0A7D200033839 /* Example */,
 				B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */,
 				3353C1CD24A0938500033839 /* FBMainViewController.swift */,
+				3353C1E624A0A7D200033839 /* Example */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";

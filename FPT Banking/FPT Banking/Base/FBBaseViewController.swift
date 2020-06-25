@@ -129,3 +129,12 @@ extension FBBaseViewController {
     }
 }
 
+//extension FBBaseViewController: TBLeftMenuDelegate {
+//    func logout() {
+//        MBProgressHUD.showAdded(to: self.view, animated: true)
+//    }
+//
+//    func logoutSuccess() {
+//        MBProgressHUD.hide(for: self.view, animated: true)
+//    }
+//}
