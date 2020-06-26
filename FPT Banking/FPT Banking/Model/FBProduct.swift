@@ -11,23 +11,18 @@ import UIKit
 
 class FBProductObj: NSObject {
     var modelId:NSInteger?
-    var productID:NSInteger?
+    var transacsion:Int?
     var productName:String?
     var productImage:[String]?
     var coverImage:String?
-    var brochures:String?
     var colors:[UIColor]?
-    var brochuresLink:String?
     var urlVideos:[String]?
     var urlImgVideos:[String]?
-    var price:Double?
-    var arrImagesLibrary:[String]?
-    var numberOfNoti: Int?
-    var midOJT: NSInteger?
+    var price:Int?
     var title: String?
-    var descriptionValue: String?
-    var pointOJT:NSInteger?
-    var date:String?
+    var dateActive:String?
+    var dateExpiriation:String?
     var id: Int?
+    var numberCard: String?
     var timeTest: String?
 }

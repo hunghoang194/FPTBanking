@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		331CB09524A5AF0700667E70 /* FBListCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CB09424A5AF0700667E70 /* FBListCardViewController.swift */; };
+		331CB09924A5B06E00667E70 /* FBListsCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CB09724A5B06D00667E70 /* FBListsCardTableViewCell.swift */; };
+		331CB09A24A5B06E00667E70 /* FBListsCardTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 331CB09824A5B06D00667E70 /* FBListsCardTableViewCell.xib */; };
 		3340418624A051E900A0E8C6 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340418524A051E800A0E8C6 /* Preferences.swift */; };
 		3353C1A424A072B100033839 /* Constain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1A324A072B100033839 /* Constain.swift */; };
 		3353C1A624A0894200033839 /* FBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1A524A0894200033839 /* FBBaseViewController.swift */; };
@@ -15,7 +18,6 @@
 		3353C1BF24A08B4000033839 /* KPDropMenuExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1B224A08B4000033839 /* KPDropMenuExtension.swift */; };
 		3353C1C424A08D6500033839 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C324A08D6500033839 /* ExampleModel.swift */; };
 		3353C1CB24A08EF300033839 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C724A08EF300033839 /* AvatarView.swift */; };
-		3353C1CE24A0938500033839 /* FBMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1CD24A0938500033839 /* FBMainViewController.swift */; };
 		3353C1D124A09AE000033839 /* FBKeychain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1D024A09AE000033839 /* FBKeychain.swift */; };
 		3353C1D524A09C0E00033839 /* FBDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1D424A09C0E00033839 /* FBDataCenter.swift */; };
 		3353C1D724A09EA800033839 /* WTUltility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1D624A09EA800033839 /* WTUltility.swift */; };
@@ -27,13 +29,6 @@
 		3353C1E424A0A79C00033839 /* HDTestResultOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DE24A0A79C00033839 /* HDTestResultOJTViewController.swift */; };
 		3353C1E524A0A79C00033839 /* HDActivityOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DF24A0A79C00033839 /* HDActivityOJTViewController.swift */; };
 		3353C1E824A0AB1000033839 /* NSDate+Ultil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1E724A0AB1000033839 /* NSDate+Ultil.swift */; };
-		3353C1EA24A0BD5B00033839 /* TBLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1E924A0BD5B00033839 /* TBLeftMenuViewController.swift */; };
-		338578F024A1DE5C00C18107 /* FBAPIRouter.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338578EF24A1DE5C00C18107 /* FBAPIRouter.swift.swift */; };
-		338578F224A1E08800C18107 /* FBBaseResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338578F124A1E08800C18107 /* FBBaseResponse.swift */; };
-		338578F424A1E2EA00C18107 /* FBConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338578F324A1E2EA00C18107 /* FBConnection.swift */; };
-		338578F624A1E37800C18107 /* FBUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338578F524A1E37800C18107 /* FBUser.swift */; };
-		338578F824A1E3BA00C18107 /* FBAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338578F724A1E3BA00C18107 /* FBAuth.swift */; };
-		338578FA24A1E3FF00C18107 /* FBLoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338578F924A1E3FF00C18107 /* FBLoginResponse.swift */; };
 		3385790324A2056B00C18107 /* ExSlideMenuContronller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385790224A2056B00C18107 /* ExSlideMenuContronller.swift */; };
 		3385790524A2097400C18107 /* FBProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C124A08C6200033839 /* FBProduct.swift */; };
 		33C34A71249C5E8100CC09AE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A70249C5E8100CC09AE /* UIView.swift */; };
@@ -79,6 +74,9 @@
 
 /* Begin PBXFileReference section */
 		12EE33B9C1C2672717FEDB12 /* Pods_FPT_Banking_FPT_BankingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPT_Banking_FPT_BankingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		331CB09424A5AF0700667E70 /* FBListCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBListCardViewController.swift; sourceTree = "<group>"; };
+		331CB09724A5B06D00667E70 /* FBListsCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBListsCardTableViewCell.swift; sourceTree = "<group>"; };
+		331CB09824A5B06D00667E70 /* FBListsCardTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBListsCardTableViewCell.xib; sourceTree = "<group>"; };
 		3340418524A051E800A0E8C6 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		3353C1A324A072B100033839 /* Constain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constain.swift; sourceTree = "<group>"; };
 		3353C1A524A0894200033839 /* FBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBaseViewController.swift; sourceTree = "<group>"; };
@@ -88,7 +86,6 @@
 		3353C1C124A08C6200033839 /* FBProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBProduct.swift; sourceTree = "<group>"; };
 		3353C1C324A08D6500033839 /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
 		3353C1C724A08EF300033839 /* AvatarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
-		3353C1CD24A0938500033839 /* FBMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBMainViewController.swift; sourceTree = "<group>"; };
 		3353C1D024A09AE000033839 /* FBKeychain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBKeychain.swift; sourceTree = "<group>"; };
 		3353C1D424A09C0E00033839 /* FBDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBDataCenter.swift; sourceTree = "<group>"; };
 		3353C1D624A09EA800033839 /* WTUltility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WTUltility.swift; sourceTree = "<group>"; };
@@ -100,13 +97,6 @@
 		3353C1DE24A0A79C00033839 /* HDTestResultOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDTestResultOJTViewController.swift; sourceTree = "<group>"; };
 		3353C1DF24A0A79C00033839 /* HDActivityOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDActivityOJTViewController.swift; sourceTree = "<group>"; };
 		3353C1E724A0AB1000033839 /* NSDate+Ultil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Ultil.swift"; sourceTree = "<group>"; };
-		3353C1E924A0BD5B00033839 /* TBLeftMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TBLeftMenuViewController.swift; sourceTree = "<group>"; };
-		338578EF24A1DE5C00C18107 /* FBAPIRouter.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAPIRouter.swift.swift; sourceTree = "<group>"; };
-		338578F124A1E08800C18107 /* FBBaseResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBaseResponse.swift; sourceTree = "<group>"; };
-		338578F324A1E2EA00C18107 /* FBConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBConnection.swift; sourceTree = "<group>"; };
-		338578F524A1E37800C18107 /* FBUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBUser.swift; sourceTree = "<group>"; };
-		338578F724A1E3BA00C18107 /* FBAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAuth.swift; sourceTree = "<group>"; };
-		338578F924A1E3FF00C18107 /* FBLoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoginResponse.swift; sourceTree = "<group>"; };
 		3385790224A2056B00C18107 /* ExSlideMenuContronller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExSlideMenuContronller.swift; sourceTree = "<group>"; };
 		33C34A70249C5E8100CC09AE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		33C34A72249C601F00CC09AE /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
@@ -184,6 +174,24 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		331CB09324A5AEDF00667E70 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				B076F3EE2498E42D00412819 /* FBLoginViewController.swift */,
+				331CB09424A5AF0700667E70 /* FBListCardViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		331CB09624A5B03C00667E70 /* ListCard */ = {
+			isa = PBXGroup;
+			children = (
+				331CB09724A5B06D00667E70 /* FBListsCardTableViewCell.swift */,
+				331CB09824A5B06D00667E70 /* FBListsCardTableViewCell.xib */,
+			);
+			path = ListCard;
+			sourceTree = "<group>";
+		};
 		3353C1A224A0729700033839 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,10 +222,6 @@
 			children = (
 				3353C1D024A09AE000033839 /* FBKeychain.swift */,
 				3353C1D824A0A02800033839 /* FBService.swift */,
-				338578EF24A1DE5C00C18107 /* FBAPIRouter.swift.swift */,
-				338578F124A1E08800C18107 /* FBBaseResponse.swift */,
-				338578F324A1E2EA00C18107 /* FBConnection.swift */,
-				338578F924A1E3FF00C18107 /* FBLoginResponse.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -238,7 +242,6 @@
 		338578FB24A1FF6800C18107 /* Slide Menu */ = {
 			isa = PBXGroup;
 			children = (
-				3353C1E924A0BD5B00033839 /* TBLeftMenuViewController.swift */,
 				33C34A76249C6F2200CC09AE /* SlideMenuController.swift */,
 				3385790224A2056B00C18107 /* ExSlideMenuContronller.swift */,
 			);
@@ -256,6 +259,7 @@
 		33C34A6D249C5B6100CC09AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				331CB09624A5B03C00667E70 /* ListCard */,
 				33F0BDE3249DE7C700E8FAA2 /* FBMenuTableViewCell.swift */,
 				33F0BDE2249DE7C700E8FAA2 /* FBMenuTableViewCell.xib */,
 				B05F7DD524A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift */,
@@ -282,10 +286,9 @@
 		B016B5C0249FCB9C000EBD2C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B076F3EE2498E42D00412819 /* FBLoginViewController.swift */,
+				331CB09324A5AEDF00667E70 /* Login */,
 				3353C1E624A0A7D200033839 /* Example */,
 				B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */,
-				3353C1CD24A0938500033839 /* FBMainViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -296,8 +299,6 @@
 				B016B5C4249FD10B000EBD2C /* FBUserProfile.swift */,
 				3353C1C124A08C6200033839 /* FBProduct.swift */,
 				3353C1C324A08D6500033839 /* ExampleModel.swift */,
-				338578F524A1E37800C18107 /* FBUser.swift */,
-				338578F724A1E3BA00C18107 /* FBAuth.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -502,6 +503,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				33F0BDE4249DE7C700E8FAA2 /* FBMenuTableViewCell.xib in Resources */,
+				331CB09A24A5B06E00667E70 /* FBListsCardTableViewCell.xib in Resources */,
 				B05F7DD424A0D13C00EEFE45 /* Home.storyboard in Resources */,
 				B076F3F72498E42F00412819 /* LaunchScreen.storyboard in Resources */,
 				B05F7DDC24A0E01600EEFE45 /* TransactionHistoryTableViewCell.xib in Resources */,
@@ -637,40 +639,34 @@
 			files = (
 				33C34A71249C5E8100CC09AE /* UIView.swift in Sources */,
 				33C34A77249C6F2200CC09AE /* SlideMenuController.swift in Sources */,
+				331CB09524A5AF0700667E70 /* FBListCardViewController.swift in Sources */,
 				3353C1E324A0A79C00033839 /* HDTestResultDetailOJTViewController.swift in Sources */,
-				338578F824A1E3BA00C18107 /* FBAuth.swift in Sources */,
 				3353C1D124A09AE000033839 /* FBKeychain.swift in Sources */,
 				B076F3EF2498E42D00412819 /* FBLoginViewController.swift in Sources */,
 				3353C1BA24A08B4000033839 /* Timer.swift in Sources */,
-				338578FA24A1E3FF00C18107 /* FBLoginResponse.swift in Sources */,
 				B016B5C2249FCBC5000EBD2C /* FBHomeViewController.swift in Sources */,
 				3353C1CB24A08EF300033839 /* AvatarView.swift in Sources */,
-				338578F224A1E08800C18107 /* FBBaseResponse.swift in Sources */,
 				3353C1D724A09EA800033839 /* WTUltility.swift in Sources */,
 				3353C1E424A0A79C00033839 /* HDTestResultOJTViewController.swift in Sources */,
 				3353C1A424A072B100033839 /* Constain.swift in Sources */,
 				B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */,
 				3353C1E524A0A79C00033839 /* HDActivityOJTViewController.swift in Sources */,
 				3353C1D524A09C0E00033839 /* FBDataCenter.swift in Sources */,
-				3353C1CE24A0938500033839 /* FBMainViewController.swift in Sources */,
 				33F0BDE5249DE7C700E8FAA2 /* FBMenuTableViewCell.swift in Sources */,
 				3353C1BF24A08B4000033839 /* KPDropMenuExtension.swift in Sources */,
+				331CB09924A5B06E00667E70 /* FBListsCardTableViewCell.swift in Sources */,
 				B016B5C5249FD10B000EBD2C /* FBUserProfile.swift in Sources */,
 				3340418624A051E900A0E8C6 /* Preferences.swift in Sources */,
-				338578F024A1DE5C00C18107 /* FBAPIRouter.swift.swift in Sources */,
-				338578F624A1E37800C18107 /* FBUser.swift in Sources */,
 				3353C1E224A0A79C00033839 /* HDExamOJTViewController.swift in Sources */,
 				3353C1E124A0A79C00033839 /* HDContentOJTViewController.swift in Sources */,
 				B05F7DD724A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift in Sources */,
 				3385790324A2056B00C18107 /* ExSlideMenuContronller.swift in Sources */,
-				3353C1EA24A0BD5B00033839 /* TBLeftMenuViewController.swift in Sources */,
 				3353C1E824A0AB1000033839 /* NSDate+Ultil.swift in Sources */,
 				3353C1E024A0A79C00033839 /* HDDetailOJTViewController.swift in Sources */,
 				3353C1C424A08D6500033839 /* ExampleModel.swift in Sources */,
 				3353C1BE24A08B4000033839 /* AvatarViewExtension.swift in Sources */,
 				3353C1A624A0894200033839 /* FBBaseViewController.swift in Sources */,
 				3353C1D924A0A02800033839 /* FBService.swift in Sources */,
-				338578F424A1E2EA00C18107 /* FBConnection.swift in Sources */,
 				B05F7DDB24A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift in Sources */,
 				33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */,
 				3385790524A2097400C18107 /* FBProduct.swift in Sources */,

@@ -10,9 +10,12 @@ import UIKit
 
 class TransactionHistoryTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var lbTypeMoney: UILabel!
-    @IBOutlet weak var lbPurchase: UILabel!
-    @IBOutlet weak var lbSale: UILabel!
+    @IBOutlet weak var transacsionView: UIView!
+    @IBOutlet weak var lbTransacsion: UILabel!
+    @IBOutlet weak var lbInfo: UILabel!
+    @IBOutlet weak var imgStatus: UIImageView!
+    @IBOutlet weak var imgShowStatus: UIImageView!
+    var indexPath: IndexPath?
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -20,8 +23,22 @@ class TransactionHistoryTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
-    
+    func setupDataTransacsion(obj:FBProductObj?) {
+        if obj?.transacsion ?? 0 >= 0 {
+            lbTransacsion.textColor = .green
+            lbInfo.textColor = .green
+            imgStatus.image = UIImage.init(named: "ic_up")
+            imgShowStatus.image = UIImage.init(named: "ic_up")
+            lbInfo.text = "\(obj?.price ?? 0)"
+            lbTransacsion.text = "\(obj?.transacsion ?? 0)"
+        } else if obj?.transacsion ?? 0 < 0 {
+            lbTransacsion.textColor = .red
+            lbInfo.textColor = .red
+            imgStatus.image = UIImage.init(named: "ic_down")
+            imgShowStatus.image = UIImage.init(named: "ic_down")
+            lbInfo.text = "\(obj?.price ?? 0)"
+            lbTransacsion.text = "\(obj?.transacsion ?? 0)"
+        }
+    }
 }

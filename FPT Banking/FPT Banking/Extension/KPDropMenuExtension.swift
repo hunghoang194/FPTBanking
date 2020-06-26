@@ -7,7 +7,7 @@
 ////
 //
 //import Foundation
-//
+//import UIKit
 //extension KPDropMenu
 //{
 //    /// Set text to default text ios 13
@@ -19,7 +19,7 @@
 //            self.itemTextColor = UIColor.darkText
 //        }
 //    }
-//    
+//
 //    /// Set background to default background ios 13
 //    func setBackgroundToDefaultBackgroundColor()
 //    {
@@ -27,7 +27,7 @@
 //            self.itemBackground = .systemBackground
 //        }
 //    }
-//    
+//
 //    /// Set title color in ios 13
 //    func setTitleColor()
 //    {
@@ -37,7 +37,7 @@
 //            self.titleColor = UIColor.init(hex: "#E92238")
 //        }
 //    }
-//    
+//
 //    /// Set default background color
 //    func setDefaultItemBackgroundColor()
 //    {
@@ -47,7 +47,7 @@
 //            self.itemBackground = UIColor.white
 //        }
 //    }
-//    
+//
 //    override open func traitCollectionDidChange(_ previousTraitCollection: UITraitCollection?) {
 //        super.traitCollectionDidChange(previousTraitCollection)
 //        didTapBackground()

@@ -104,12 +104,12 @@ extension UIView {
     func copyView<T: UIView>() -> T {
         return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self)) as! T
     }
-    func setGradientBackground(colorTop: UIColor, colorBottom: UIColor) {
+    func setGradientBackground(colorLeft: UIColor, colorRight: UIColor) {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]
-        gradientLayer.startPoint = CGPoint(x: 0.5, y: 1.0)
-        gradientLayer.endPoint = CGPoint(x: 0.5, y: 0.0)
-        gradientLayer.locations = [0, 1]
+        gradientLayer.colors = [colorLeft.cgColor, colorRight.cgColor]
+        gradientLayer.startPoint = CGPoint(x: 1, y: 0.0)
+        gradientLayer.endPoint = CGPoint(x: 0, y: 0.0)
+        gradientLayer.locations = [0, 0.5]
         gradientLayer.frame = bounds
 
        layer.insertSublayer(gradientLayer, at: 0)

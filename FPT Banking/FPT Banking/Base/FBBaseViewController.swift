@@ -30,9 +30,6 @@ class FBBaseViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        self.navigationController?.navigationItem.backBarButtonItem?.isEnabled = false
-//        self.navigationController?.interactivePopGestureRecognizer?.delegate = self
         self.initData()
         self.initUI()
     }
@@ -57,16 +54,6 @@ class FBBaseViewController: UIViewController {
                 self.view.backgroundColor = UIColor(hex: "#E5E5E5")
             }
         }
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.slideMenuController()?.removeLeftGestures()
-        self.slideMenuController()?.removeRightGestures()
-    }
-    
-    @objc func tapRightMenu(){
-        self.toggleRight()
     }
     func initData(){}
     func initUI(){}
