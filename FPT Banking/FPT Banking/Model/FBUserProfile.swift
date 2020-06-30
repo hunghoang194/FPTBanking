@@ -6,48 +6,58 @@
 //  Copyright © 2020 Admin. All rights reserved.
 //
 
-import UIKit
-class FBUserProfile: NSObject {
-        var id: String?
-        var name: String?
-        var email: String?
-        var image: UIImage?
-        var imageUrl: String?
-        var gender: String?
-        var birthday: String?
-        var phone:String?
-        var password:String?
-        var accessToken: String?
-//        var arrayCategory = [BVCategoryFavoriteModel]()
-        override init() {
-            super.init()
-        }
-        
-        required init(_ json: NSDictionary) {
-            super.init()
-             let data = json["data"] as? [String:Any]
-            let userRespon = data!["user"] as? [String:Any]
-            if let tokenAccess = data!["token"] as? String {
-            self.accessToken = tokenAccess
-           }
-           if let value = userRespon?["phone"] as? String {
-               self.phone = value
-           }
-           if let value = userRespon?["avatar"] as? String {
-               self.imageUrl = value
-           }
-           if let value = userRespon?["id"] as? String {
-              self.id = value
-           }
-           if let value = userRespon?["birthday"] as? String {
-              self.birthday = value
-           }
-           if let value = userRespon?["email"] as? String {
-               self.email = value
-           }
-           if let value = userRespon?["full_name"] as? String {
-              self.name = value
-           }
+import Foundation
+import SwiftyJSON
 
-        }
+public class FBUserProfile: NSObject {
+    // MARK: - Properties
+    var id: Int?
+    var fullname: String?
+    var username: String?
+    var email: String?
+    var birthday: String?
+    var address: String?
+    var gender: String?
+    var image: UIImage?
+    var imageUrl: String?
+    var idCardNumber: String?
+    var phone:String?
+    var createdAt: String?
+    var updatedAt: String?
+    var status: Bool?
+    // MARK: - Declaration for string constants to be used to decode and also serialize.
+    private let FBid: String = "id"
+    private let FBFullname: String = "fullname"
+    private let FBEmail: String = "email"
+    private let FBBirthday: String = "birthday"
+    private let FBAddress: String = "address"
+    private let FBGender: String = "gender"
+    private let FBImageUrl: String = "image"
+    
+    // MARK: SwiftyJSON Initalizers
+    /**
+     Initates the instance based on the object
+     - parameter object: The object of either Dictionary or Array kind that was passed.
+     - returns: An initalized instance of the class.
+     */
+    convenience public init(object: Any) {
+        self.init(json: JSON(object))
+    }
+    public init(json: JSON) {
+        id = json[FBid].int}
+    
+    public func dictionaryRepresentation() -> [String: Any] {
+        var dictionary: [String: Any] = [:]
+        if let value = id { dictionary[FBid] = value }
+        return dictionary
+    }
+    // MARK: - NSCoding Protocol
+    required public init(coder aDecoder: NSCoder) {
+        self.id = aDecoder.decodeObject(forKey: FBid) as? Int
+        
+    }
+    public func encode(with aCoder: NSCoder) {
+        aCoder.encode(id, forKey: FBid)
+        
+    }
 }

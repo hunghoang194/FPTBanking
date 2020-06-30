@@ -7,16 +7,19 @@
 //
 
 import UIKit
+import MBProgressHUD
+import Alamofire
 
 class FBListCardViewController: FBBaseViewController {
     @IBOutlet weak var tbListCard: UITableView!
     
     var listCard:[FBProductObj] = [FBProductObj]()
-    
+    var profileUser:[FBUserProfile] = [FBUserProfile]()
     override func viewDidLoad() {
         super.viewDidLoad()
         tbListCard.delegate = self
         tbListCard.dataSource = self
+        getData()
     }
     // MARK: - Support method
     override func initData() {
@@ -48,8 +51,24 @@ class FBListCardViewController: FBBaseViewController {
         demoListCard.numberCard = replacement
         self.tbListCard?.reloadData()
     }
-    
+    func getData() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        Alamofire.request("http://192.168.1.10:8080/api/user/current").responseJSON {
+            (response) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            debugPrint(response)
+            switch response.result {
+            case .success:
+                print(response)
+                //                        self.goHome()
+                break
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
+
 extension FBListCardViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listCard.count

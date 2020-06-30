@@ -15,7 +15,11 @@ class UtilitysCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        utilitysView.layer.cornerRadius = 10
+        utilitysView.layer.masksToBounds = true
     }
-
+    func setDataUtility(obj: FBProductObj?) {
+//        imgUtilitys.image = obj?.productImage
+        lbUtility.text = obj?.title
+    }
 }

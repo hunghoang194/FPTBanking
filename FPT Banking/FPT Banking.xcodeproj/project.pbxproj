@@ -29,16 +29,20 @@
 		3353C1E424A0A79C00033839 /* HDTestResultOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DE24A0A79C00033839 /* HDTestResultOJTViewController.swift */; };
 		3353C1E524A0A79C00033839 /* HDActivityOJTViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1DF24A0A79C00033839 /* HDActivityOJTViewController.swift */; };
 		3353C1E824A0AB1000033839 /* NSDate+Ultil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1E724A0AB1000033839 /* NSDate+Ultil.swift */; };
-		3385790324A2056B00C18107 /* ExSlideMenuContronller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3385790224A2056B00C18107 /* ExSlideMenuContronller.swift */; };
 		3385790524A2097400C18107 /* FBProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C124A08C6200033839 /* FBProduct.swift */; };
 		33C34A71249C5E8100CC09AE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A70249C5E8100CC09AE /* UIView.swift */; };
 		33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A72249C601F00CC09AE /* ColorConstant.swift */; };
-		33C34A77249C6F2200CC09AE /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C34A76249C6F2200CC09AE /* SlideMenuController.swift */; };
 		33F0BDE4249DE7C700E8FAA2 /* FBMenuTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33F0BDE2249DE7C700E8FAA2 /* FBMenuTableViewCell.xib */; };
 		33F0BDE5249DE7C700E8FAA2 /* FBMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F0BDE3249DE7C700E8FAA2 /* FBMenuTableViewCell.swift */; };
 		B016B5C2249FCBC5000EBD2C /* FBHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */; };
 		B016B5C5249FD10B000EBD2C /* FBUserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B016B5C4249FD10B000EBD2C /* FBUserProfile.swift */; };
-		B05F7DD424A0D13C00EEFE45 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B05F7DD324A0D13C00EEFE45 /* Home.storyboard */; };
+		B03944BA24AAED930031269A /* FBLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03944B924AAED930031269A /* FBLogin.swift */; };
+		B03944BC24AAFC750031269A /* BaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03944BB24AAFC750031269A /* BaseService.swift */; };
+		B03944BF24AB16800031269A /* FBPersonalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03944BE24AB16800031269A /* FBPersonalViewController.swift */; };
+		B03944C124AB2ABA0031269A /* FBHelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03944C024AB2ABA0031269A /* FBHelpViewController.swift */; };
+		B03944C524AB6E2C0031269A /* FBListAccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03944C324AB6E2C0031269A /* FBListAccountTableViewCell.swift */; };
+		B03944C624AB6E2C0031269A /* FBListAccountTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B03944C424AB6E2C0031269A /* FBListAccountTableViewCell.xib */; };
+		B03944C824AB79EC0031269A /* FBListAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03944C724AB79EC0031269A /* FBListAccount.swift */; };
 		B05F7DD724A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F7DD524A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift */; };
 		B05F7DD824A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B05F7DD624A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib */; };
 		B05F7DDB24A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05F7DD924A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift */; };
@@ -97,10 +101,8 @@
 		3353C1DE24A0A79C00033839 /* HDTestResultOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDTestResultOJTViewController.swift; sourceTree = "<group>"; };
 		3353C1DF24A0A79C00033839 /* HDActivityOJTViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HDActivityOJTViewController.swift; sourceTree = "<group>"; };
 		3353C1E724A0AB1000033839 /* NSDate+Ultil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSDate+Ultil.swift"; sourceTree = "<group>"; };
-		3385790224A2056B00C18107 /* ExSlideMenuContronller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExSlideMenuContronller.swift; sourceTree = "<group>"; };
 		33C34A70249C5E8100CC09AE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		33C34A72249C601F00CC09AE /* ColorConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorConstant.swift; sourceTree = "<group>"; };
-		33C34A76249C6F2200CC09AE /* SlideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
 		33F0BDE2249DE7C700E8FAA2 /* FBMenuTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FBMenuTableViewCell.xib; sourceTree = "<group>"; };
 		33F0BDE3249DE7C700E8FAA2 /* FBMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBMenuTableViewCell.swift; sourceTree = "<group>"; };
 		3BDB5D9B0EF27C8D93BA58DC /* Pods-FPT Banking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking.release.xcconfig"; path = "Target Support Files/Pods-FPT Banking/Pods-FPT Banking.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +111,13 @@
 		8D2A9B5DD8BCC731B4B242B4 /* Pods-FPT Banking-FPT BankingUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FPT Banking-FPT BankingUITests.debug.xcconfig"; path = "Target Support Files/Pods-FPT Banking-FPT BankingUITests/Pods-FPT Banking-FPT BankingUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBHomeViewController.swift; sourceTree = "<group>"; };
 		B016B5C4249FD10B000EBD2C /* FBUserProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBUserProfile.swift; sourceTree = "<group>"; };
-		B05F7DD324A0D13C00EEFE45 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		B03944B924AAED930031269A /* FBLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLogin.swift; sourceTree = "<group>"; };
+		B03944BB24AAFC750031269A /* BaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseService.swift; sourceTree = "<group>"; };
+		B03944BE24AB16800031269A /* FBPersonalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBPersonalViewController.swift; sourceTree = "<group>"; };
+		B03944C024AB2ABA0031269A /* FBHelpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBHelpViewController.swift; sourceTree = "<group>"; };
+		B03944C324AB6E2C0031269A /* FBListAccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBListAccountTableViewCell.swift; sourceTree = "<group>"; };
+		B03944C424AB6E2C0031269A /* FBListAccountTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBListAccountTableViewCell.xib; sourceTree = "<group>"; };
+		B03944C724AB79EC0031269A /* FBListAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBListAccount.swift; sourceTree = "<group>"; };
 		B05F7DD524A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilitysCollectionViewCell.swift; sourceTree = "<group>"; };
 		B05F7DD624A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UtilitysCollectionViewCell.xib; sourceTree = "<group>"; };
 		B05F7DD924A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionHistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -203,7 +211,6 @@
 		3353C1C524A08EE900033839 /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				338578FB24A1FF6800C18107 /* Slide Menu */,
 				3353C1C624A08EF300033839 /* Avatar View */,
 			);
 			path = Lib;
@@ -220,8 +227,10 @@
 		3353C1CF24A09AB500033839 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				3353C1D424A09C0E00033839 /* FBDataCenter.swift */,
 				3353C1D024A09AE000033839 /* FBKeychain.swift */,
 				3353C1D824A0A02800033839 /* FBService.swift */,
+				B03944BB24AAFC750031269A /* BaseService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -239,15 +248,6 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		338578FB24A1FF6800C18107 /* Slide Menu */ = {
-			isa = PBXGroup;
-			children = (
-				33C34A76249C6F2200CC09AE /* SlideMenuController.swift */,
-				3385790224A2056B00C18107 /* ExSlideMenuContronller.swift */,
-			);
-			path = "Slide Menu";
-			sourceTree = "<group>";
-		};
 		33C34A6B249C5B4A00CC09AE /* Base */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +259,7 @@
 		33C34A6D249C5B6100CC09AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B03944C224AB6B1B0031269A /* ListAccount */,
 				331CB09624A5B03C00667E70 /* ListCard */,
 				33F0BDE3249DE7C700E8FAA2 /* FBMenuTableViewCell.swift */,
 				33F0BDE2249DE7C700E8FAA2 /* FBMenuTableViewCell.xib */,
@@ -286,6 +287,7 @@
 		B016B5C0249FCB9C000EBD2C /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				B03944BD24AB16580031269A /* Personal */,
 				331CB09324A5AEDF00667E70 /* Login */,
 				3353C1E624A0A7D200033839 /* Example */,
 				B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */,
@@ -299,6 +301,8 @@
 				B016B5C4249FD10B000EBD2C /* FBUserProfile.swift */,
 				3353C1C124A08C6200033839 /* FBProduct.swift */,
 				3353C1C324A08D6500033839 /* ExampleModel.swift */,
+				B03944B924AAED930031269A /* FBLogin.swift */,
+				B03944C724AB79EC0031269A /* FBListAccount.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -306,9 +310,26 @@
 		B016B5C6249FD2FA000EBD2C /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
-				B05F7DD324A0D13C00EEFE45 /* Home.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B03944BD24AB16580031269A /* Personal */ = {
+			isa = PBXGroup;
+			children = (
+				B03944BE24AB16800031269A /* FBPersonalViewController.swift */,
+				B03944C024AB2ABA0031269A /* FBHelpViewController.swift */,
+			);
+			path = Personal;
+			sourceTree = "<group>";
+		};
+		B03944C224AB6B1B0031269A /* ListAccount */ = {
+			isa = PBXGroup;
+			children = (
+				B03944C324AB6E2C0031269A /* FBListAccountTableViewCell.swift */,
+				B03944C424AB6E2C0031269A /* FBListAccountTableViewCell.xib */,
+			);
+			path = ListAccount;
 			sourceTree = "<group>";
 		};
 		B076F3E02498E42C00412819 = {
@@ -376,7 +397,6 @@
 		B0DA1394249B9D52003DBC6E /* Ultility */ = {
 			isa = PBXGroup;
 			children = (
-				3353C1D424A09C0E00033839 /* FBDataCenter.swift */,
 				3353C1D624A09EA800033839 /* WTUltility.swift */,
 				3353C1E724A0AB1000033839 /* NSDate+Ultil.swift */,
 			);
@@ -504,8 +524,8 @@
 			files = (
 				33F0BDE4249DE7C700E8FAA2 /* FBMenuTableViewCell.xib in Resources */,
 				331CB09A24A5B06E00667E70 /* FBListsCardTableViewCell.xib in Resources */,
-				B05F7DD424A0D13C00EEFE45 /* Home.storyboard in Resources */,
 				B076F3F72498E42F00412819 /* LaunchScreen.storyboard in Resources */,
+				B03944C624AB6E2C0031269A /* FBListAccountTableViewCell.xib in Resources */,
 				B05F7DDC24A0E01600EEFE45 /* TransactionHistoryTableViewCell.xib in Resources */,
 				B05F7DD824A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib in Resources */,
 				B076F3F42498E42F00412819 /* Assets.xcassets in Resources */,
@@ -637,8 +657,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B03944C824AB79EC0031269A /* FBListAccount.swift in Sources */,
 				33C34A71249C5E8100CC09AE /* UIView.swift in Sources */,
-				33C34A77249C6F2200CC09AE /* SlideMenuController.swift in Sources */,
 				331CB09524A5AF0700667E70 /* FBListCardViewController.swift in Sources */,
 				3353C1E324A0A79C00033839 /* HDTestResultDetailOJTViewController.swift in Sources */,
 				3353C1D124A09AE000033839 /* FBKeychain.swift in Sources */,
@@ -647,20 +667,22 @@
 				B016B5C2249FCBC5000EBD2C /* FBHomeViewController.swift in Sources */,
 				3353C1CB24A08EF300033839 /* AvatarView.swift in Sources */,
 				3353C1D724A09EA800033839 /* WTUltility.swift in Sources */,
+				B03944BA24AAED930031269A /* FBLogin.swift in Sources */,
 				3353C1E424A0A79C00033839 /* HDTestResultOJTViewController.swift in Sources */,
 				3353C1A424A072B100033839 /* Constain.swift in Sources */,
 				B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */,
 				3353C1E524A0A79C00033839 /* HDActivityOJTViewController.swift in Sources */,
 				3353C1D524A09C0E00033839 /* FBDataCenter.swift in Sources */,
 				33F0BDE5249DE7C700E8FAA2 /* FBMenuTableViewCell.swift in Sources */,
+				B03944BF24AB16800031269A /* FBPersonalViewController.swift in Sources */,
 				3353C1BF24A08B4000033839 /* KPDropMenuExtension.swift in Sources */,
 				331CB09924A5B06E00667E70 /* FBListsCardTableViewCell.swift in Sources */,
 				B016B5C5249FD10B000EBD2C /* FBUserProfile.swift in Sources */,
 				3340418624A051E900A0E8C6 /* Preferences.swift in Sources */,
 				3353C1E224A0A79C00033839 /* HDExamOJTViewController.swift in Sources */,
 				3353C1E124A0A79C00033839 /* HDContentOJTViewController.swift in Sources */,
+				B03944C124AB2ABA0031269A /* FBHelpViewController.swift in Sources */,
 				B05F7DD724A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift in Sources */,
-				3385790324A2056B00C18107 /* ExSlideMenuContronller.swift in Sources */,
 				3353C1E824A0AB1000033839 /* NSDate+Ultil.swift in Sources */,
 				3353C1E024A0A79C00033839 /* HDDetailOJTViewController.swift in Sources */,
 				3353C1C424A08D6500033839 /* ExampleModel.swift in Sources */,
@@ -670,6 +692,8 @@
 				B05F7DDB24A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift in Sources */,
 				33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */,
 				3385790524A2097400C18107 /* FBProduct.swift in Sources */,
+				B03944C524AB6E2C0031269A /* FBListAccountTableViewCell.swift in Sources */,
+				B03944BC24AAFC750031269A /* BaseService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

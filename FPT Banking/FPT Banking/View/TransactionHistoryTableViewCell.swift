@@ -15,10 +15,13 @@ class TransactionHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var lbInfo: UILabel!
     @IBOutlet weak var imgStatus: UIImageView!
     @IBOutlet weak var imgShowStatus: UIImageView!
+    @IBOutlet weak var lbContent: UILabel!
     var indexPath: IndexPath?
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        transacsionView.layer.cornerRadius = 10
+        transacsionView.layer.masksToBounds = true
+        self.contentView.setMutilColorForView(nameColor: ColorName.CallBackground)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -28,16 +31,14 @@ class TransactionHistoryTableViewCell: UITableViewCell {
         if obj?.transacsion ?? 0 >= 0 {
             lbTransacsion.textColor = .green
             lbInfo.textColor = .green
-            imgStatus.image = UIImage.init(named: "ic_up")
-            imgShowStatus.image = UIImage.init(named: "ic_up")
             lbInfo.text = "\(obj?.price ?? 0)"
+            lbContent.text = obj?.title
             lbTransacsion.text = "\(obj?.transacsion ?? 0)"
         } else if obj?.transacsion ?? 0 < 0 {
             lbTransacsion.textColor = .red
             lbInfo.textColor = .red
-            imgStatus.image = UIImage.init(named: "ic_down")
-            imgShowStatus.image = UIImage.init(named: "ic_down")
             lbInfo.text = "\(obj?.price ?? 0)"
+            lbContent.text = obj?.title
             lbTransacsion.text = "\(obj?.transacsion ?? 0)"
         }
     }

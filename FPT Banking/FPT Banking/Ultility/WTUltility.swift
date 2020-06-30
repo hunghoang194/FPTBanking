@@ -448,7 +448,7 @@ public class WTUtilitys:NSObject {
         label.sizeToFit()
         return label.frame.height
     }
-
+    
     class func save(service: NSString, data: NSString) {
         let dataFromString: NSData = data.data(using: String.Encoding.utf8.rawValue, allowLossyConversion: false)! as NSData
         
@@ -603,7 +603,7 @@ public class WTUtilitys:NSObject {
             return ""
         }
     }
-
+    
     class func getThumbnailImage(forUrl url: URL) -> UIImage? {
         let asset: AVAsset = AVAsset(url: url)
         let imageGenerator = AVAssetImageGenerator(asset: asset)

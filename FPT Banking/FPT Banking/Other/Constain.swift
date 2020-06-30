@@ -20,50 +20,50 @@ let BKG_GRAY = UIColor.init(red: 229.0/255.0, green: 229.0/255.0, blue: 229.0/25
 let DATE_FOMAT_SERVER = "YYYY-MM-dd HH:mm:ss"
 let DATE_FOMAT_SHOW = "dd-MMM-YYYY"
 
-extension UserDefaults {
-    class func savePassword(_ id:String){
-        self.standard.set(id, forKey: KEY.KEY_API.password)
-        self.standard.synchronize()
-    }
-    class func resultPassword() -> String{
-        if let id = self.standard.object(forKey: KEY.KEY_API.password) {
-            return id as! String
-        }
-        return ""
-    }
-    class func saveRememberLogin(_ id:String){
-        self.standard.set(id, forKey: KEY.KEY_API.rememberLogin)
-        self.standard.synchronize()
-    }
-}
+//extension UserDefaults {
+//    class func savePassword(_ id:String){
+//        self.standard.set(id, forKey: KEY.KEY_API.password)
+//        self.standard.synchronize()
+//    }
+//    class func resultPassword() -> String{
+//        if let id = self.standard.object(forKey: KEY.KEY_API.password) {
+//            return id as! String
+//        }
+//        return ""
+//    }
+//    class func saveAccessToken(_ accessToken:String){
+//        self.standard.set(accessToken, forKey: KEY.KEY_API.access_token)
+//        self.standard.synchronize()
+//    }
+//}
 
-enum NetworkErrorType {
-    case API_ERROR
-    case HTTP_ERROR
-}
-
-struct API {
-    static let baseUrl = "your base url"
-    struct PATH {
-        static let login = "auth/login"
-        static let logout = "auth/logout"
-    }
-    static let login = "\(baseUrl)\(PATH.login)"
-    static let logout = "\(baseUrl)\(PATH.logout)"
-}
-struct KEY {
-    struct KEY_API {
-        static let rememberLogin = "rememberID"
-        static let userName = "username"
-        static let id = "id"
-        static let password = "password"
-        static let error = "error"
-        static let message = "message"
-        static let data = "data"
-        static let access_token = "access_token"
-        
-    }
-}
+//enum NetworkErrorType {
+//    case API_ERROR
+//    case HTTP_ERROR
+//}
+//
+//struct API {
+//    static let baseUrl = "your base url"
+//    struct PATH {
+//        static let login = "auth/login"
+//        static let logout = "auth/logout"
+//    }
+//    static let login = "\(baseUrl)\(PATH.login)"
+//    static let logout = "\(baseUrl)\(PATH.logout)"
+//}
+//struct KEY {
+//    struct KEY_API {
+//        static let rememberLogin = "rememberID"
+//        static let userName = "username"
+//        static let id = "id"
+//        static let password = "password"
+//        static let error = "error"
+//        static let message = "message"
+//        static let data = "data"
+//        static let access_token = "access_token"
+//        
+//    }
+//}
 extension Date {
     var yesterday: Date {
         return Calendar.current.date(byAdding: .day, value: -1, to: noon)!

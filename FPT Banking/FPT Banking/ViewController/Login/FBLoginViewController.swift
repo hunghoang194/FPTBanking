@@ -19,11 +19,12 @@ class FBLoginViewController: FBBaseViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var btnLogin: UIButton!
+    var userInfo = [FBLogin]()
     
     var savedResJson: JSON = JSON(parseJSON: "{}")
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        dismissKeyboard()
     }
     override func viewDidLayoutSubviews() {
         userNameView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.Gray4Clear)
@@ -32,77 +33,46 @@ class FBLoginViewController: FBBaseViewController {
     }
     
     // check validate login
-    func checkValid() -> Bool {
-        var check:Bool = true
-        var message = NSLocalizedString("Vui lòng nhập tài khoản của bạn", comment: "")
-        if WTUtilitys.isEmptyString(textCheck: self.txtUserName?.text) {
-            check = false
+    func checkValidUserName() {
+        let userName: String = (self.txtUserName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+        let password: String = (self.txtPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+        //check nhap tk/mk
+        if (userName.isEmpty || password.isEmpty ) {
+        self.showToast(message: "Bạn chưa nhập tài khoản hoặc mật khẩu của mình",font: .systemFont(ofSize: 13.0))
+            return
         }
-        else if WTUtilitys.isEmptyString(textCheck: self.txtPassword?.text)
-        {
-            message = NSLocalizedString("Vui lòng nhập mật khẩu của bạn", comment: "")
+        //check do dai pass
+        if !self.isValidPassword(testPass: password) {
+        self.showToast(message: "Password không hợp lệ",font: .systemFont(ofSize: 13.0))
+            return
         }
-        //        if !check {
-        //            Toas.init(text: message, delay: 0, duration: 2.0).show()
-        //                }
-        return check
+        postDataWithBody()
+    }
+    @IBAction func actionLoginPress(_ sender: Any) {
+        self.checkValidUserName()
     }
     
-    @IBAction func actionLoginPress(_ sender: Any) {
-        //        if checkValid() {
-        //            MBProgressHUD.showAdded(to: self.view, animated: true)
-        //            FBConnection.request(APIRouter.login(username: "username", password: "password"), LoginResponse.self, completion: {(result, error) in
-        //                MBProgressHUD.hide(for: self.view, animated: true)
-        //                if error == SUCCESS_CODE as! Int {
-        //                    if result != nil {
-        //                        let resJson = JSON.init(result!)
-        //                        FBKeychainService.savePassword(token:self.txtPassword.text ?? "")
-        //                        FBKeychainService.saveUsername(token:self.txtUserName.text ?? "")
-        //                        FBKeychainService.saveToken(token:"Bearer \(resJson["data"]["access_token"].string ?? "")")
-        //                        print("TEST access_token login: \("Bearer \(resJson["data"]["access_token"].string ?? "")")")
-        //
-        //                        let encodedData = NSKeyedArchiver.archivedData(withRootObject: FBDataCenter.sharedInstance.userInfo!)
-        //                        UserDefaults.standard.set(encodedData, forKey: "save_user_obj")
-        //                        FBDataCenter.sharedInstance.token = "Bearer \(resJson["data"]["access_token"].string ?? "")"
-        //                        self.savedResJson = resJson
-        //                    }
-        //                    print("Fullname: " + (result?.user?.fullname)!)
-        //                    // gotoHome
-        //                    self.goHome()
-        //                }
-        //                guard error == nil else {
-        //                    print("False with code: \(error?.mErrorCode) and message: \(error?.mErrorMessage)")
-        //                    return
-        //                }
-        //            })
-        //        }
-        self.goHome()
-    }
-    func checkLogin() {
-        let task = URLSession.shared.dataTask(with: NSURL(string: "local888")! as URL, completionHandler: { (data, response, error) -> Void in
-            do{
-                let str = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:AnyObject]
-                print(str)
-            }
-            catch {
-                print("json error: \(error)")
-            }
-        })
-        task.resume()
-    }
-    func postData() {
-        let parameters : [String: Any] = ["username":"username_1","password":"password"]
-        Alamofire.request("local888", method: .post, parameters: parameters,encoding: JSONSerialization() as! ParameterEncoding, headers: nil).responseJSON {
-            response in
-            switch response.result {
-            case .success:
-                print(response)
-                break
-            case .failure(let error):
-            print(error)
+    func postDataWithBody() {
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+            let userName: String = (self.txtUserName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+            let password: String = (self.txtPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+            let url = "http://198.119.45.100:8080/api/user/auth/login"
+            let param = ["usernameOrEmail":userName,"password":password]
+            if let jsonData = try? JSONEncoder().encode(param) {
+                var request = URLRequest(url: URL(string: url)!)
+                request.httpMethod = HTTPMethod.post.rawValue
+                request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
+                request.httpBody = jsonData
+                Alamofire.request(request).responseJSON {
+                    (response) in
+                    MBProgressHUD.hide(for: self.view, animated: true)
+                    debugPrint(response)
+                    if response.result.isSuccess {
+                        self.userInfo = ((jsonData as? [FBLogin]) ?? [FBLogin]())
+                        }
+                    }
+                }
             }
         }
-    }
-}
 
 
