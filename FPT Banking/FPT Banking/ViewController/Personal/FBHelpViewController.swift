@@ -15,12 +15,18 @@ class FBHelpViewController: FBBaseViewController, MFMailComposeViewControllerDel
     @IBOutlet weak var callView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        self.isBackgroundGray = true
     }
     
+    override func initUI() {
+        emailView.layer.cornerRadius = 5
+        emailView.layer.masksToBounds = true
+        callView.layer.cornerRadius = 5
+        callView.layer.masksToBounds = true
+        emailView.setMutilColorForView(nameColor: ColorName.CallBackground)
+        callView.setMutilColorForView(nameColor: ColorName.CallBackground)
+    }
     // MARK: - Support method
-    
     func makeAPhoneCall()  {
         if let phoneCallURL:URL = URL(string: "tel:\(0936230865)") {
             let application:UIApplication = UIApplication.shared
@@ -37,6 +43,9 @@ class FBHelpViewController: FBBaseViewController, MFMailComposeViewControllerDel
                 present(alertController, animated: true, completion: nil)
             }
         }
+    }
+    @IBAction func backPress(_ sender: Any) {
+        backButtonPress()
     }
     @IBAction func emailPress(_ sender: Any) {
             // Modify following variables with your text / recipient

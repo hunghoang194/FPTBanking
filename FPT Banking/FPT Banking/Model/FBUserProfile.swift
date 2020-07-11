@@ -25,6 +25,7 @@ public class FBUserProfile: NSObject {
     var createdAt: String?
     var updatedAt: String?
     var status: Bool?
+    var lock: Bool?
     // MARK: - Declaration for string constants to be used to decode and also serialize.
     private let FBid: String = "id"
     private let FBFullname: String = "fullname"
@@ -32,7 +33,12 @@ public class FBUserProfile: NSObject {
     private let FBBirthday: String = "birthday"
     private let FBAddress: String = "address"
     private let FBGender: String = "gender"
-    private let FBImageUrl: String = "image"
+    private let FBIdCardNumber: String = "idCardNumber"
+    private let FBPhone: String = "phone"
+    private let FBCreatedAt: String = "createdAt"
+    private let FBUpdatedAt: String = "updatedAt"
+    private let FBStatus: Bool = true
+    private let FBLocked: Bool = false
     
     // MARK: SwiftyJSON Initalizers
     /**
@@ -44,20 +50,42 @@ public class FBUserProfile: NSObject {
         self.init(json: JSON(object))
     }
     public init(json: JSON) {
-        id = json[FBid].int}
+        id = json[FBid].int
+        fullname = json[FBFullname].string
+        email = json[FBEmail].string
+        birthday = json[FBBirthday].string
+        address = json[FBAddress].string
+        gender = json[FBGender].string
+        idCardNumber = json[FBIdCardNumber].string
+        phone = json[FBPhone].string
+        createdAt = json[FBCreatedAt].string
+        updatedAt = json[FBUpdatedAt].string
+        
+    }
     
     public func dictionaryRepresentation() -> [String: Any] {
         var dictionary: [String: Any] = [:]
         if let value = id { dictionary[FBid] = value }
+        if let value = fullname { dictionary[FBFullname] = value }
+        if let value = email { dictionary[FBEmail] = value }
+        if let value = birthday { dictionary[FBBirthday] = value }
+        if let value = address { dictionary[FBAddress] = value }
+        if let value = gender { dictionary[FBGender] = value }
+        if let value = phone { dictionary[FBPhone] = value }
+        if let value = idCardNumber { dictionary[FBIdCardNumber] = value }
+        if let value = createdAt { dictionary[FBCreatedAt] = value }
+        if let value = updatedAt { dictionary[FBUpdatedAt] = value }
         return dictionary
     }
     // MARK: - NSCoding Protocol
     required public init(coder aDecoder: NSCoder) {
         self.id = aDecoder.decodeObject(forKey: FBid) as? Int
+        self.fullname = aDecoder.decodeObject(forKey: FBFullname) as? String
         
     }
     public func encode(with aCoder: NSCoder) {
         aCoder.encode(id, forKey: FBid)
+        aCoder.encode(fullname, forKey: FBFullname)
         
     }
 }

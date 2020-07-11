@@ -14,12 +14,13 @@ public class FBLogin: NSObject {
     var status: Int?
     var messages: String?
     var roles: String?
+    var loggedInFailedTime: Int?
     // MARK: - Declaration for string constants to be used to decode and also serialize.
     private let FBAccessToken: String = "accessToken"
     private let FBStatus: String = "status"
     private let FBMessages: String = "messgages"
     private let FBRoles: String = "roles"
-    
+    private let FBLoggedInFailedTime : String = "loggedInFailedTime"
     // MARK: SwiftyJSON Initalizers
     /**
      Initates the instance based on the object
@@ -34,5 +35,6 @@ public class FBLogin: NSObject {
          status = json[FBStatus].int
          messages = json[FBMessages].string
          roles = json[FBRoles].string
+        loggedInFailedTime = json[FBLoggedInFailedTime].int
     }
 }

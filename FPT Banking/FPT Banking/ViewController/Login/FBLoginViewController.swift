@@ -19,17 +19,23 @@ class FBLoginViewController: FBBaseViewController {
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var loginView: UIView!
     @IBOutlet weak var btnLogin: UIButton!
+    @IBOutlet weak var logoView: UIView!
     var userInfo = [FBLogin]()
     
     var savedResJson: JSON = JSON(parseJSON: "{}")
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.isBackgroundGray = true
         dismissKeyboard()
+        txtPassword.isSecureTextEntry = true
     }
     override func viewDidLayoutSubviews() {
-        userNameView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.Gray4Clear)
-        passwordView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.Gray4Clear)
-        loginView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.Gray4Clear)
+        userNameView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
+        logoView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
+        passwordView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
+        loginView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.CallBackground)
+        passwordView.setMutilColorForView(nameColor: ColorName.CallBackground)
+        userNameView.setMutilColorForView(nameColor: ColorName.CallBackground)
     }
     
     // check validate login
@@ -38,41 +44,56 @@ class FBLoginViewController: FBBaseViewController {
         let password: String = (self.txtPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
         //check nhap tk/mk
         if (userName.isEmpty || password.isEmpty ) {
-        self.showToast(message: "Bạn chưa nhập tài khoản hoặc mật khẩu của mình",font: .systemFont(ofSize: 13.0))
+            self.showPopup(string:"Bạn chưa nhập tài khoản hoặc mật khẩu của mình")
             return
         }
         //check do dai pass
         if !self.isValidPassword(testPass: password) {
-        self.showToast(message: "Password không hợp lệ",font: .systemFont(ofSize: 13.0))
+            self.showPopup(string:"Mật khẩu không hợp lệ")
             return
         }
-        postDataWithBody()
+        self.checkLogin()
     }
     @IBAction func actionLoginPress(_ sender: Any) {
         self.checkValidUserName()
     }
     
-    func postDataWithBody() {
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            let userName: String = (self.txtUserName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
-            let password: String = (self.txtPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
-            let url = "http://198.119.45.100:8080/api/user/auth/login"
-            let param = ["usernameOrEmail":userName,"password":password]
-            if let jsonData = try? JSONEncoder().encode(param) {
-                var request = URLRequest(url: URL(string: url)!)
-                request.httpMethod = HTTPMethod.post.rawValue
-                request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
-                request.httpBody = jsonData
-                Alamofire.request(request).responseJSON {
-                    (response) in
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                    debugPrint(response)
-                    if response.result.isSuccess {
-                        self.userInfo = ((jsonData as? [FBLogin]) ?? [FBLogin]())
-                        }
+    func checkLogin() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        let userName: String = (self.txtUserName.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+        let password: String = (self.txtPassword.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+        BaseServices.shareInstance.login(username: userName, password: password) { (response, message, errorCode) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if errorCode == SUCCESS_CODE {
+                self.getDetailUser()
+            } else  {
+                 var errMesaage = message ?? "Lỗi api"
+                if response != nil {
+                    let jsonData = JSON(response!)
+                    let status = jsonData["status"].int
+                    let countError = jsonData["loggedInFailedTime"].int
+                    if status == 403, countError == 1 {
+                        errMesaage = "Nhập sai mật khẩu 1 lần , còn \(countError ?? 0) lần"
+                    } else if status == 403, countError == 2 {
+                        errMesaage = "Nhập sai mật khẩu 2 lần , còn \(countError ?? 0) lần"
+                    } else if status == 403, countError == 3 {
+                        errMesaage = "Nhập sai mật khẩu 3 lần , còn \(countError ?? 0) lần"
+                    } else if status == 403, countError ?? 0 >= 4 {
+                        errMesaage = "Nhập sai mật khẩu quá 3 lần vui lòng liên hệ admin để mở khoá"
                     }
                 }
+                self.showToast(message: errMesaage,font: .systemFont(ofSize: 13.0))
             }
         }
+    }
+    
+    func getDetailUser() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        BaseServices.shareInstance.detailUser { (response, message, errorCode) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            self.goListCard()
+        }
+    }
+}
 
 

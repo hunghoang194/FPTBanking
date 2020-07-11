@@ -42,8 +42,8 @@ class BaseServices:NSObject{
             if response.result.isSuccess && response.data != nil {
                 do {
                     let resJson = try JSON.init(data: response.data!)
-                   
-                        block(resJson, resJson["message"].string, resJson[KEY.KEY_API.error].int  ?? ERROR_CODE)
+                    
+                    block(resJson, resJson["message"].string, resJson[KEY.KEY_API.error].int  ?? ERROR_CODE)
                 }
                 catch{
                     block(nil,error.localizedDescription,ERROR_CODE)
@@ -83,7 +83,7 @@ class BaseServices:NSObject{
                 do {
                     let resJson = try JSON.init(data: response.data!)
                     
-                        block(resJson, resJson["message"].string, resJson[KEY.KEY_API.error].int  ?? ERROR_CODE)
+                    block(resJson, resJson["message"].string, resJson[KEY.KEY_API.error].int  ?? ERROR_CODE)
                 }
                 catch{
                     block(nil,error.localizedDescription,ERROR_CODE)
@@ -131,29 +131,255 @@ class BaseServices:NSObject{
     }
 }
 extension BaseServices{
+    //MARK: - Get: listACC, listTrans, listCheque
+    func getListTransactions(block:@escaping CompletionBlock) {
+        var url = API.getListTransactions
+        let id = FBDataCenter.sharedInstance.userInfo?.id ?? 3
+        let idAcc = FBDataCenter.sharedInstance.account?.id ?? 3
+        url = url.replacingOccurrences(of: "{user_id}", with: "\(id)")
+        url = url.replacingOccurrences(of: "{account_id}", with: "\(idAcc)")
+        self.get(URL.init(string: url)!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                var result = [TransactionsObj]()
+                if let data = jsonData["items"].array {
+                    result = data.map {TransactionsObj(json: $0)}
+                }
+                block(result, message, ERROR_CODE)
+            } else {
+                block(nil, message,ERROR_CODE)
+            }
+        }
+    }
+    
+    func detailUser(block:@escaping CompletionBlock){
+        self.get(URL.init(string: API.detailUser)!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                FBDataCenter.sharedInstance.userInfo = FBUserProfile(json: jsonData)
+                block(nil, "Lỗi đăng nhập",ERROR_CODE)
+            } else {
+                block(nil, "Lỗi đăng nhập1",ERROR_CODE)
+            }
+        }
+    }
+    
+    func getAccount(block:@escaping CompletionBlock) {
+        let id = FBDataCenter.sharedInstance.userInfo?.id ?? 2
+        let url = API.getAccount.replacingOccurrences(of: "{id}", with: "\(id)")
+        self.get(URL.init(string: url)!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                var result = [FBListAccount]()
+                if let data = jsonData.array {
+                    result = data.map {FBListAccount(json: $0)}
+                }
+                block(result, message, ERROR_CODE)
+            } else {
+                block(nil, message,ERROR_CODE)
+            }
+        }
+    }
+    
+    func getListCheque(block:@escaping CompletionBlock) {
+        var url = API.listCheque
+        let id = FBDataCenter.sharedInstance.userInfo?.id ?? 1
+        let idAcc = FBDataCenter.sharedInstance.account?.id ?? 1
+        url = url.replacingOccurrences(of: "{user_id}", with: "\(id)")
+        url = url.replacingOccurrences(of: "{account_id}", with: "\(idAcc)")
+        self.get(URL.init(string: url)!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                var result = [FBListsCheque]()
+                if let data = jsonData.array {
+                    result = data.map {FBListsCheque(json: $0)}
+                }
+                block(result, message, ERROR_CODE)
+            } else {
+                block(nil, message,ERROR_CODE)
+            }
+        }
+    }
+    func getCanceledCheque(chequeId:Int,block:@escaping CompletionBlock) {
+        var url = API.canceledCheque
+        let id = FBDataCenter.sharedInstance.userInfo?.id ?? 3
+        let idAcc = FBDataCenter.sharedInstance.account?.id ?? 3
+        url = url.replacingOccurrences(of: "{user_id}", with: "\(id)")
+        url = url.replacingOccurrences(of: "{account_id}", with: "\(idAcc)")
+        url = url.replacingOccurrences(of: "{cheque_id}", with: "\(chequeId)")
+        self.get(URL.init(string: url)!,parameter:  nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                var result = [FBListsCheque]()
+                if let data = jsonData.array {
+                    result = data.map {FBListsCheque(json: $0)}
+                }
+                block(result, message, ERROR_CODE)
+            } else {
+                block(nil, message,ERROR_CODE)
+            }
+        }
+    }
+    
+    //MARK: - Post: tranfer, login, verifyOtp, find account
     func login(username:String,password:String,block:@escaping CompletionBlock){
         let passwordEncode = WTUtilitys.encryptAES256(password) ?? ""
-        let param:[String:Any] = ["name":username,
-                                  "password":passwordEncode]
-        self.post(URL.init(string: API.login)!, parameter: param, header: nil, block: block)
+        let param:[String:Any] = ["usernameOrEmail":username,
+                                  "password":password]
+        self.postWithBody(URL.init(string: API.login)!, parameter: param, header: nil) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                if let token = jsonData["accessToken"].string {
+                    FBDataCenter.sharedInstance.token = token
+                    block(response, "Thành công",SUCCESS_CODE)
+                } else {
+                    block(response, message,ERROR_CODE)
+                }
+            } else {
+                block(response, "Lỗi đăng nhập",ERROR_CODE)
+            }
+        }
     }
+    
+    func tranfer(accountNumber: String, amount: String, fullName: String, pin: Int, des: String,block:@escaping CompletionBlock) {
+        let param = [
+            "accountNumber": accountNumber,
+            "amount": amount,
+            "fullName": fullName,
+            "pin": pin,
+            "description": des,
+            ] as [String : Any]
+        var url = API.tranfer
+        let id = FBDataCenter.sharedInstance.userInfo?.id ?? 2
+        let idAcc = FBDataCenter.sharedInstance.account?.id ?? 2
+        url = url.replacingOccurrences(of: "{user_id}", with: "\(id)")
+        url = url.replacingOccurrences(of: "{account_id}", with: "\(idAcc)")
+        self.postWithBody(URL.init(string: url)!, parameter: param, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                let code = jsonData["status"] == 200 ? SUCCESS_CODE : errorCode
+                block(jsonData["message"].string, "Thành công",code)
+            } else {
+                block(response, "Lỗi đăng nhập",ERROR_CODE)
+            }
+        }
+    }
+    func tranferCard(cardNumber: String, amount: String, fullName: String, pin: Int, des: String,block:@escaping CompletionBlock) {
+        let param = [
+            "cardNumber": cardNumber,
+            "amount": amount,
+            "fullName": fullName,
+            "pin": pin,
+            "description": des,
+            ] as [String : Any]
+        var url = API.tranferCard
+        let id = FBDataCenter.sharedInstance.userInfo?.id ?? 2
+        let idAcc = FBDataCenter.sharedInstance.account?.id ?? 2
+        url = url.replacingOccurrences(of: "{user_id}", with: "\(id)")
+        url = url.replacingOccurrences(of: "{account_id}", with: "\(idAcc)")
+        self.postWithBody(URL.init(string: url)!, parameter: param, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                let code = jsonData["status"] == 200 ? SUCCESS_CODE : errorCode
+                block(jsonData["message"].string, "Thành công",code)
+            } else {
+                block(response, "Lỗi đăng nhập",ERROR_CODE)
+            }
+        }
+    }
+    func addCheque(recieverFullname: String, recieverIdCardNumber: String, transactionAmount: String,block:@escaping CompletionBlock) {
+        let param:[String : Any] = [
+            "recieverFullname": recieverFullname,
+            "recieverIdCardNumber": recieverIdCardNumber,
+            "transactionAmount": transactionAmount]
+        var url = API.addCheque
+        let id = FBDataCenter.sharedInstance.userInfo?.id ?? 2
+        let idAcc = FBDataCenter.sharedInstance.account?.id ?? 2
+        url = url.replacingOccurrences(of: "{user_id}", with: "\(id)")
+        url = url.replacingOccurrences(of: "{account_id}", with: "\(idAcc)")
+        self.postWithBody(URL.init(string: url)!, parameter: param, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                let code = jsonData["status"] == 200 ? SUCCESS_CODE : errorCode
+                block(jsonData["message"].string, "Thành công",code)
+            } else {
+                block(response, "Lỗi đăng nhập",ERROR_CODE)
+            }
+        }
+    }
+    func changePassword(password: String, passwordConfirm: String,block:@escaping CompletionBlock) {
+        let param:[String : Any] = [
+            "password": password,
+            "passwordConfirm": passwordConfirm]
+        var url = API.changePassword
+        let id = FBDataCenter.sharedInstance.userInfo?.id ?? 2
+        let idAcc = FBDataCenter.sharedInstance.account?.id ?? 2
+        url = url.replacingOccurrences(of: "{user_id}", with: "\(id)")
+        url = url.replacingOccurrences(of: "{account_id}", with: "\(idAcc)")
+        self.postWithBody(URL.init(string: url)!, parameter: param, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                let code = jsonData["status"] == 200 ? SUCCESS_CODE : errorCode
+                block(jsonData["message"].string, "Thành công",code)
+            } else {
+                block(response, "Lỗi đăng nhập",ERROR_CODE)
+            }
+        }
+    }
+    
+    func verifyOtpTranfer(idTranfer: String, otp: String ,block:@escaping CompletionBlock)  {
+        let param = [
+            "transactionQueueId": idTranfer,
+            "otpCode": otp
+            ] as [String : Any]
+        var url = API.tranferVerify
+        self.postWithBody(URL.init(string: url)!, parameter: param, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                block(jsonData["message"].string, "Thành công",errorCode)
+            } else {
+                block(response, "Lỗi đăng nhập",ERROR_CODE)
+            }
+        }
+    }
+    
+    func findAccount(term: String, type: String ,block:@escaping CompletionBlock)  {
+        let param = [
+            "term": term,
+            "type": type
+            ] as [String : Any]
+        var url = API.findAccount
+        self.postWithBody(URL.init(string: url)!, parameter: param, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                if let fullName = jsonData["fullname"].string {
+                    FBDataCenter.sharedInstance.fullName = fullName
+                    block(response, "Thành công",SUCCESS_CODE)
+                } else {
+                    block(response, message,ERROR_CODE)
+                }
+            } else {
+                block(response, "Lỗi đăng nhập",ERROR_CODE)
+            }        }
+    }
+    
 }
 
 class FBHeader {
     class func headerTokenForUpload()-> HTTPHeaders{
-        return ["Authorization":FBDataCenter.sharedInstance.token,
-                "Content-type": "multipart/form-data"]
+        return ["Authorization":"Bearer \(FBDataCenter.sharedInstance.token)",
+            "Content-type": "multipart/form-data"]
     }
     class func headerTokenTitle()-> HTTPHeaders{
-        return ["Authorization":FBDataCenter.sharedInstance.token,
-                "Content-Type":"application/x-www-form-urlencoded"]
+        return ["Authorization":"Bearer \(FBDataCenter.sharedInstance.token)",
+            "Content-Type":"application/x-www-form-urlencoded"]
     }
     class  func headerToken() -> HTTPHeaders{
-        return ["Authorization":FBDataCenter.sharedInstance.token]
+        return ["Authorization":"Bearer \(FBDataCenter.sharedInstance.token)"]
     }
     class func headerTokenJson() -> HTTPHeaders {
-        return ["Authorization": FBDataCenter.sharedInstance.token,
-                "Content-type": "application/json"]
+        return ["Authorization": "Bearer \(FBDataCenter.sharedInstance.token)",
+            "Content-type": "application/json"]
     }
     class func  headerForLogin() -> HTTPHeaders  {
         return [
@@ -164,13 +390,38 @@ class FBHeader {
 }
 
 struct API {
-    static let baseUrl = "your base url"
+    static let baseUrl = "http://192.168.1.76:8080/api/"
     struct PATH {
-        static let login = "auth/login"
+        static let login = "user/auth/login"
         static let logout = "auth/logout"
+        static let detailUser = "users/current"
+        static let getAccount = "users/{id}/accounts"
+        static let findAccount = "users/find"
+        static let getListTransactions = "users/{user_id}/accounts/{account_id}/transactions"
+        static let transfer = "users/{user_id}/accounts/{account_id}/transferInternal/accountNumber"
+        static let transferCard = "users/{user_id}/accounts/{account_id}/transferInternal/cardNumber"
+        static let tranferVerify = "transfer/confirm"
+        static let listCheque = "users/{user_id}/accounts/{account_id}/cheques"
+        static let canceledCheque = "users/{user_id}/accounts/{account_id}/cheques/{cheque_id}/cancel"
+        static let addCheque = "users/{user_id}/accounts/{account_id}/cheques"
+        static let changePassword = "users/current/change-password"
+        static let notifications = "users/current/notifications/totalUnread"
     }
     static let login = "\(baseUrl)\(PATH.login)"
     static let logout = "\(baseUrl)\(PATH.logout)"
+    static let detailUser = "\(baseUrl)\(PATH.detailUser)"
+    static let getAccount = "\(baseUrl)\(PATH.getAccount)"
+    static let findAccount = "\(baseUrl)\(PATH.findAccount)"
+    static let tranfer = "\(baseUrl)\(PATH.transfer)"
+    static let tranferCard = "\(baseUrl)\(PATH.transferCard)"
+    static let tranferVerify = "\(baseUrl)\(PATH.tranferVerify)"
+    static let getListTransactions = "\(baseUrl)\(PATH.getListTransactions)"
+    static let listCheque = "\(baseUrl)\(PATH.listCheque)"
+    static let canceledCheque = "\(baseUrl)\(PATH.canceledCheque)"
+    static let addCheque = "\(baseUrl)\(PATH.addCheque)"
+    static let changePassword = "\(baseUrl)\(PATH.changePassword)"
+    static let notifications = "\(baseUrl)\(PATH.notifications)"
+    
 }
 struct KEY {
     struct KEY_API {

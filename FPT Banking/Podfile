@@ -11,9 +11,6 @@ target 'FPT Banking' do
     pod 'SwiftyJSON'
     pod 'SDWebImage'
     pod 'RNCryptor'
-    pod 'SideMenu'
-    pod 'ObjectMapper'
-    pod 'AlamofireObjectMapper'
   # Pods for FPT Banking
 	
   target 'FPT BankingTests' do

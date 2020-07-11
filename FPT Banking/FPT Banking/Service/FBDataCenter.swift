@@ -10,7 +10,9 @@ import UIKit
 
 class FBDataCenter: NSObject {
     var token:String = "accessToken"
-    var userInfo:FBLogin?
+    var fullName:String = "fullname"
+    var userInfo:FBUserProfile?
+    var account:FBListAccount?
     class var sharedInstance :FBDataCenter {
         struct Singleton {
             static let instance = FBDataCenter.init()

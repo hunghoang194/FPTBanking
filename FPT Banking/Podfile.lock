@@ -1,52 +1,38 @@
 PODS:
   - Alamofire (4.9.0)
-  - AlamofireObjectMapper (5.2.1):
-    - Alamofire (~> 4.7)
-    - ObjectMapper (~> 3.4)
   - MBProgressHUD (1.2.0)
-  - ObjectMapper (3.5.2)
   - RNCryptor (5.1.0)
   - SDWebImage (5.8.0):
     - SDWebImage/Core (= 5.8.0)
   - SDWebImage/Core (5.8.0)
-  - SideMenu (6.4.8)
   - SwiftyJSON (5.0.0)
   - Toast-Swift (5.0.1)
 
 DEPENDENCIES:
   - Alamofire (~> 4.2)
-  - AlamofireObjectMapper
   - MBProgressHUD
-  - ObjectMapper
   - RNCryptor
   - SDWebImage
-  - SideMenu
   - SwiftyJSON
   - Toast-Swift
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - AlamofireObjectMapper
     - MBProgressHUD
-    - ObjectMapper
     - RNCryptor
     - SDWebImage
-    - SideMenu
     - SwiftyJSON
     - Toast-Swift
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
-  AlamofireObjectMapper: 1989f690e982b71921b9253f53a4f33a9bc00d88
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
-  ObjectMapper: b53ae947d370bf89423e86be7d4e2d2b2a8d3f40
   RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
   SDWebImage: 84000f962cbfa70c07f19d2234cbfcf5d779b5dc
-  SideMenu: 4a891be552d30bb6fa87ad404d62e485f8450c34
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   Toast-Swift: 9b6a70f28b3bf0b96c40d46c0c4b9d6639846711
 
-PODFILE CHECKSUM: ad9d70feaa477c3e30a7065f4e5074f346b76e2c
+PODFILE CHECKSUM: 293df225b4250316e8b85ae543023eb3fbeb8041
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.8.3

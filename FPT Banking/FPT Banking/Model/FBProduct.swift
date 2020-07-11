@@ -25,4 +25,5 @@ class FBProductObj: NSObject {
     var id: Int?
     var numberCard: String?
     var timeTest: String?
+    var image: UIImage?
 }
