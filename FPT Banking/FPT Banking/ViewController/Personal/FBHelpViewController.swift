@@ -28,10 +28,10 @@ class FBHelpViewController: FBBaseViewController, MFMailComposeViewControllerDel
     }
     // MARK: - Support method
     func makeAPhoneCall()  {
-        if let phoneCallURL:URL = URL(string: "tel:\(0936230865)") {
+        if let phoneCallURL:URL = URL(string: "tel:\(0963558935)") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
-                let alertController = UIAlertController(title: "Gọi tới dịch vụ CSKH", message: "Bạn muốn gọi tới số \n\(0936230865) không?", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Gọi tới dịch vụ CSKH", message: "Bạn muốn gọi tới số \n\(0963558935) không?", preferredStyle: .alert)
                 let yesPressed = UIAlertAction(title: "Gọi ngay", style: .default, handler: { (action) in
                     application.openURL(phoneCallURL)
                 })

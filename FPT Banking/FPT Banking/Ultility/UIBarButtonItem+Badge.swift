@@ -46,7 +46,7 @@ extension UIBarButtonItem {
         else{
             label.string = "\(number)"
         }
-        label.alignmentMode = kCAAlignmentCenter
+        label.alignmentMode = CATextLayerAlignmentMode.center
         label.fontSize = 9
         if number > 99{
             label.frame = CGRect(origin: CGPoint(x: location.x - 7, y: 3), size: CGSize(width: 20, height: 16))

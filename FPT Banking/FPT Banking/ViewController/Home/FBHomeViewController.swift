@@ -48,19 +48,23 @@ class FBHomeViewController: FBBaseViewController {
         let demoListActivity2:FBProductObj = FBProductObj()
         let demoListActivity3:FBProductObj = FBProductObj()
         let demoListActivity4:FBProductObj = FBProductObj()
+        let demoListActivity5:FBProductObj = FBProductObj()
         // collectionview
         demoListActivity1.title = "Chuyển tiền trong ngân hàng"
         demoListActivity2.title = "Chuyển tiền qua thẻ"
         demoListActivity3.title = "Danh sách Séc"
         demoListActivity4.title = "Tạo séc"
-        demoListActivity1.image = UIImage.init(named: "ic_multi_user")
-        demoListActivity2.image = UIImage.init(named: "ic_Identify_id")
-        demoListActivity3.image = UIImage.init(named: "ic_cheque")
-        demoListActivity4.image = UIImage.init(named: "ic_addimage")
+        demoListActivity5.title = "Hồ sơ vay"
+        demoListActivity1.image = UIImage.init(named: "ic_send3")
+        demoListActivity2.image = UIImage.init(named: "ic_send3")
+        demoListActivity3.image = UIImage.init(named: "ic_listCV")
+        demoListActivity4.image = UIImage.init(named: "ic_add2")
+        demoListActivity5.image = UIImage.init(named: "ic_listLoanProfile")
         self.listActivity.append(demoListActivity1)
         self.listActivity.append(demoListActivity2)
         self.listActivity.append(demoListActivity3)
         self.listActivity.append(demoListActivity4)
+        self.listActivity.append(demoListActivity5)
         self.tbTransacsion?.reloadData()
         self.clActivity?.reloadData()
     }

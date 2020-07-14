@@ -14,16 +14,24 @@ class FBActivityViewController: FBBaseViewController {
     @IBOutlet weak var sendToCardView: UIView!
     @IBOutlet weak var listChequeView: UIView!
     @IBOutlet weak var addChequeView: UIView!
+    @IBOutlet weak var listLoanProfileView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isBackgroundGray = true
     }
     override func initUI() {
-        sendInBankView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
-        sendToCardView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
-        listChequeView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
-        addChequeView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
+        sendInBankView.layer.cornerRadius = 10
+        sendInBankView.layer.masksToBounds = true
+        listChequeView.layer.cornerRadius = 10
+        listChequeView.layer.masksToBounds = true
+        sendToCardView.layer.cornerRadius = 10
+        sendToCardView.layer.masksToBounds = true
+        addChequeView.layer.cornerRadius = 10
+        addChequeView.layer.masksToBounds = true
+        listLoanProfileView.layer.cornerRadius = 10
+        listLoanProfileView.layer.masksToBounds = true
+        listLoanProfileView.setMutilColorForView(nameColor:ColorName.CallBackground)
         sendInBankView.setMutilColorForView(nameColor:ColorName.CallBackground)
         sendToCardView.setMutilColorForView(nameColor:ColorName.CallBackground)
         listChequeView.setMutilColorForView(nameColor:ColorName.CallBackground)
@@ -40,6 +48,8 @@ class FBActivityViewController: FBBaseViewController {
     }
     @IBAction func addCheque(_ sender: Any) {
         self.goAddCheque()
+    }
+    @IBAction func loanProfile(_ sender: Any) {
     }
     
 }

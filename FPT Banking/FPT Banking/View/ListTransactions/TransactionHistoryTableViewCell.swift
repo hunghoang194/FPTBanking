@@ -34,15 +34,14 @@ class TransactionHistoryTableViewCell: UITableViewCell {
     func setupDataTransacsion(obj:TransactionsObj?,index: IndexPath) {
         lbDate.text = tail(s: obj?.createdAt! ?? "")
         lbContent.text = obj?.description
-        lbAmount.text = "\(obj?.amount ?? 0)"
         lbTypeSend.text = obj?.transactionType.transactionType
         if obj?.amount ?? 0 >= 0 {
             lbAmount.textColor = .green
-            lbDate.textColor = .green
+            lbAmount.text = "+\(obj?.amount ?? 0)"
             lbVND.textColor = .green
         } else if obj?.amount ?? 0 < 0 {
             lbAmount.textColor = .red
-            lbDate.textColor = .red
+            lbAmount.text = "-\(obj?.amount ?? 0)"
             lbVND.textColor = .red
         }
     }

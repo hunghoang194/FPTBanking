@@ -25,10 +25,14 @@ class FBAddChequeViewController: FBBaseViewController {
         self.isBackgroundGray = true
     }
     override func viewDidLayoutSubviews() {
-        userNameView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
-        cardNumberView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
-        addChequeView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
-        moneyView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
+        moneyView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 0.5,isCircle: true)
+        userNameView.layer.cornerRadius = 10
+        userNameView.layer.masksToBounds = true
+        cardNumberView.layer.cornerRadius = 10
+        cardNumberView.layer.masksToBounds = true
+        moneyView.layer.cornerRadius = 10
+        moneyView.layer.masksToBounds = true
+        addChequeView.setMutilColorForView(nameColor:ColorName.CallBackground)
         moneyView.setMutilColorForView(nameColor:ColorName.CallBackground)
         userNameView.setMutilColorForView(nameColor:ColorName.CallBackground)
         cardNumberView.setMutilColorForView(nameColor:ColorName.CallBackground)

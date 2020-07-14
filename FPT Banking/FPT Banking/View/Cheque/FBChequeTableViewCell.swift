@@ -12,6 +12,7 @@ protocol ChequeTableViewCellDelegate {
 }
 class FBChequeTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var lbWithdrawAt: UILabel!
     @IBOutlet weak var btnStatus: UIButton!
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var lbMoney: UILabel!
@@ -67,5 +68,6 @@ class FBChequeTableViewCell: UITableViewCell {
     func tail(s: String) -> String {
         return String(s.prefix(10))
     }
+    @IBOutlet weak var editChequePRess: NSLayoutConstraint!
     
 }
