@@ -390,7 +390,7 @@ class FBHeader {
 }
 
 struct API {
-    static let baseUrl = "http://192.168.1.76:8080/api/"
+    static let baseUrl = "http://10.22.184.231:8080/api/"
     struct PATH {
         static let login = "user/auth/login"
         static let logout = "auth/logout"
