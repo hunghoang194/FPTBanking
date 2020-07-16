@@ -9,7 +9,29 @@
 import Foundation
 import SwiftyJSON
 
-public class FBListsCheque: NSObject {
+public class FBListsCheque : NSObject {
+    var withdrawEmployeeFullName: String?
+    var withdrawAt: String?
+    var cheque: ListsChequeObj?
+    // MARK: - Declaration for string constants to be used to decode and also serialize.
+    private let FBWithdrawEmployeeFullName: String = "withdrawEmployeeFullName"
+    private let FBWithdrawAt: String = "withdrawAt"
+    // MARK: SwiftyJSON Initalizers
+    /**
+     Initates the instance based on the object
+     - parameter object: The object of either Dictionary or Array kind that was passed.
+     - returns: An initalized instance of the class.
+     */
+    convenience public init(object: Any) {
+        self.init(json: JSON(object))
+    }
+    public init(json: JSON) {
+        withdrawEmployeeFullName = json[FBWithdrawEmployeeFullName].string
+        withdrawAt = json[FBWithdrawAt].string
+        cheque = ListsChequeObj.init(json: json["cheque"])
+    }
+}
+final class ListsChequeObj: NSObject {
     // MARK: - Properties
     var id: Int?
     var recieverFullname: String?

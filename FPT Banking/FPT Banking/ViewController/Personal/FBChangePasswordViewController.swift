@@ -22,9 +22,9 @@ class FBChangePasswordViewController: FBBaseViewController {
     @IBOutlet weak var btnChangePass: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+            self.isBackgroundGray = true
     }
     override func initUI() {
-        self.isBackgroundGray = true
         txtCurrentPass.isSecureTextEntry = true
         txtConfirmPass.isSecureTextEntry = true
         txtNewPass.isSecureTextEntry = true

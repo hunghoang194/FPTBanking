@@ -132,6 +132,7 @@ class BaseServices:NSObject{
 }
 extension BaseServices{
     //MARK: - Get: listACC, listTrans, listCheque
+    // danh sách giao dịch
     func getListTransactions(block:@escaping CompletionBlock) {
         var url = API.getListTransactions
         let id = FBDataCenter.sharedInstance.userInfo?.id ?? 3
@@ -151,7 +152,7 @@ extension BaseServices{
             }
         }
     }
-    
+    // thông tin tài khoản
     func detailUser(block:@escaping CompletionBlock){
         self.get(URL.init(string: API.detailUser)!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
             if response != nil {
@@ -163,7 +164,7 @@ extension BaseServices{
             }
         }
     }
-    
+    // thông tin thẻ
     func getAccount(block:@escaping CompletionBlock) {
         let id = FBDataCenter.sharedInstance.userInfo?.id ?? 2
         let url = API.getAccount.replacingOccurrences(of: "{id}", with: "\(id)")
@@ -180,7 +181,7 @@ extension BaseServices{
             }
         }
     }
-    
+    // lấy list séc
     func getListCheque(block:@escaping CompletionBlock) {
         var url = API.listCheque
         let id = FBDataCenter.sharedInstance.userInfo?.id ?? 1
@@ -200,19 +201,64 @@ extension BaseServices{
             }
         }
     }
-    func getCanceledCheque(chequeId:Int,block:@escaping CompletionBlock) {
-        var url = API.canceledCheque
-        let id = FBDataCenter.sharedInstance.userInfo?.id ?? 3
-        let idAcc = FBDataCenter.sharedInstance.account?.id ?? 3
-        url = url.replacingOccurrences(of: "{user_id}", with: "\(id)")
-        url = url.replacingOccurrences(of: "{account_id}", with: "\(idAcc)")
-        url = url.replacingOccurrences(of: "{cheque_id}", with: "\(chequeId)")
-        self.get(URL.init(string: url)!,parameter:  nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+    
+    // lấy số notifications chưa đọc
+    func getListNoti(block:@escaping CompletionBlock) {
+        let url = API.notifications
+        self.get(URL.init(string: url )!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
             if response != nil {
                 let jsonData = JSON(response!)
-                var result = [FBListsCheque]()
+                var result = [FBNotifications]()
                 if let data = jsonData.array {
-                    result = data.map {FBListsCheque(json: $0)}
+                    result = data.map {FBNotifications(json: $0)}
+                }
+                block(result, message, ERROR_CODE)
+            } else {
+                block(nil, message,ERROR_CODE)
+            }
+        }
+    }
+    // lấy nội dung notifications
+    func getCurrentNoti(block:@escaping CompletionBlock) {
+        let url = API.currentNoti
+        self.get(URL.init(string: url )!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                var result = [CurrentNotiObj]()
+                if let data = jsonData["items"].array {
+                    result = data.map {CurrentNotiObj(json: $0)}
+                }
+                block(result, message, ERROR_CODE)
+            } else {
+                block(nil, message,ERROR_CODE)
+            }
+        }
+    }
+    // lấy số tin nhắn chưa đọc
+    func unreadMessage(block:@escaping CompletionBlock) {
+        let url = API.unreadMessage
+        self.get(URL.init(string: url )!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                var result = [FBNotifications]()
+                if let data = jsonData.array {
+                    result = data.map {FBNotifications(json: $0)}
+                }
+                block(result, message, ERROR_CODE)
+            } else {
+                block(nil, message,ERROR_CODE)
+            }
+        }
+    }
+    // lấy nội dung ho so vay
+    func getLoanProfiles(block:@escaping CompletionBlock) {
+        let url = API.loanProfiles
+        self.get(URL.init(string: url )!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                var result = [FBLoanprofiles]()
+                if let data = jsonData.array {
+                    result = data.map {FBLoanprofiles(json: $0)}
                 }
                 block(result, message, ERROR_CODE)
             } else {
@@ -222,6 +268,7 @@ extension BaseServices{
     }
     
     //MARK: - Post: tranfer, login, verifyOtp, find account
+    // đăng nhập
     func login(username:String,password:String,block:@escaping CompletionBlock){
         let passwordEncode = WTUtilitys.encryptAES256(password) ?? ""
         let param:[String:Any] = ["usernameOrEmail":username,
@@ -240,7 +287,7 @@ extension BaseServices{
             }
         }
     }
-    
+    // chuyển tiền qua stk
     func tranfer(accountNumber: String, amount: String, fullName: String, pin: Int, des: String,block:@escaping CompletionBlock) {
         let param = [
             "accountNumber": accountNumber,
@@ -264,6 +311,7 @@ extension BaseServices{
             }
         }
     }
+    // chuyển tiền qua thẻ
     func tranferCard(cardNumber: String, amount: String, fullName: String, pin: Int, des: String,block:@escaping CompletionBlock) {
         let param = [
             "cardNumber": cardNumber,
@@ -287,6 +335,7 @@ extension BaseServices{
             }
         }
     }
+    // thêm séc
     func addCheque(recieverFullname: String, recieverIdCardNumber: String, transactionAmount: String,block:@escaping CompletionBlock) {
         let param:[String : Any] = [
             "recieverFullname": recieverFullname,
@@ -307,6 +356,25 @@ extension BaseServices{
             }
         }
     }
+    // sửa séc
+    func editCheque(id: String,recieverFullname: String, recieverIdCardNumber: String, transactionAmount: String,block:@escaping CompletionBlock) {
+        let param:[String : Any] = [
+            "chequeId" :id,
+            "recieverFullname": recieverFullname,
+            "recieverIdCardNumber": recieverIdCardNumber,
+            "transactionAmount": transactionAmount]
+        let url = API.editCheque
+        self.postWithBody(URL.init(string: url)!, parameter: param, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                let code = jsonData["status"] == 200 ? SUCCESS_CODE : errorCode
+                block(jsonData["message"].string, "Thành công",code)
+            } else {
+                block(response, "Lỗi đăng nhập",ERROR_CODE)
+            }
+        }
+    }
+    // thay pass
     func changePassword(password: String, passwordConfirm: String,block:@escaping CompletionBlock) {
         let param:[String : Any] = [
             "password": password,
@@ -326,7 +394,7 @@ extension BaseServices{
             }
         }
     }
-    
+    // xác thực otp
     func verifyOtpTranfer(idTranfer: String, otp: String ,block:@escaping CompletionBlock)  {
         let param = [
             "transactionQueueId": idTranfer,
@@ -342,7 +410,7 @@ extension BaseServices{
             }
         }
     }
-    
+    // tìm kiếm
     func findAccount(term: String, type: String ,block:@escaping CompletionBlock)  {
         let param = [
             "term": term,
@@ -390,7 +458,7 @@ class FBHeader {
 }
 
 struct API {
-    static let baseUrl = "http://10.22.184.231:8080/api/"
+    static let baseUrl = "http://198.119.45.100:8080/api/"
     struct PATH {
         static let login = "user/auth/login"
         static let logout = "auth/logout"
@@ -402,10 +470,14 @@ struct API {
         static let transferCard = "users/{user_id}/accounts/{account_id}/transferInternal/cardNumber"
         static let tranferVerify = "transfer/confirm"
         static let listCheque = "users/{user_id}/accounts/{account_id}/cheques"
-        static let canceledCheque = "users/{user_id}/accounts/{account_id}/cheques/{cheque_id}/cancel"
+        static let editCheque = "users/current/accounts/cheques/edit"
         static let addCheque = "users/{user_id}/accounts/{account_id}/cheques"
         static let changePassword = "users/current/change-password"
         static let notifications = "users/current/notifications/totalUnread"
+        static let unreadMessage = "users/current/conversations/total-unread"
+        static let curentNoti = "users/current/notifications"
+        static let loanProfiles = "users/current/loanProfiles"
+        
     }
     static let login = "\(baseUrl)\(PATH.login)"
     static let logout = "\(baseUrl)\(PATH.logout)"
@@ -417,10 +489,13 @@ struct API {
     static let tranferVerify = "\(baseUrl)\(PATH.tranferVerify)"
     static let getListTransactions = "\(baseUrl)\(PATH.getListTransactions)"
     static let listCheque = "\(baseUrl)\(PATH.listCheque)"
-    static let canceledCheque = "\(baseUrl)\(PATH.canceledCheque)"
+    static let editCheque = "\(baseUrl)\(PATH.editCheque)"
     static let addCheque = "\(baseUrl)\(PATH.addCheque)"
     static let changePassword = "\(baseUrl)\(PATH.changePassword)"
     static let notifications = "\(baseUrl)\(PATH.notifications)"
+    static let unreadMessage = "\(baseUrl)\(PATH.unreadMessage)"
+    static let currentNoti = "\(baseUrl)\(PATH.curentNoti)"
+    static let loanProfiles = "\(baseUrl)\(PATH.loanProfiles)"
     
 }
 struct KEY {

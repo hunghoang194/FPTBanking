@@ -82,7 +82,7 @@ class FBLoginViewController: FBBaseViewController {
                         errMesaage = "Nhập sai mật khẩu quá 3 lần vui lòng liên hệ admin để mở khoá"
                     }
                 }
-                self.showToast(message: errMesaage,font: .systemFont(ofSize: 13.0))
+                self.showPopup(string: errMesaage)
             }
         }
     }

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FBNotificationsTableViewCell" rowHeight="96" id="KGk-i7-Jjw" customClass="FBNotificationsTableViewCell" customModule="FPT_Banking" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="386" height="75"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="386" height="75"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AzV-yH-zro">
+                        <rect key="frame" x="0.0" y="0.0" width="386" height="75"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have tranfered 40000 to account with account number is 444411112001" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6p-KH-ERw">
+                                <rect key="frame" x="5" y="5" width="376" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="MUW-pp-Ub8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Da xem" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WUq-90-5tV">
+                                <rect key="frame" x="332.5" y="53" width="48.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/12/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfY-JX-c9c">
+                                <rect key="frame" x="5" y="55" width="72.5" height="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="WUq-90-5tV" secondAttribute="trailing" constant="5" id="3X7-Is-Uwf"/>
+                            <constraint firstAttribute="trailing" secondItem="Z6p-KH-ERw" secondAttribute="trailing" constant="5" id="52D-Dg-ZYC"/>
+                            <constraint firstItem="WfY-JX-c9c" firstAttribute="top" secondItem="Z6p-KH-ERw" secondAttribute="bottom" constant="5" id="5OW-NR-n5a"/>
+                            <constraint firstItem="Z6p-KH-ERw" firstAttribute="top" secondItem="AzV-yH-zro" secondAttribute="top" constant="5" id="6qx-ac-Wd0"/>
+                            <constraint firstAttribute="bottom" secondItem="WfY-JX-c9c" secondAttribute="bottom" constant="5" id="7d4-B5-dMY"/>
+                            <constraint firstAttribute="bottom" secondItem="WUq-90-5tV" secondAttribute="bottom" constant="5" id="Gxv-LY-qBm"/>
+                            <constraint firstItem="Z6p-KH-ERw" firstAttribute="leading" secondItem="AzV-yH-zro" secondAttribute="leading" constant="5" id="HaB-id-CrK"/>
+                            <constraint firstItem="WfY-JX-c9c" firstAttribute="leading" secondItem="AzV-yH-zro" secondAttribute="leading" constant="5" id="wNd-IX-zup"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                <constraints>
+                    <constraint firstItem="AzV-yH-zro" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8ID-fC-870"/>
+                    <constraint firstAttribute="bottom" secondItem="AzV-yH-zro" secondAttribute="bottom" id="Tbi-0z-vq3"/>
+                    <constraint firstItem="AzV-yH-zro" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="vhr-OO-WGo"/>
+                    <constraint firstAttribute="trailing" secondItem="AzV-yH-zro" secondAttribute="trailing" id="y1f-az-SxX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="lbDate" destination="WfY-JX-c9c" id="JLe-ya-7Ep"/>
+                <outlet property="lbMessage" destination="Z6p-KH-ERw" id="cxw-1w-y1o"/>
+                <outlet property="lbStatus" destination="WUq-90-5tV" id="Y3l-hQ-8O4"/>
+                <outlet property="listView" destination="AzV-yH-zro" id="MLL-Vd-m01"/>
+            </connections>
+            <point key="canvasLocation" x="185.50724637681162" y="103.79464285714285"/>
+        </tableViewCell>
+    </objects>
+</document>

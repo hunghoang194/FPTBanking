@@ -30,11 +30,13 @@ class FBSendMoneyInBankViewController: FBBaseViewController {
     @IBOutlet weak var tbSendMoney: UITableView!
     var infoAccount = [FBUserProfile]()
     var obj : FBUserProfile?
+    var profileUser = [FBListAccount]()
     var idTranfer: String?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isBackgroundGray = true
         pinCodeTxt.isSecureTextEntry = true
+                checkForm()
     }
     override func initUI() {
         cardNumberSendView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.CallBackground)
@@ -44,20 +46,31 @@ class FBSendMoneyInBankViewController: FBBaseViewController {
         nameView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.CallBackground)
         btnSendMoney.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
     }
+    
     override func initData() {
         lbName.text = FBDataCenter.sharedInstance.userInfo?.fullname
         lbAccountNumber.text = FBDataCenter.sharedInstance.account?.accountNumber
-        lbAmount.text =  "\(FBDataCenter.sharedInstance.account?.amount ?? 0) "
+        lbAmount.text =  "\(FBDataCenter.sharedInstance.account?.amount?.formatnumber() ?? "") "
     }
+    
     @IBAction func checkAccount(_ sender: Any) {
-        findAccount()
+        self.validateAccount()
     }
     @IBAction func backPress(_ sender: Any) {
         backButtonPress()
     }
     
     @IBAction func sendMoneyPress(_ sender: Any) {
-        self.tranfer()
+        self.validateAccount()
+    }
+    func getDetailAccount() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        BaseServices.shareInstance.getAccount { (response, message, errorCode) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if let data = response as? [FBListAccount]{
+                self.profileUser = data
+            }
+        }
     }
     func findAccount() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
@@ -68,21 +81,31 @@ class FBSendMoneyInBankViewController: FBBaseViewController {
             if errorCode == SUCCESS_CODE {
                 self.nameTxt.text = FBDataCenter.sharedInstance.fullName
                 self.tbSendMoney?.reloadData()
-            } else  {
+            } else if errorCode != SUCCESS_CODE {
+                self.showPopup(string: "Tài khoản bạn nhập không chính xác")
             }
-            self.showToast(message: message ?? "",font: .systemFont(ofSize: 13.0))
         }
     }
-    func checkIsvalidate() {
-        if accountNumberTxt == nil, nameTxt == nil,contentTxt == nil, pinCodeTxt == nil, moneyInputTxt == nil {
+    func checkForm() {
+        if accountNumberTxt == nil {
             btnSendMoney.isEnabled = true
-            btnSendMoney.backgroundColor = .gray
-        } else {
-            btnSendMoney.isEnabled = false
-            btnSendMoney.backgroundColor = .systemRed
+            btnSendMoney.backgroundColor = UIColor.orange
         }
-        self.tbSendMoney.reloadData()
     }
+    func validateAccount() {
+         let accountNumber: String = (self.accountNumberTxt.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+         let amount: String = (self.moneyInputTxt.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines))!
+        if !isValidAccount(testAccount: accountNumber) {
+            self.showPopup(string:"Số tài khoản bạn nhập không đúng định dạng")
+            return
+        }
+        if !isValidForm(testAccount: amount){
+            self.showPopup(string:"Tài khoản không đủ số dư để thực hiện giao dịch. Quý khách vui lòng thử lại")
+            return
+        }
+        self.findAccount()
+    }
+    
     func tranfer() {
         BaseServices.shareInstance.tranfer(
             accountNumber: accountNumberTxt.text ?? "",
@@ -93,8 +116,9 @@ class FBSendMoneyInBankViewController: FBBaseViewController {
                 if errorCode == SUCCESS_CODE {
                     self.idTranfer = response as? String
                     self.otpAlert()
+                    self.getDetailAccount()
                 } else  {
-                    self.showToast(message: response as! String,font: .systemFont(ofSize: 13.0))
+                    self.showPopup(string: response as! String)
                 }
         }
     }
@@ -104,6 +128,7 @@ class FBSendMoneyInBankViewController: FBBaseViewController {
         let ok = UIAlertAction(title: "Gửi", style: .default) { (ACTION) in
             let code = alert.textFields![0].text ?? ""
             self.sendOtp(code: code)
+            self.goDetail()
         }
         alert.addTextField { (txtDes) in
             txtDes.placeholder = "Nhập OTP "
@@ -131,15 +156,12 @@ class FBSendMoneyInBankViewController: FBBaseViewController {
             if errorCode == SUCCESS_CODE {
                 self.idTranfer = response as? String
                 self.otpAlert()
-                self.goDetail()
-                if response != nil {
-                    let jsonData = JSON(response!)
-                    let status = jsonData["status"].int
-                    if status == 200 {
-                        self.goDetail()
-                    }
+            } else if response != nil {
+                let jsonData = JSON(response!)
+                let status = jsonData["status"].int
+                if status == 200 {
+                    self.goDetail()
                 }
-                
             } else  {
                 self.showToast(message: messsage ?? "",font: .systemFont(ofSize: 13.0))
             }

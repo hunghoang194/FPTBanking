@@ -23,7 +23,7 @@ class FBSuccessfulTransactionViewController: FBBaseViewController {
     var receiver: String?
     var accountsGet: String?
     var time: String?
-    
+    var amount: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +40,8 @@ class FBSuccessfulTransactionViewController: FBBaseViewController {
         btnTransactions.layer.cornerRadius = 10
         btnTransactions.layer.masksToBounds = true
         lbNameSend.text = FBDataCenter.sharedInstance.userInfo?.fullname
-        lbAmount.text = "\(FBDataCenter.sharedInstance.account?.amount ?? 0)"
+        lbAmount.text = "-\(amount ?? "")"
+        lbAmount.textColor = UIColor.red
         lbNamePull.text = receiver
         lbAccountNumberPull.text = accountsGet
         lbTime.text = time

@@ -17,6 +17,9 @@ class FBListChequeViewController: FBBaseViewController {
         super.viewDidLoad()
         self.isBackgroundGray = true
     }
+    @IBAction func editChequePress(_ sender: Any) {
+        self.editCheque()
+    }
     @IBAction func backPress(_ sender: Any) {
         self.backButtonPress()
     }
@@ -42,17 +45,17 @@ class FBListChequeViewController: FBBaseViewController {
 }
 
 
-extension FBListChequeViewController: UITableViewDelegate, UITableViewDataSource, ChequeTableViewCellDelegate {
-    func cancel(index: IndexPath) {
-        if index.row < listCheque.count {
-            let obj = listCheque[index.row]
-            MBProgressHUD.showAdded(to: self.view, animated: true)
-            BaseServices.shareInstance.getCanceledCheque(chequeId: obj.id ?? -1) { (response, message, errorCode) in
-                          MBProgressHUD.hide(for: self.view, animated: true)
-                    self.getListCheque()
-            }
-        }
-    }
+extension FBListChequeViewController: UITableViewDelegate, UITableViewDataSource{
+//    func edit(index: IndexPath) {
+//        if index.row < listCheque.count {
+//            let obj = listCheque[index.row]
+//            MBProgressHUD.showAdded(to: self.view, animated: true)
+//            BaseServices.shareInstance.editCheque(id: <#T##String#>, recieverFullname: <#T##String#>, recieverIdCardNumber: <#T##String#>, transactionAmount: <#T##String#>, block: <#T##CompletionBlock##CompletionBlock##(Any?, String?, Int) -> Void#> { (response, message, errorCode) in
+//                          MBProgressHUD.hide(for: self.view, animated: true)
+//                    self.getListCheque()
+//            }
+//        }
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listCheque.count

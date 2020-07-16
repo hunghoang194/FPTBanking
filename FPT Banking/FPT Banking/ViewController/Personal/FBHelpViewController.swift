@@ -8,23 +8,39 @@
 
 import UIKit
 import MessageUI
+import Alamofire
+import SwiftyJSON
+import MBProgressHUD
 
 class FBHelpViewController: FBBaseViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var callView: UIView!
+    var numberNoti = [FBNotifications]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isBackgroundGray = true
     }
+
     
     override func initUI() {
+//        lbNoti.text = number
         emailView.layer.cornerRadius = 5
         emailView.layer.masksToBounds = true
         callView.layer.cornerRadius = 5
         callView.layer.masksToBounds = true
         emailView.setMutilColorForView(nameColor: ColorName.CallBackground)
         callView.setMutilColorForView(nameColor: ColorName.CallBackground)
+    }
+    // MARK: - Call API
+    func numberUnread() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        BaseServices.shareInstance.unreadMessage{ (response, message, errorCode) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if let data = response as? [FBNotifications]{
+                self.numberNoti = data
+            }
+        }
     }
     // MARK: - Support method
     func makeAPhoneCall()  {

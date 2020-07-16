@@ -33,6 +33,8 @@ class FBUserDetailViewController: FBBaseViewController {
         self.isBackgroundGray = true
     }
     override func initUI() {
+        detailAvatarView.maskCircle()
+        avatarView.setMutilColorForView(nameColor: ColorName.CallBackground)
         detailAvatarView.setMutilColorForView(nameColor: ColorName.CallBackground)
         nameView.setMutilColorForView(nameColor: ColorName.CallBackground)
         dateOfBirthView.setMutilColorForView(nameColor: ColorName.CallBackground)

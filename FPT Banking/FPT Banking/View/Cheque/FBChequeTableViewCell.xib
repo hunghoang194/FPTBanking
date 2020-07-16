@@ -33,7 +33,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Séc:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q4q-Va-QkJ">
                                         <rect key="frame" x="306" y="10" width="25" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="82W-dt-eg7">
@@ -52,7 +52,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trạng thái" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V3E-IC-YWY">
                                         <rect key="frame" x="5" y="9.5" width="61" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oQP-r5-8ep">
@@ -76,7 +76,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Người nhận:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmw-4Q-xwf">
                                         <rect key="frame" x="5" y="40.5" width="73.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOANG VAN HUNG" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XOF-ZQ-alR">
@@ -95,7 +95,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số tiền:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a48-8u-DP5">
                                         <rect key="frame" x="5" y="68" width="46" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I7R-eq-07S">
@@ -120,7 +120,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Số CMND:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8hJ-rg-VbJ">
                                         <rect key="frame" x="5" y="95.5" width="63" height="18"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="001094012166" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6qW-Zu-3pz">
@@ -139,49 +139,38 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hiệu lực:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xPJ-Ze-RvH">
                                         <rect key="frame" x="5" y="124" width="53.5" height="16"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/12/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1kJ-IZ-F0d">
-                                        <rect key="frame" x="88.5" y="124" width="68" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <rect key="frame" x="88.5" y="123" width="77" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.31444682959999998" blue="0.033140696310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="đến" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XhJ-cI-rmO">
-                                        <rect key="frame" x="161.5" y="124.5" width="22" height="15"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="170.5" y="123.5" width="24.5" height="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12/12/2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ax-gM-W4W">
-                                        <rect key="frame" x="188.5" y="124" width="68" height="16"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <rect key="frame" x="200" y="123" width="77" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="0.31444682959999998" blue="0.033140696310000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9J-i4-c1v" userLabel="lineView">
-                                        <rect key="frame" x="5" y="140" width="251.5" height="0.5"/>
+                                        <rect key="frame" x="5" y="140" width="272" height="0.5"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="0.5" id="qwC-Xl-ssh"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s0s-5q-umE">
-                                        <rect key="frame" x="161" y="4" width="80" height="27"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="U0N-Xq-8d5"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Thu Hồi Séc"/>
-                                        <connections>
-                                            <action selector="cancelCheque:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="5Oh-BW-Bza"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nơi rút:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2gh-ds-Ups">
                                         <rect key="frame" x="251" y="67.5" width="48" height="17"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Đội cấn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTR-MZ-z4d">
@@ -198,14 +187,6 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="0.5" id="8L7-jr-qdz"/>
                                         </constraints>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sm3-2S-ZVu">
-                                        <rect key="frame" x="325" y="119.5" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="LH1-2h-QRg"/>
-                                            <constraint firstAttribute="height" constant="25" id="wdR-B5-gxS"/>
-                                        </constraints>
-                                        <state key="normal" image="ic_learning_ojt"/>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="0.89862478595890416" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -231,11 +212,9 @@
                                     <constraint firstItem="a48-8u-DP5" firstAttribute="leading" secondItem="pmw-4Q-xwf" secondAttribute="leading" id="TmM-B8-gcb"/>
                                     <constraint firstAttribute="trailing" secondItem="sTR-MZ-z4d" secondAttribute="trailing" constant="5" id="Tu0-dg-0HH"/>
                                     <constraint firstItem="2gh-ds-Ups" firstAttribute="centerY" secondItem="sTR-MZ-z4d" secondAttribute="centerY" id="UWQ-aG-ZlA"/>
-                                    <constraint firstItem="Sm3-2S-ZVu" firstAttribute="centerY" secondItem="xPJ-Ze-RvH" secondAttribute="centerY" id="UeP-de-BJD"/>
                                     <constraint firstItem="V3E-IC-YWY" firstAttribute="leading" secondItem="Mga-PB-oQE" secondAttribute="leading" constant="5" id="VOX-if-yhj"/>
                                     <constraint firstItem="sTR-MZ-z4d" firstAttribute="centerY" secondItem="a48-8u-DP5" secondAttribute="centerY" id="W8u-aJ-rre"/>
                                     <constraint firstItem="82W-dt-eg7" firstAttribute="top" secondItem="Mga-PB-oQE" secondAttribute="top" constant="5" id="Whg-ku-lhQ"/>
-                                    <constraint firstItem="s0s-5q-umE" firstAttribute="centerY" secondItem="oQP-r5-8ep" secondAttribute="centerY" id="Wp7-Qn-n99"/>
                                     <constraint firstItem="A1h-RO-98a" firstAttribute="leading" secondItem="8hJ-rg-VbJ" secondAttribute="leading" id="Wtz-mz-vk5"/>
                                     <constraint firstItem="roD-Lv-jFN" firstAttribute="leading" secondItem="q4q-Va-QkJ" secondAttribute="leading" id="YHJ-NC-mWm"/>
                                     <constraint firstItem="1kJ-IZ-F0d" firstAttribute="leading" secondItem="XOF-ZQ-alR" secondAttribute="leading" id="YLr-2l-tto"/>
@@ -251,7 +230,6 @@
                                     <constraint firstItem="roD-Lv-jFN" firstAttribute="top" secondItem="82W-dt-eg7" secondAttribute="bottom" id="dTp-n4-Rq1"/>
                                     <constraint firstItem="gdI-oV-3DI" firstAttribute="leading" secondItem="pmw-4Q-xwf" secondAttribute="leading" id="eFU-Fr-35T"/>
                                     <constraint firstAttribute="trailing" secondItem="82W-dt-eg7" secondAttribute="trailing" constant="5" id="faT-B6-VJo"/>
-                                    <constraint firstItem="s0s-5q-umE" firstAttribute="leading" secondItem="oQP-r5-8ep" secondAttribute="trailing" constant="10" id="fjd-On-lo5"/>
                                     <constraint firstItem="pmw-4Q-xwf" firstAttribute="leading" secondItem="V3E-IC-YWY" secondAttribute="leading" id="gBL-Ya-mO4"/>
                                     <constraint firstItem="q4q-Va-QkJ" firstAttribute="centerY" secondItem="82W-dt-eg7" secondAttribute="centerY" id="geT-hh-Dwt"/>
                                     <constraint firstItem="6qW-Zu-3pz" firstAttribute="top" secondItem="rDQ-3q-Ged" secondAttribute="bottom" constant="10" id="jEY-m7-e3P"/>
@@ -261,7 +239,6 @@
                                     <constraint firstItem="8ax-gM-W4W" firstAttribute="centerY" secondItem="xPJ-Ze-RvH" secondAttribute="centerY" id="lq6-Uc-5a4"/>
                                     <constraint firstItem="XOF-ZQ-alR" firstAttribute="centerY" secondItem="pmw-4Q-xwf" secondAttribute="centerY" id="m4B-zI-wPc"/>
                                     <constraint firstItem="XOF-ZQ-alR" firstAttribute="leading" secondItem="pmw-4Q-xwf" secondAttribute="trailing" constant="10" id="mBl-e2-myt"/>
-                                    <constraint firstAttribute="trailing" secondItem="Sm3-2S-ZVu" secondAttribute="trailing" constant="5" id="njv-DE-PI8"/>
                                     <constraint firstItem="5hI-dt-kGP" firstAttribute="centerY" secondItem="I7R-eq-07S" secondAttribute="centerY" id="nyF-gk-c3Y"/>
                                     <constraint firstItem="I7R-eq-07S" firstAttribute="centerY" secondItem="a48-8u-DP5" secondAttribute="centerY" id="qsJ-f4-Ifb"/>
                                     <constraint firstItem="V3E-IC-YWY" firstAttribute="centerY" secondItem="q4q-Va-QkJ" secondAttribute="centerY" id="rwg-Af-NCM"/>
@@ -294,9 +271,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="btnCancelCheque" destination="s0s-5q-umE" id="Mz5-vb-d7C"/>
                 <outlet property="btnStatus" destination="oQP-r5-8ep" id="afW-Q1-3mu"/>
-                <outlet property="editChequePRess" destination="UeP-de-BJD" id="fWe-fM-hWs"/>
                 <outlet property="lbDateExpire" destination="8ax-gM-W4W" id="7LW-GH-Fn7"/>
                 <outlet property="lbDateFrom" destination="1kJ-IZ-F0d" id="NvV-fo-YyI"/>
                 <outlet property="lbId" destination="82W-dt-eg7" id="Q0t-y5-HBD"/>
@@ -310,6 +285,5 @@
     </objects>
     <resources>
         <image name="Icon-App-20x20" width="20" height="20"/>
-        <image name="ic_learning_ojt" width="160" height="160"/>
     </resources>
 </document>

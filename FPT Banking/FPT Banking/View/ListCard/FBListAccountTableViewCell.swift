@@ -32,7 +32,7 @@ class FBListAccountTableViewCell: UITableViewCell {
     func setupListAccount(obj:FBListAccount?, index: IndexPath) {
         lbCardNumber.text = obj?.card?.cardNumber
         lbAccountNumber.text = obj?.accountNumber
-        lbTotalMoney.text = "\(obj?.amount ?? 0)"
+        lbTotalMoney.text = "\(obj?.amount?.formatnumber() ?? "")"
         lbId.text = "\(obj?.id ?? 0)"
     }
 }

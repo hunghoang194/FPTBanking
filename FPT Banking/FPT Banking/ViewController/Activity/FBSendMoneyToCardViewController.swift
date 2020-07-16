@@ -47,7 +47,7 @@ class FBSendMoneyToCardViewController: FBBaseViewController {
     override func initData() {
         lbName.text = FBDataCenter.sharedInstance.userInfo?.fullname
         lbAccountNumber.text = FBDataCenter.sharedInstance.account?.accountNumber
-        lbAmount.text =  "\(FBDataCenter.sharedInstance.account?.amount ?? 0) "
+        lbAmount.text =  "\(FBDataCenter.sharedInstance.account?.amount?.formatnumber() ?? "") "
     }
     @IBAction func backPress(_ sender: Any) {
         backButtonPress()
@@ -96,7 +96,7 @@ class FBSendMoneyToCardViewController: FBBaseViewController {
         let ok = UIAlertAction(title: "Gửi", style: .default) { (ACTION) in
             let code = alert.textFields![0].text ?? ""
             self.sendOtp(code: code)
-            self.goDetailCard()
+//            self.goDetailCard()
         }
         alert.addTextField { (txtDes) in
             txtDes.placeholder = "Nhập OTP "
@@ -147,6 +147,7 @@ class FBSendMoneyToCardViewController: FBBaseViewController {
         let successfullyVC = self.storyboard?.instantiateViewController(withIdentifier: "FBSuccessfulTransactionViewController") as! FBSuccessfulTransactionViewController
         successfullyVC.receiver = FBDataCenter.sharedInstance.fullName
         successfullyVC.accountsGet = self.accountNumberTxt.text
+        successfullyVC.amount = self.moneyInputTxt.text
         let timestamp = DateFormatter.localizedString(from: NSDate() as Date, dateStyle: .medium, timeStyle: .short)
         successfullyVC.time = timestamp
         self.navigationController?.pushViewController(successfullyVC, animated: true)

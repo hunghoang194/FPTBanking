@@ -80,6 +80,18 @@ class FBBaseViewController: UIViewController {
     @objc public func backButtonPress() {
         self.navigationController?.popViewController(animated: true)
     }
+    @objc public func goListNoti() {
+        let listNotiVC = self.storyboard?.instantiateViewController(withIdentifier: "FBNotificationsViewController") as! FBNotificationsViewController
+        self.navigationController?.pushViewController(listNotiVC, animated: true)
+    }
+    @objc public func editCheque() {
+        let editChequeVC = self.storyboard?.instantiateViewController(withIdentifier: "FBEditChequeViewController") as! FBEditChequeViewController
+        self.navigationController?.pushViewController(editChequeVC, animated: true)
+    }
+    @objc public func goLoanProfiles() {
+        let loanProfilesVC = self.storyboard?.instantiateViewController(withIdentifier: "FBLoanProfilesViewController") as! FBLoanProfilesViewController
+        self.navigationController?.pushViewController(loanProfilesVC, animated: true)
+    }
     @objc public func goListActivity() {
         let inBankVC = self.storyboard?.instantiateViewController(withIdentifier: "FBActivityViewController") as! FBActivityViewController
         self.navigationController?.pushViewController(inBankVC, animated: true)
@@ -144,6 +156,25 @@ class FBBaseViewController: UIViewController {
             return false
         }
     }
+    @objc public func isValidAccount(testAccount:String?) -> Bool {
+        let length: Int = testAccount?.count ?? 0
+        if length == 12 {
+            return true
+        } else {
+            return false
+        }
+    }
+    @objc public func isValidForm(testAccount:String?) -> Bool {
+        let length: Int = testAccount?.count ?? 0
+        if length  <= FBDataCenter.sharedInstance.account?.amount ?? 0 {
+            return true
+        } else {
+            return false
+        }
+    }
+    @objc public func tail(s: String) -> String {
+        return String(s.prefix(10))
+    }
     // MARK: - UIGestureRecognizerDelegate
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
@@ -194,5 +225,21 @@ extension UIViewController {
 
     @objc func dismissKeyboard() {
         view.endEditing(true)
+    }
+}
+extension UIView {
+     public func maskCircle() {
+        self.contentMode = UIView.ContentMode.scaleAspectFill
+       self.layer.cornerRadius = self.frame.height / 2
+       self.layer.masksToBounds = false
+       self.clipsToBounds = true
+     }
+}
+extension Int {
+    func formatnumber() -> String {
+        let formater = NumberFormatter()
+        formater.groupingSeparator = "."
+        formater.numberStyle = .decimal
+        return formater.string(from: NSNumber(value: self))!
     }
 }

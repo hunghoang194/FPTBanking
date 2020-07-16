@@ -19,22 +19,26 @@ class FBHomeViewController: FBBaseViewController {
     @IBOutlet weak var lbName: UILabel!
     @IBOutlet weak var clActivity: UICollectionView!
     @IBOutlet weak var tbTransacsion: UITableView!
+    @IBOutlet weak var btnBadge: UIButton!
+    @IBOutlet weak var lbNumberNoti: UILabel!
+    @IBOutlet weak var numberNotiView: UIView!
     var listTransactions = [TransactionsObj]()
+    var listNoti = [FBNotifications]()
     var id: Int?
     var listActivity:[FBProductObj] = [FBProductObj]()
+    var obj:FBNotifications?
     // MARK: - View Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isBackgroundGray = true
-        avatarView.layer.cornerRadius = 5
-        avatarView.layer.masksToBounds = true
+
     }
     override func viewDidLayoutSubviews() {
-        lbAmount.text =  "\(FBDataCenter.sharedInstance.account?.amount ?? 0) "
+        lbAmount.text =  "\(FBDataCenter.sharedInstance.account?.amount?.formatnumber() ?? "") "
     }
     override func initData() {
         self.getListTransacsion()
-        lbName.text = FBDataCenter.sharedInstance.userInfo?.fullname
+        self.getListNoti()
         // cap quyen
         tbTransacsion.delegate = self
         tbTransacsion.dataSource = self
@@ -69,8 +73,13 @@ class FBHomeViewController: FBBaseViewController {
         self.clActivity?.reloadData()
     }
     override func initUI() {
-        
+        lbName.text = FBDataCenter.sharedInstance.userInfo?.fullname
+        avatarView.layer.cornerRadius = 5
+        avatarView.layer.masksToBounds = true
+        numberNotiView.maskCircle()
+        numberNotiView.setMutilColorForView(nameColor: ColorName.CallBackground)
     }
+    // MARK: - Call API
     func getListTransacsion() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         BaseServices.shareInstance.getListTransactions{ (response, message, errorCode) in
@@ -81,8 +90,38 @@ class FBHomeViewController: FBBaseViewController {
             }
         }
     }
+    func getListNoti() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        BaseServices.shareInstance.getListNoti{ (response, message, errorCode) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if let data = response as? [FBNotifications]{
+                self.listNoti = data
+            }
+        }
+    }
+    // MARK: - Support method
+    func getNumberNoti(obj:FBNotifications?) {
+        lbNumberNoti.text = obj?.message
+    }
+    func notifications() {
+        let noti = UIButton(type: .custom)
+        btnBadge.setImage(UIImage.init(named: "ic_noti"), for: .normal)
+        btnBadge.addTarget(self, action: #selector(self.viewBadge(_:)), for: .touchUpInside)
+        let notiButton = UIBarButtonItem(customView: noti)
+        if UIApplication.shared.applicationIconBadgeNumber > 0 {
+            notiButton.addBadge(number: UIApplication.shared.applicationIconBadgeNumber)
+        }
+    }
+    func formatNumber() {
+        let currencyFormatter = NumberFormatter()
+        currencyFormatter.usesGroupingSeparator = true
+        currencyFormatter.numberStyle = .currency
+        currencyFormatter.locale = Locale.current
+    }
     // MARK: - Action
-    @IBAction func gotoAccount(_ sender: Any) {
+    @IBAction func viewBadge(_ sender: Any) {
+        self.goListNoti()
+        self.lbNumberNoti.text = "0"
     }
     
 }
@@ -91,7 +130,7 @@ extension FBHomeViewController: UITableViewDelegate, UITableViewDataSource {
         return listTransactions.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 85
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TransactionHistoryTableViewCell", for: indexPath) as! TransactionHistoryTableViewCell
@@ -131,6 +170,8 @@ extension FBHomeViewController:UICollectionViewDelegate, UICollectionViewDataSou
             self.goListCheque()
         case 3:
             self.goAddCheque()
+        case 4:
+            self.goLoanProfiles()
         default:
             return
         }

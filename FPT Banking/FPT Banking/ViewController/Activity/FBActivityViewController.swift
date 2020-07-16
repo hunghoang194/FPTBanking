@@ -50,6 +50,7 @@ class FBActivityViewController: FBBaseViewController {
         self.goAddCheque()
     }
     @IBAction func loanProfile(_ sender: Any) {
+        self.goLoanProfiles()
     }
     
 }

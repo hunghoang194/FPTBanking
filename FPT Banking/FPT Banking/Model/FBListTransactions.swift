@@ -49,12 +49,16 @@ final class TransactionsObj {
     private let FBDescription: String = "description"
     private let FBCreatedAt: String = "createdAt"
     private let FBAmountAfterTransaction: String = "amountAfterTransaction"
+    private let FBFromOrToFullName: String = "fromOrToFullName"
+    private let FBFromOrToAccountNumber: String = "fromOrToAccountNumber"
     
     var id: Int?
     var amount: Int?
     var description : String?
     var createdAt: String?
     var amountAfterTransaction: Int?
+    var fromOrToFullName: String?
+    var fromOrToAccountNumber: String?
     var transactionType: TypeTransactionsObj
     
     convenience public init(object: Any) {
@@ -66,6 +70,8 @@ final class TransactionsObj {
         description = json[FBDescription].string
         createdAt = json[FBCreatedAt].string
         amountAfterTransaction = json[FBAmountAfterTransaction].int
+        fromOrToFullName = json[FBFromOrToFullName].string
+        fromOrToAccountNumber = json[FBFromOrToAccountNumber].string
         transactionType = TypeTransactionsObj.init(json: json["transactionType"])
     }
 }
