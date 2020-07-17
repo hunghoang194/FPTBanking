@@ -19,6 +19,7 @@ class FBSuccessfulTransactionViewController: FBBaseViewController {
     @IBOutlet weak var btnTransactions: UIButton!
     @IBOutlet weak var btnGoHome: UIButton!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var lbNumber: UILabel!
     
     var receiver: String?
     var accountsGet: String?
@@ -35,6 +36,9 @@ class FBSuccessfulTransactionViewController: FBBaseViewController {
     }
 
     override func initUI() {
+        let names = ["012", "323", "123", "563", "321","042", "363", "923", "513", "721"]
+        let randomName = names.randomElement()
+        lbNumber.text = randomName
         btnGoHome.layer.cornerRadius = 10
         btnGoHome.layer.masksToBounds = true
         btnTransactions.layer.cornerRadius = 10
