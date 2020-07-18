@@ -15,8 +15,9 @@ class TransactionHistoryTableViewCell: UITableViewCell {
     @IBOutlet weak var lbDate: UILabel!
     @IBOutlet weak var lbContent: UILabel!
     @IBOutlet weak var lbTypeSend: UILabel!
-    @IBOutlet weak var dayView: UIView!
     @IBOutlet weak var lbVND: UILabel!
+    @IBOutlet weak var lbFromOrToFullName: UILabel!
+    @IBOutlet weak var lbFromOrToAccountNumber: UILabel!
     var indexPath: IndexPath?
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,15 +35,21 @@ class TransactionHistoryTableViewCell: UITableViewCell {
     func setupDataTransacsion(obj:TransactionsObj?,index: IndexPath) {
         lbDate.text = tail(s: obj?.createdAt! ?? "")
         lbContent.text = obj?.description
-        lbAmount.text = "\(obj?.amount ?? 0)"
-        lbTypeSend.text = obj?.transactionType.transactionType
+        lbFromOrToFullName.text = obj?.fromOrToFullName
+        lbFromOrToAccountNumber.text = obj?.fromOrToAccountNumber
+//        lbTypeSend.text = obj?.transactionType.transactionType
+        if obj?.transactionType.transactionType == "transfer_internal" {
+            lbTypeSend.text = "Chuyển tiền"
+        } else if obj?.transactionType.transactionType == "withdraw" {
+            lbTypeSend.text = "Nạp tiền"
+        }
         if obj?.amount ?? 0 >= 0 {
             lbAmount.textColor = .green
-            lbDate.textColor = .green
+            lbAmount.text = "+\(obj?.amount?.formatnumber() ?? "")"
             lbVND.textColor = .green
         } else if obj?.amount ?? 0 < 0 {
             lbAmount.textColor = .red
-            lbDate.textColor = .red
+            lbAmount.text = "\(obj?.amount?.formatnumber() ?? "")"
             lbVND.textColor = .red
         }
     }

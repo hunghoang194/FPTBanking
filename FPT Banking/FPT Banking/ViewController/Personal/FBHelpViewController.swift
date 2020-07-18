@@ -8,17 +8,23 @@
 
 import UIKit
 import MessageUI
+import Alamofire
+import SwiftyJSON
+import MBProgressHUD
 
 class FBHelpViewController: FBBaseViewController, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var emailView: UIView!
     @IBOutlet weak var callView: UIView!
+    var numberNoti = [FBNotifications]()
     override func viewDidLoad() {
         super.viewDidLoad()
         self.isBackgroundGray = true
     }
+
     
     override func initUI() {
+//        lbNoti.text = number
         emailView.layer.cornerRadius = 5
         emailView.layer.masksToBounds = true
         callView.layer.cornerRadius = 5
@@ -26,12 +32,22 @@ class FBHelpViewController: FBBaseViewController, MFMailComposeViewControllerDel
         emailView.setMutilColorForView(nameColor: ColorName.CallBackground)
         callView.setMutilColorForView(nameColor: ColorName.CallBackground)
     }
+    // MARK: - Call API
+    func numberUnread() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        BaseServices.shareInstance.unreadMessage{ (response, message, errorCode) in
+            MBProgressHUD.hide(for: self.view, animated: true)
+            if let data = response as? [FBNotifications]{
+                self.numberNoti = data
+            }
+        }
+    }
     // MARK: - Support method
     func makeAPhoneCall()  {
-        if let phoneCallURL:URL = URL(string: "tel:\(0936230865)") {
+        if let phoneCallURL:URL = URL(string: "tel:\(0963558935)") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
-                let alertController = UIAlertController(title: "Gọi tới dịch vụ CSKH", message: "Bạn muốn gọi tới số \n\(0936230865) không?", preferredStyle: .alert)
+                let alertController = UIAlertController(title: "Gọi tới dịch vụ CSKH", message: "Bạn muốn gọi tới số \n\(0963558935) không?", preferredStyle: .alert)
                 let yesPressed = UIAlertAction(title: "Gọi ngay", style: .default, handler: { (action) in
                     application.openURL(phoneCallURL)
                 })

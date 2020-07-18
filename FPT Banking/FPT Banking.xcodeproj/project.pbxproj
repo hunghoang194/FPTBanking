@@ -8,11 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		331CB09524A5AF0700667E70 /* FBListAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 331CB09424A5AF0700667E70 /* FBListAccountViewController.swift */; };
-		3340418624A051E900A0E8C6 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3340418524A051E800A0E8C6 /* Preferences.swift */; };
 		3353C1A424A072B100033839 /* Constain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1A324A072B100033839 /* Constain.swift */; };
 		3353C1A624A0894200033839 /* FBBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1A524A0894200033839 /* FBBaseViewController.swift */; };
 		3353C1BA24A08B4000033839 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1AD24A08B3F00033839 /* Timer.swift */; };
-		3353C1BE24A08B4000033839 /* AvatarViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1B124A08B4000033839 /* AvatarViewExtension.swift */; };
 		3353C1BF24A08B4000033839 /* KPDropMenuExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1B224A08B4000033839 /* KPDropMenuExtension.swift */; };
 		3353C1C424A08D6500033839 /* ExampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C324A08D6500033839 /* ExampleModel.swift */; };
 		3353C1CB24A08EF300033839 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3353C1C724A08EF300033839 /* AvatarView.swift */; };
@@ -61,6 +59,16 @@
 		B076F3F72498E42F00412819 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B076F3F52498E42F00412819 /* LaunchScreen.storyboard */; };
 		B076F4022498E42F00412819 /* FPT_BankingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F4012498E42F00412819 /* FPT_BankingTests.swift */; };
 		B076F40D2498E42F00412819 /* FPT_BankingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076F40C2498E42F00412819 /* FPT_BankingUITests.swift */; };
+		B0A462D824BF83990087152F /* FBNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A462D724BF83990087152F /* FBNotifications.swift */; };
+		B0A462DC24C016910087152F /* FBNotificationsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A462DA24C016910087152F /* FBNotificationsTableViewCell.swift */; };
+		B0A462DD24C016910087152F /* FBNotificationsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A462DB24C016910087152F /* FBNotificationsTableViewCell.xib */; };
+		B0A462DF24C01B020087152F /* FBNotificationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A462DE24C01B020087152F /* FBNotificationsViewController.swift */; };
+		B0A462E324C03A680087152F /* FBEditChequeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A462E224C03A680087152F /* FBEditChequeViewController.swift */; };
+		B0A462E624C04BE40087152F /* FBLoanProfilesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A462E424C04BE40087152F /* FBLoanProfilesTableViewCell.swift */; };
+		B0A462E724C04BE40087152F /* FBLoanProfilesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A462E524C04BE40087152F /* FBLoanProfilesTableViewCell.xib */; };
+		B0A462E924C053B20087152F /* FBLoanProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A462E824C053B20087152F /* FBLoanProfiles.swift */; };
+		B0A462EB24C061E30087152F /* FBLoanProfilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A462EA24C061E30087152F /* FBLoanProfilesViewController.swift */; };
+		B0A549C824C14FAB00281D25 /* FBConfirmOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A549C724C14FAB00281D25 /* FBConfirmOTPViewController.swift */; };
 		B0D7125B24B1E8CA00FFE01A /* FBAddChequeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D7125A24B1E8CA00FFE01A /* FBAddChequeViewController.swift */; };
 		B0E176D324B4A55300C9121B /* FBChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E176D224B4A55300C9121B /* FBChangePasswordViewController.swift */; };
 		B0E176D524B7020B00C9121B /* UIBarButtonItem+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E176D424B7020B00C9121B /* UIBarButtonItem+Badge.swift */; };
@@ -89,11 +97,9 @@
 /* Begin PBXFileReference section */
 		12EE33B9C1C2672717FEDB12 /* Pods_FPT_Banking_FPT_BankingUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FPT_Banking_FPT_BankingUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		331CB09424A5AF0700667E70 /* FBListAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBListAccountViewController.swift; sourceTree = "<group>"; };
-		3340418524A051E800A0E8C6 /* Preferences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		3353C1A324A072B100033839 /* Constain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constain.swift; sourceTree = "<group>"; };
 		3353C1A524A0894200033839 /* FBBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBBaseViewController.swift; sourceTree = "<group>"; };
 		3353C1AD24A08B3F00033839 /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
-		3353C1B124A08B4000033839 /* AvatarViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AvatarViewExtension.swift; sourceTree = "<group>"; };
 		3353C1B224A08B4000033839 /* KPDropMenuExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KPDropMenuExtension.swift; sourceTree = "<group>"; };
 		3353C1C124A08C6200033839 /* FBProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBProduct.swift; sourceTree = "<group>"; };
 		3353C1C324A08D6500033839 /* ExampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleModel.swift; sourceTree = "<group>"; };
@@ -152,6 +158,16 @@
 		B076F4082498E42F00412819 /* FPT BankingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "FPT BankingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B076F40C2498E42F00412819 /* FPT_BankingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FPT_BankingUITests.swift; sourceTree = "<group>"; };
 		B076F40E2498E42F00412819 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B0A462D724BF83990087152F /* FBNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNotifications.swift; sourceTree = "<group>"; };
+		B0A462DA24C016910087152F /* FBNotificationsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNotificationsTableViewCell.swift; sourceTree = "<group>"; };
+		B0A462DB24C016910087152F /* FBNotificationsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBNotificationsTableViewCell.xib; sourceTree = "<group>"; };
+		B0A462DE24C01B020087152F /* FBNotificationsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBNotificationsViewController.swift; sourceTree = "<group>"; };
+		B0A462E224C03A680087152F /* FBEditChequeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBEditChequeViewController.swift; sourceTree = "<group>"; };
+		B0A462E424C04BE40087152F /* FBLoanProfilesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoanProfilesTableViewCell.swift; sourceTree = "<group>"; };
+		B0A462E524C04BE40087152F /* FBLoanProfilesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBLoanProfilesTableViewCell.xib; sourceTree = "<group>"; };
+		B0A462E824C053B20087152F /* FBLoanProfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoanProfiles.swift; sourceTree = "<group>"; };
+		B0A462EA24C061E30087152F /* FBLoanProfilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoanProfilesViewController.swift; sourceTree = "<group>"; };
+		B0A549C724C14FAB00281D25 /* FBConfirmOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBConfirmOTPViewController.swift; sourceTree = "<group>"; };
 		B0D7125A24B1E8CA00FFE01A /* FBAddChequeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAddChequeViewController.swift; sourceTree = "<group>"; };
 		B0E176D224B4A55300C9121B /* FBChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBChangePasswordViewController.swift; sourceTree = "<group>"; };
 		B0E176D424B7020B00C9121B /* UIBarButtonItem+Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Badge.swift"; sourceTree = "<group>"; };
@@ -278,6 +294,8 @@
 		33C34A6D249C5B6100CC09AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B0A549C624C14E7200281D25 /* LoanProfiles */,
+				B0A462D924C0164D0087152F /* ListNotifications */,
 				B02C31A624B181E0008B1DDA /* Cheque */,
 				B02C31A524B067DA008B1DDA /* Activitys */,
 				B02C31A424B0679D008B1DDA /* ListTransactions */,
@@ -289,10 +307,8 @@
 		33C34A6F249C5E6F00CC09AE /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				3353C1B124A08B4000033839 /* AvatarViewExtension.swift */,
 				3353C1B224A08B4000033839 /* KPDropMenuExtension.swift */,
 				3353C1AD24A08B3F00033839 /* Timer.swift */,
-				3340418524A051E800A0E8C6 /* Preferences.swift */,
 				33C34A70249C5E8100CC09AE /* UIView.swift */,
 				33C34A72249C601F00CC09AE /* ColorConstant.swift */,
 			);
@@ -303,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				33C34A6B249C5B4A00CC09AE /* Base */,
-				B02C319F24B05A1C008B1DDA /* Cheque */,
 				B02C319A24B05948008B1DDA /* ListTransactions */,
 				B03944CA24AC61880031269A /* Activity */,
 				B03944C924AC61750031269A /* Home */,
@@ -324,15 +339,10 @@
 				B03944C724AB79EC0031269A /* FBListAccount.swift */,
 				B02C31A224B05C8F008B1DDA /* FBListTransactions.swift */,
 				B02C31AB24B1B6B5008B1DDA /* FBListsCheque.swift */,
+				B0A462D724BF83990087152F /* FBNotifications.swift */,
+				B0A462E824C053B20087152F /* FBLoanProfiles.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B016B5C6249FD2FA000EBD2C /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		B02C319A24B05948008B1DDA /* ListTransactions */ = {
@@ -348,6 +358,7 @@
 			children = (
 				B02C31A024B05A3C008B1DDA /* FBListChequeViewController.swift */,
 				B0D7125A24B1E8CA00FFE01A /* FBAddChequeViewController.swift */,
+				B0A462E224C03A680087152F /* FBEditChequeViewController.swift */,
 			);
 			path = Cheque;
 			sourceTree = "<group>";
@@ -395,6 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */,
+				B0A462DE24C01B020087152F /* FBNotificationsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -402,10 +414,10 @@
 		B03944CA24AC61880031269A /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				B03944CB24AC61BC0031269A /* FBSendMoneyInBankViewController.swift */,
-				B02C319324AF85A3008B1DDA /* FBSendMoneyToCardViewController.swift */,
 				B02C319524AFA20A008B1DDA /* FBActivityViewController.swift */,
-				B02C319724B05769008B1DDA /* FBSuccessfulTransactionViewController.swift */,
+				B0A549C524C14DE700281D25 /* LoanProfiles */,
+				B02C319F24B05A1C008B1DDA /* Cheque */,
+				B0A549C424C14DA200281D25 /* SendMoney */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -438,7 +450,6 @@
 				3353C1CF24A09AB500033839 /* Service */,
 				3353C1C524A08EE900033839 /* Lib */,
 				3353C1A224A0729700033839 /* Other */,
-				B016B5C6249FD2FA000EBD2C /* Storyboard */,
 				B016B5C3249FD0FC000EBD2C /* Model */,
 				B016B5C0249FCB9C000EBD2C /* ViewController */,
 				33C34A6F249C5E6F00CC09AE /* Extension */,
@@ -469,6 +480,43 @@
 				B076F40E2498E42F00412819 /* Info.plist */,
 			);
 			path = "FPT BankingUITests";
+			sourceTree = "<group>";
+		};
+		B0A462D924C0164D0087152F /* ListNotifications */ = {
+			isa = PBXGroup;
+			children = (
+				B0A462DA24C016910087152F /* FBNotificationsTableViewCell.swift */,
+				B0A462DB24C016910087152F /* FBNotificationsTableViewCell.xib */,
+			);
+			path = ListNotifications;
+			sourceTree = "<group>";
+		};
+		B0A549C424C14DA200281D25 /* SendMoney */ = {
+			isa = PBXGroup;
+			children = (
+				B03944CB24AC61BC0031269A /* FBSendMoneyInBankViewController.swift */,
+				B02C319324AF85A3008B1DDA /* FBSendMoneyToCardViewController.swift */,
+				B02C319724B05769008B1DDA /* FBSuccessfulTransactionViewController.swift */,
+				B0A549C724C14FAB00281D25 /* FBConfirmOTPViewController.swift */,
+			);
+			path = SendMoney;
+			sourceTree = "<group>";
+		};
+		B0A549C524C14DE700281D25 /* LoanProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				B0A462EA24C061E30087152F /* FBLoanProfilesViewController.swift */,
+			);
+			path = LoanProfiles;
+			sourceTree = "<group>";
+		};
+		B0A549C624C14E7200281D25 /* LoanProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				B0A462E424C04BE40087152F /* FBLoanProfilesTableViewCell.swift */,
+				B0A462E524C04BE40087152F /* FBLoanProfilesTableViewCell.xib */,
+			);
+			path = LoanProfiles;
 			sourceTree = "<group>";
 		};
 		B0DA1394249B9D52003DBC6E /* Ultility */ = {
@@ -604,8 +652,10 @@
 				B03944C624AB6E2C0031269A /* FBListAccountTableViewCell.xib in Resources */,
 				B05F7DDC24A0E01600EEFE45 /* TransactionHistoryTableViewCell.xib in Resources */,
 				B05F7DD824A0DE6400EEFE45 /* UtilitysCollectionViewCell.xib in Resources */,
+				B0A462DD24C016910087152F /* FBNotificationsTableViewCell.xib in Resources */,
 				B076F3F42498E42F00412819 /* Assets.xcassets in Resources */,
 				B02C31AA24B1820D008B1DDA /* FBChequeTableViewCell.xib in Resources */,
+				B0A462E724C04BE40087152F /* FBLoanProfilesTableViewCell.xib in Resources */,
 				B076F3F22498E42D00412819 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -736,6 +786,7 @@
 			files = (
 				B03944CE24AE07310031269A /* FBUserDetailViewController.swift in Sources */,
 				B03944C824AB79EC0031269A /* FBListAccount.swift in Sources */,
+				B0A462DC24C016910087152F /* FBNotificationsTableViewCell.swift in Sources */,
 				B03944CC24AC61BC0031269A /* FBSendMoneyInBankViewController.swift in Sources */,
 				33C34A71249C5E8100CC09AE /* UIView.swift in Sources */,
 				331CB09524A5AF0700667E70 /* FBListAccountViewController.swift in Sources */,
@@ -744,14 +795,17 @@
 				3353C1D124A09AE000033839 /* FBKeychain.swift in Sources */,
 				B02C31A924B1820D008B1DDA /* FBChequeTableViewCell.swift in Sources */,
 				B076F3EF2498E42D00412819 /* FBLoginViewController.swift in Sources */,
+				B0A462DF24C01B020087152F /* FBNotificationsViewController.swift in Sources */,
 				3353C1BA24A08B4000033839 /* Timer.swift in Sources */,
 				B016B5C2249FCBC5000EBD2C /* FBHomeViewController.swift in Sources */,
+				B0A462E624C04BE40087152F /* FBLoanProfilesTableViewCell.swift in Sources */,
 				3353C1CB24A08EF300033839 /* AvatarView.swift in Sources */,
 				B02C31A124B05A3C008B1DDA /* FBListChequeViewController.swift in Sources */,
 				3353C1D724A09EA800033839 /* WTUltility.swift in Sources */,
 				B03944BA24AAED930031269A /* FBLogin.swift in Sources */,
 				3353C1E424A0A79C00033839 /* HDTestResultOJTViewController.swift in Sources */,
 				3353C1A424A072B100033839 /* Constain.swift in Sources */,
+				B0A462D824BF83990087152F /* FBNotifications.swift in Sources */,
 				B0E176D524B7020B00C9121B /* UIBarButtonItem+Badge.swift in Sources */,
 				B076F3ED2498E42D00412819 /* AppDelegate.swift in Sources */,
 				3353C1E524A0A79C00033839 /* HDActivityOJTViewController.swift in Sources */,
@@ -761,26 +815,28 @@
 				B03944D024AE12F00031269A /* FBQuestionViewController.swift in Sources */,
 				B016B5C5249FD10B000EBD2C /* FBUserProfile.swift in Sources */,
 				B02C319824B0576A008B1DDA /* FBSuccessfulTransactionViewController.swift in Sources */,
-				3340418624A051E900A0E8C6 /* Preferences.swift in Sources */,
+				B0A462E924C053B20087152F /* FBLoanProfiles.swift in Sources */,
 				3353C1E224A0A79C00033839 /* HDExamOJTViewController.swift in Sources */,
 				3353C1E124A0A79C00033839 /* HDContentOJTViewController.swift in Sources */,
 				B0D7125B24B1E8CA00FFE01A /* FBAddChequeViewController.swift in Sources */,
 				B03944C124AB2ABA0031269A /* FBHelpViewController.swift in Sources */,
 				B02C31A324B05C8F008B1DDA /* FBListTransactions.swift in Sources */,
 				B05F7DD724A0DE6400EEFE45 /* UtilitysCollectionViewCell.swift in Sources */,
+				B0A462EB24C061E30087152F /* FBLoanProfilesViewController.swift in Sources */,
 				3353C1E824A0AB1000033839 /* NSDate+Ultil.swift in Sources */,
 				B02C319624AFA20A008B1DDA /* FBActivityViewController.swift in Sources */,
 				B02C319E24B05980008B1DDA /* FBListTransactionsDetailViewController.swift in Sources */,
 				3353C1E024A0A79C00033839 /* HDDetailOJTViewController.swift in Sources */,
 				3353C1C424A08D6500033839 /* ExampleModel.swift in Sources */,
-				3353C1BE24A08B4000033839 /* AvatarViewExtension.swift in Sources */,
 				3353C1A624A0894200033839 /* FBBaseViewController.swift in Sources */,
 				B05F7DDB24A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift in Sources */,
 				33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */,
 				B02C31AC24B1B6B6008B1DDA /* FBListsCheque.swift in Sources */,
+				B0A549C824C14FAB00281D25 /* FBConfirmOTPViewController.swift in Sources */,
 				3385790524A2097400C18107 /* FBProduct.swift in Sources */,
 				B03944C524AB6E2C0031269A /* FBListAccountTableViewCell.swift in Sources */,
 				B03944BC24AAFC750031269A /* BaseService.swift in Sources */,
+				B0A462E324C03A680087152F /* FBEditChequeViewController.swift in Sources */,
 				B0E176D324B4A55300C9121B /* FBChangePasswordViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

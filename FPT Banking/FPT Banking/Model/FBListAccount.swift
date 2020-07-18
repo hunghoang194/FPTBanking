@@ -49,6 +49,10 @@ public class FBListAccount: NSObject {
         card = CardObj.init(json: json["card"])
         
     }
+    
+    func setAmount(amount:Int) {
+        self.amount = amount
+    }
 }
 
 

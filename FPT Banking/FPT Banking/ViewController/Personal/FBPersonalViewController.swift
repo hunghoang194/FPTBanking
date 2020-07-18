@@ -34,8 +34,8 @@ class FBPersonalViewController: FBBaseViewController {
         
         lbVersion.text = "1.0 by FPT Banking"
         avataView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.CallBackground)
-        btnLogout.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.CallBackground)
-        btnChangePass.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.CallBackground)
+        btnLogout.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
+        btnChangePass.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true)
         lbName.text = FBDataCenter.sharedInstance.userInfo?.fullname
         lbCardNumber.text = FBDataCenter.sharedInstance.account?.accountNumber
     }
