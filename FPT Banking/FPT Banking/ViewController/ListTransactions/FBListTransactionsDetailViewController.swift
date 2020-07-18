@@ -11,6 +11,7 @@ import MBProgressHUD
 import Alamofire
 
 class FBListTransactionsDetailViewController: FBBaseViewController, UITableViewDataSource, UITableViewDelegate {
+
     @IBOutlet weak var tbListTransactions: UITableView!
     var listTransactions = [TransactionsObj]()
     
@@ -36,6 +37,7 @@ class FBListTransactionsDetailViewController: FBBaseViewController, UITableViewD
             }
         }
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return listTransactions.count
     }

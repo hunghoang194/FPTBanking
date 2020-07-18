@@ -201,6 +201,26 @@ extension BaseServices{
             }
         }
     }
+    // tìm kiếm
+    func searchKey(term: String,block:@escaping CompletionBlock) {
+        var url = API.search
+        let key = ["term":term]
+        let idAcc = FBDataCenter.sharedInstance.account?.id ?? 1
+        url = url.replacingOccurrences(of: "{term}", with: "\(key)")
+        url = url.replacingOccurrences(of: "{account_id}", with: "\(idAcc)")
+        self.get(URL.init(string: url)!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
+            if response != nil {
+                let jsonData = JSON(response!)
+                var result = [TransactionsObj]()
+                if let data = jsonData["items"].array {
+                    result = data.map {TransactionsObj(json: $0)}
+                }
+                block(result, message, ERROR_CODE)
+            } else {
+                block(nil, message,ERROR_CODE)
+            }
+        }
+    }
     
     // lấy số notifications chưa đọc
     func getListNoti(block:@escaping CompletionBlock) {
@@ -208,6 +228,7 @@ extension BaseServices{
         self.get(URL.init(string: url )!, parameter: nil, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
             if response != nil {
                 let jsonData = JSON(response!)
+                FBDataCenter.sharedInstance.noti = FBNotifications(json: jsonData)
                 var result = [FBNotifications]()
                 if let data = jsonData.array {
                     result = data.map {FBNotifications(json: $0)}
@@ -404,7 +425,7 @@ extension BaseServices{
         self.postWithBody(URL.init(string: url)!, parameter: param, header: FBHeader.headerTokenJson()) { (response, message, errorCode) in
             if response != nil {
                 let jsonData = JSON(response!)
-                block(jsonData["message"].string, "Thành công",errorCode)
+                block(jsonData["status"].int, "Thành công",errorCode)
             } else {
                 block(response, "Lỗi đăng nhập",ERROR_CODE)
             }
@@ -458,7 +479,7 @@ class FBHeader {
 }
 
 struct API {
-    static let baseUrl = "http://198.119.45.100:8080/api/"
+    static let baseUrl = "http://10.22.186.244:8080/api/"
     struct PATH {
         static let login = "user/auth/login"
         static let logout = "auth/logout"
@@ -477,6 +498,7 @@ struct API {
         static let unreadMessage = "users/current/conversations/total-unread"
         static let curentNoti = "users/current/notifications"
         static let loanProfiles = "users/current/loanProfiles"
+        static let search = "users/current/accounts/{account_id}/transactions/search?term={term}"
         
     }
     static let login = "\(baseUrl)\(PATH.login)"
@@ -496,7 +518,7 @@ struct API {
     static let unreadMessage = "\(baseUrl)\(PATH.unreadMessage)"
     static let currentNoti = "\(baseUrl)\(PATH.curentNoti)"
     static let loanProfiles = "\(baseUrl)\(PATH.loanProfiles)"
-    
+    static let search = "\(baseUrl)\(PATH.search)"
 }
 struct KEY {
     struct KEY_API {

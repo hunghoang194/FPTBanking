@@ -68,6 +68,7 @@
 		B0A462E724C04BE40087152F /* FBLoanProfilesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B0A462E524C04BE40087152F /* FBLoanProfilesTableViewCell.xib */; };
 		B0A462E924C053B20087152F /* FBLoanProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A462E824C053B20087152F /* FBLoanProfiles.swift */; };
 		B0A462EB24C061E30087152F /* FBLoanProfilesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A462EA24C061E30087152F /* FBLoanProfilesViewController.swift */; };
+		B0A549C824C14FAB00281D25 /* FBConfirmOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A549C724C14FAB00281D25 /* FBConfirmOTPViewController.swift */; };
 		B0D7125B24B1E8CA00FFE01A /* FBAddChequeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D7125A24B1E8CA00FFE01A /* FBAddChequeViewController.swift */; };
 		B0E176D324B4A55300C9121B /* FBChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E176D224B4A55300C9121B /* FBChangePasswordViewController.swift */; };
 		B0E176D524B7020B00C9121B /* UIBarButtonItem+Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E176D424B7020B00C9121B /* UIBarButtonItem+Badge.swift */; };
@@ -166,6 +167,7 @@
 		B0A462E524C04BE40087152F /* FBLoanProfilesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FBLoanProfilesTableViewCell.xib; sourceTree = "<group>"; };
 		B0A462E824C053B20087152F /* FBLoanProfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoanProfiles.swift; sourceTree = "<group>"; };
 		B0A462EA24C061E30087152F /* FBLoanProfilesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBLoanProfilesViewController.swift; sourceTree = "<group>"; };
+		B0A549C724C14FAB00281D25 /* FBConfirmOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBConfirmOTPViewController.swift; sourceTree = "<group>"; };
 		B0D7125A24B1E8CA00FFE01A /* FBAddChequeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBAddChequeViewController.swift; sourceTree = "<group>"; };
 		B0E176D224B4A55300C9121B /* FBChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FBChangePasswordViewController.swift; sourceTree = "<group>"; };
 		B0E176D424B7020B00C9121B /* UIBarButtonItem+Badge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Badge.swift"; sourceTree = "<group>"; };
@@ -292,13 +294,12 @@
 		33C34A6D249C5B6100CC09AE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B0A549C624C14E7200281D25 /* LoanProfiles */,
 				B0A462D924C0164D0087152F /* ListNotifications */,
 				B02C31A624B181E0008B1DDA /* Cheque */,
 				B02C31A524B067DA008B1DDA /* Activitys */,
 				B02C31A424B0679D008B1DDA /* ListTransactions */,
 				331CB09624A5B03C00667E70 /* ListCard */,
-				B0A462E424C04BE40087152F /* FBLoanProfilesTableViewCell.swift */,
-				B0A462E524C04BE40087152F /* FBLoanProfilesTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -318,7 +319,6 @@
 			isa = PBXGroup;
 			children = (
 				33C34A6B249C5B4A00CC09AE /* Base */,
-				B02C319F24B05A1C008B1DDA /* Cheque */,
 				B02C319A24B05948008B1DDA /* ListTransactions */,
 				B03944CA24AC61880031269A /* Activity */,
 				B03944C924AC61750031269A /* Home */,
@@ -343,13 +343,6 @@
 				B0A462E824C053B20087152F /* FBLoanProfiles.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B016B5C6249FD2FA000EBD2C /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		B02C319A24B05948008B1DDA /* ListTransactions */ = {
@@ -414,7 +407,6 @@
 			children = (
 				B016B5C1249FCBC5000EBD2C /* FBHomeViewController.swift */,
 				B0A462DE24C01B020087152F /* FBNotificationsViewController.swift */,
-				B0A462EA24C061E30087152F /* FBLoanProfilesViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -422,10 +414,10 @@
 		B03944CA24AC61880031269A /* Activity */ = {
 			isa = PBXGroup;
 			children = (
-				B03944CB24AC61BC0031269A /* FBSendMoneyInBankViewController.swift */,
-				B02C319324AF85A3008B1DDA /* FBSendMoneyToCardViewController.swift */,
 				B02C319524AFA20A008B1DDA /* FBActivityViewController.swift */,
-				B02C319724B05769008B1DDA /* FBSuccessfulTransactionViewController.swift */,
+				B0A549C524C14DE700281D25 /* LoanProfiles */,
+				B02C319F24B05A1C008B1DDA /* Cheque */,
+				B0A549C424C14DA200281D25 /* SendMoney */,
 			);
 			path = Activity;
 			sourceTree = "<group>";
@@ -458,7 +450,6 @@
 				3353C1CF24A09AB500033839 /* Service */,
 				3353C1C524A08EE900033839 /* Lib */,
 				3353C1A224A0729700033839 /* Other */,
-				B016B5C6249FD2FA000EBD2C /* Storyboard */,
 				B016B5C3249FD0FC000EBD2C /* Model */,
 				B016B5C0249FCB9C000EBD2C /* ViewController */,
 				33C34A6F249C5E6F00CC09AE /* Extension */,
@@ -498,6 +489,34 @@
 				B0A462DB24C016910087152F /* FBNotificationsTableViewCell.xib */,
 			);
 			path = ListNotifications;
+			sourceTree = "<group>";
+		};
+		B0A549C424C14DA200281D25 /* SendMoney */ = {
+			isa = PBXGroup;
+			children = (
+				B03944CB24AC61BC0031269A /* FBSendMoneyInBankViewController.swift */,
+				B02C319324AF85A3008B1DDA /* FBSendMoneyToCardViewController.swift */,
+				B02C319724B05769008B1DDA /* FBSuccessfulTransactionViewController.swift */,
+				B0A549C724C14FAB00281D25 /* FBConfirmOTPViewController.swift */,
+			);
+			path = SendMoney;
+			sourceTree = "<group>";
+		};
+		B0A549C524C14DE700281D25 /* LoanProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				B0A462EA24C061E30087152F /* FBLoanProfilesViewController.swift */,
+			);
+			path = LoanProfiles;
+			sourceTree = "<group>";
+		};
+		B0A549C624C14E7200281D25 /* LoanProfiles */ = {
+			isa = PBXGroup;
+			children = (
+				B0A462E424C04BE40087152F /* FBLoanProfilesTableViewCell.swift */,
+				B0A462E524C04BE40087152F /* FBLoanProfilesTableViewCell.xib */,
+			);
+			path = LoanProfiles;
 			sourceTree = "<group>";
 		};
 		B0DA1394249B9D52003DBC6E /* Ultility */ = {
@@ -813,6 +832,7 @@
 				B05F7DDB24A0E01600EEFE45 /* TransactionHistoryTableViewCell.swift in Sources */,
 				33C34A73249C601F00CC09AE /* ColorConstant.swift in Sources */,
 				B02C31AC24B1B6B6008B1DDA /* FBListsCheque.swift in Sources */,
+				B0A549C824C14FAB00281D25 /* FBConfirmOTPViewController.swift in Sources */,
 				3385790524A2097400C18107 /* FBProduct.swift in Sources */,
 				B03944C524AB6E2C0031269A /* FBListAccountTableViewCell.swift in Sources */,
 				B03944BC24AAFC750031269A /* BaseService.swift in Sources */,

@@ -73,13 +73,13 @@ class FBLoginViewController: FBBaseViewController {
                     let status = jsonData["status"].int
                     let countError = jsonData["loggedInFailedTime"].int
                     if status == 403, countError == 1 {
-                        errMesaage = "Nhập sai mật khẩu 1 lần , còn \(countError ?? 0) lần"
+                        errMesaage = "Nhập sai mật khẩu \(countError ?? 0) lần , còn 2 lần, quá 3 lần tài khoản sẽ bị khoá"
                     } else if status == 403, countError == 2 {
-                        errMesaage = "Nhập sai mật khẩu 2 lần , còn \(countError ?? 0) lần"
+                        errMesaage = "Nhập sai mật khẩu \(countError ?? 0) lần , còn 1 lần, quá 3 lần tài khoản sẽ bị khoá"
                     } else if status == 403, countError == 3 {
-                        errMesaage = "Nhập sai mật khẩu 3 lần , còn \(countError ?? 0) lần"
+                        errMesaage = "Nhập sai mật khẩu \(countError ?? 0) lần , quá 3 lần tài khoản sẽ bị khoá"
                     } else if status == 403, countError ?? 0 >= 4 {
-                        errMesaage = "Nhập sai mật khẩu quá 3 lần vui lòng liên hệ admin để mở khoá"
+                        errMesaage = "Nhập sai mật khẩu quá 3 lần. Tài khoản của bạn đã bị khoá, vui lòng liên hệ admin để mở khoá"
                     }
                 }
                 self.showPopup(string: errMesaage)

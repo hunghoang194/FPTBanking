@@ -19,6 +19,16 @@ class FBListAccountViewController: FBBaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.methodOfReceivedNotification(notification:)), name: Notification.Name("ReloadAmountNotification"), object: nil)
+    }
+    
+    @objc func methodOfReceivedNotification(notification: Notification) {
+        getListCard()
+    }
+    
+    deinit {
+      NotificationCenter.default.removeObserver(self, name: Notification.Name("ReloadAmountNotification"), object: nil)
     }
     override func initUI() {
         avatarView.setBorder(color: UIColor(red: 189, green: 189, blue: 189, alpha: 1), width: 1,isCircle: true, mutilColorName: ColorName.CallBackground)

@@ -13,6 +13,7 @@ class FBDataCenter: NSObject {
     var fullName:String = "fullname"
     var userInfo:FBUserProfile?
     var account:FBListAccount?
+    var noti: FBNotifications?
     class var sharedInstance :FBDataCenter {
         struct Singleton {
             static let instance = FBDataCenter.init()

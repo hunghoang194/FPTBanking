@@ -16,7 +16,6 @@ class FBSuccessfulTransactionViewController: FBBaseViewController {
     @IBOutlet weak var lbAccountNumberPull: UILabel!
     @IBOutlet weak var lbTime: UILabel!
     @IBOutlet weak var lbTransactionCode: UILabel!
-    @IBOutlet weak var btnTransactions: UIButton!
     @IBOutlet weak var btnGoHome: UIButton!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var lbNumber: UILabel!
@@ -41,8 +40,6 @@ class FBSuccessfulTransactionViewController: FBBaseViewController {
         lbNumber.text = randomName
         btnGoHome.layer.cornerRadius = 10
         btnGoHome.layer.masksToBounds = true
-        btnTransactions.layer.cornerRadius = 10
-        btnTransactions.layer.masksToBounds = true
         lbNameSend.text = FBDataCenter.sharedInstance.userInfo?.fullname
         lbAmount.text = "-\(amount ?? "")"
         lbAmount.textColor = UIColor.red
@@ -50,9 +47,7 @@ class FBSuccessfulTransactionViewController: FBBaseViewController {
         lbAccountNumberPull.text = accountsGet
         lbTime.text = time
     }
-    @IBAction func transactionsPress(_ sender: Any) {
-        self.goListActivity()
-    }
+
     @IBAction func goHomePress(_ sender: Any) {
         self.goHome()
     }

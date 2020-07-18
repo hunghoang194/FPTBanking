@@ -33,8 +33,9 @@ class FBHomeViewController: FBBaseViewController {
         self.isBackgroundGray = true
 
     }
-    override func viewDidLayoutSubviews() {
-        lbAmount.text =  "\(FBDataCenter.sharedInstance.account?.amount?.formatnumber() ?? "") "
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        lbAmount.text =  "\(FBDataCenter.sharedInstance.account?.cardNumber ?? "")"
     }
     override func initData() {
         self.getListTransacsion()
@@ -74,10 +75,12 @@ class FBHomeViewController: FBBaseViewController {
     }
     override func initUI() {
         lbName.text = FBDataCenter.sharedInstance.userInfo?.fullname
+        lbNumberNoti.text = FBDataCenter.sharedInstance.noti?.message
         avatarView.layer.cornerRadius = 5
         avatarView.layer.masksToBounds = true
         numberNotiView.maskCircle()
         numberNotiView.setMutilColorForView(nameColor: ColorName.CallBackground)
+        self.getNumberNoti(obj: obj)
     }
     // MARK: - Call API
     func getListTransacsion() {
@@ -90,12 +93,23 @@ class FBHomeViewController: FBBaseViewController {
             }
         }
     }
+    private func setNotidata(data: FBNotifications) {
+        self.lbNumberNoti.text = data.message
+    }
+    
     func getListNoti() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
-        BaseServices.shareInstance.getListNoti{ (response, message, errorCode) in
-            MBProgressHUD.hide(for: self.view, animated: true)
+        BaseServices.shareInstance.getListNoti{ [weak self](response, message, errorCode) in
+            guard let strongSelf = self else {
+                return
+            }
+            strongSelf.lbNumberNoti.text = message
+            MBProgressHUD.hide(for: strongSelf.view, animated: true)
             if let data = response as? [FBNotifications]{
-                self.listNoti = data
+                strongSelf.listNoti = data
+//                if data.count > 0 {
+//                    strongSelf.setNotidata(data: data[0])
+//                }
             }
         }
     }
@@ -103,15 +117,7 @@ class FBHomeViewController: FBBaseViewController {
     func getNumberNoti(obj:FBNotifications?) {
         lbNumberNoti.text = obj?.message
     }
-    func notifications() {
-        let noti = UIButton(type: .custom)
-        btnBadge.setImage(UIImage.init(named: "ic_noti"), for: .normal)
-        btnBadge.addTarget(self, action: #selector(self.viewBadge(_:)), for: .touchUpInside)
-        let notiButton = UIBarButtonItem(customView: noti)
-        if UIApplication.shared.applicationIconBadgeNumber > 0 {
-            notiButton.addBadge(number: UIApplication.shared.applicationIconBadgeNumber)
-        }
-    }
+
     func formatNumber() {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true

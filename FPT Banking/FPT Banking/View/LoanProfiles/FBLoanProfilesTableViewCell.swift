@@ -47,7 +47,7 @@ class FBLoanProfilesTableViewCell: UITableViewCell {
         } else if obj?.status == 4 {
             lbStatus.text = "Vay thành công"
         }
-        lbAmount.text = "\(obj?.amount ?? 0)"
+        lbAmount.text = "\(obj?.amount?.formatnumber() ?? "") VNĐ"
         lbFullName.text = FBDataCenter.sharedInstance.userInfo?.fullname
         lbIdCardNumber.text = FBDataCenter.sharedInstance.userInfo?.idCardNumber
         lbTimeLoan.text = "\(obj?.loanInterestRate?.months ?? 0) tháng"
@@ -84,6 +84,10 @@ class FBLoanProfilesTableViewCell: UITableViewCell {
         } else {
             lbEmployeeConfirmedName.text = obj?.employeeConfirmedName
         }
+        if obj?.confirmed == 0 {
+            lbConfirm.text = "Chưa xác nhận"
+        } else if obj?.confirmed == 1 {
+            lbConfirm.text = "Đã xác nhận"
+        }
     }
-    
 }

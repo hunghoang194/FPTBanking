@@ -37,7 +37,12 @@ class TransactionHistoryTableViewCell: UITableViewCell {
         lbContent.text = obj?.description
         lbFromOrToFullName.text = obj?.fromOrToFullName
         lbFromOrToAccountNumber.text = obj?.fromOrToAccountNumber
-        lbTypeSend.text = obj?.transactionType.transactionType
+//        lbTypeSend.text = obj?.transactionType.transactionType
+        if obj?.transactionType.transactionType == "transfer_internal" {
+            lbTypeSend.text = "Chuyển tiền"
+        } else if obj?.transactionType.transactionType == "withdraw" {
+            lbTypeSend.text = "Nạp tiền"
+        }
         if obj?.amount ?? 0 >= 0 {
             lbAmount.textColor = .green
             lbAmount.text = "+\(obj?.amount?.formatnumber() ?? "")"
